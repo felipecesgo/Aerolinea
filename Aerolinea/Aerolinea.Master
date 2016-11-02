@@ -39,12 +39,9 @@
                         <ul class="list-unstyled list-inline pull-right">
                             <li class="pie_texto">
                                 <span>aerolineas.com Sitio Oficial de Aerolineas. © 2016 Aerolíneas S.A.<br>
-                                    <a class="pie" href="/es-ar/legales/terminoscondiciones">Legales</a> 
-            <a class="pie" href="#" onclick="popup_condiciones_transporte();">Condiciones Generales de Transporte </a>|
-            <a class="pie" href="/es-ar/asppage/open?link=http%3A%2F%2Fww1.aerolineas.com.ar%2Farg%2Fmain.asp%3Fidsitio%3Dar%26idpagina%3D84%26ididioma%3Des">Ud. está en un SITIO SEGURO</a>
+                                  Condiciones Generales de Transporte | Ud. está en un SITIO SEGURO
                                 </span>
                             </li>
-
                         </ul>
                     </div>
                 </div>
