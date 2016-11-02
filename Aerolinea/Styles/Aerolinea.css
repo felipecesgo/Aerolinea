@@ -1,0 +1,57 @@
+﻿
+body {
+	font-family: 'Open Sans',sans-serif;
+    color: #838384;
+}
+
+
+#container_home {
+	background-color: #FFF;
+	width:100%;
+    margin: 0 auto;
+	padding: 0;
+}
+
+#header {
+    box-shadow: 0 2px 5px rgba(0,0,0,.24);
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: #FFF;
+    height: 146px;
+}
+
+.container {
+    width: 1030px;
+    min-width: 1030px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+#header-top {
+    border-bottom: 1px solid #0077CB;
+    height: 106px;
+}
+
+#header-top #logo-header {
+    margin: 15px 0 25px;
+}
+
+#header-top #access-top {
+    margin: 20px 0 0;
+    font-size: 13px;
+    height: 84px;
+}
+
+
+#footer {
+    background-color: #eee;
+    padding: 10px 0;
+    clear: both;
+    z-index: 100;
+    width: 100%;
+    bottom: 0px;
+}

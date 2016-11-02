@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Aerolinea.master.cs" Inherits="Aerolinea.Aerolinea" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Styles/Aerolinea.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container_home">
+
+            <div id="header">
+                <div class="container">
+                    <div id="header-top">
+                        <div id="logo-header"><img alt="Logo Aerolineas Argentinas" src="Images/logo_Aerolineas.gif" /></div>
+                        <div id="acess-top" >
+                            <a href="Index.aspx">Ingresá a tu cuenta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="navigation">
+            </div>
+
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div id="footer">
+                <div class="container">
+                    <div class="pie_legals clearfix">
+                        <ul class="list-unstyled list-inline pull-right">
+                            <li class="pie_texto">
+                                <span>aerolineas.com Sitio Oficial de Aerolineas. © 2016 Aerolíneas S.A.<br>
+                                    <a class="pie" href="/es-ar/legales/terminoscondiciones">Legales</a> 
+            <a class="pie" href="#" onclick="popup_condiciones_transporte();">Condiciones Generales de Transporte </a>|
+            <a class="pie" href="/es-ar/asppage/open?link=http%3A%2F%2Fww1.aerolineas.com.ar%2Farg%2Fmain.asp%3Fidsitio%3Dar%26idpagina%3D84%26ididioma%3Des">Ud. está en un SITIO SEGURO</a>
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
