@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Aerolinea.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="Styles/StyleMain.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <title></title>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="container">
+
+            <table style="width: 100%;">
+                <tr class="header">
+                    <td style="width: 60%;">
+                        <div id="logo-header">
+                            <img alt="Logo Aerolineas Argentinas" src="Images/logo_Aerolineas.gif" /></div>
+                    </td>
+                    <td style="width: 40%; text-align: right">
+                        <asp:LinkButton CssClass="access-top" ID="lbtnLogIn" runat="server" PostBackUrl="~/Index.aspx" OnClientClick="location.href='Index.aspx'">Ingresá a tu cuenta</asp:LinkButton>
+                    </td>
+                </tr>
+           
+                <tr style="width: 100%;">
+                    <td colspan="2">
+                        <hr style="border: 0px; border-top: 1px solid #0077CB; width: 100%;" />
+                        <asp:Menu ID="_mnuPrincipal" runat="server" Font-Names="Verdana" Orientation="Horizontal">
+                            <LevelMenuItemStyles>
+                                <asp:MenuItemStyle CssClass="main_menu" />
+                                <asp:MenuItemStyle CssClass="level_menu" />
+                            </LevelMenuItemStyles>
+                            <StaticSelectedStyle CssClass="selected" />
+                            <Items>
+                                <asp:MenuItem Selected="true" Text="La empresa" NavigateUrl="~/Index.aspx"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </td>
+                </tr>
+            </table>
+
+            <div style="margin-left: 15px;  margin-right: 15px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <h2>Titulo </h2>
+                <br />
+                <br />
+            </asp:ContentPlaceHolder>
+                </div>
+        
+        </div>
+        <div id="footer">
+            <p>aerolineas.com Sitio Oficial de Aerolineas. © 2016 Aerolíneas S.A.</p>
+            <br />
+        </div>
+
+    </form>
+</body>
+</html>

@@ -10,7 +10,7 @@
 namespace Aerolinea {
     
     
-    public partial class Aerolinea {
+    public partial class MasterPage {
         
         /// <summary>
         /// Control head.
@@ -29,6 +29,24 @@ namespace Aerolinea {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// Control lbtnLogIn.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnLogIn;
+        
+        /// <summary>
+        /// Control _mnuPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Menu _mnuPrincipal;
         
         /// <summary>
         /// Control ContentPlaceHolder1.
