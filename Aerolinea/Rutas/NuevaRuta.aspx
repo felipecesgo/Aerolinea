@@ -1,23 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="NuevaRuta.aspx.cs" Inherits="Aerolinea.Rutas.NuevaRuta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-
-        function uploadme() {
-            $('#Uploadfile').click();
-
-        }
-
-        function splitpath(paths) {
-            var st = paths.split("\\");
-            return st[st.length - 1];
-        }
-
-        function updatemyname() {
-            var varfile = document.getElementById("Uploadfile");
-            document.getElementById("txtImagen").value = splitpath(varfile.value);
-        }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Nueva Ruta </h2>
@@ -40,16 +23,16 @@
         <asp:TextBox ID="txtTarifa" runat="server" class="form-control"></asp:TextBox>
 
         <asp:Label ID="lbImagen" runat="server" Text="Imagen: "></asp:Label>
+        <asp:FileUpload ID="fileUpload" runat="server" />
 
-        <div>
-            <input type="file" id="Uploadfile" style="display: none;" onchange="updatemyname();" />
+            <%--<input type="file" id="Uploadfile" runat="server" style="display: none;" onchange="updatemyname();" />
             <div class="input-group">
                 <input id="txtImagen" type="text" class="form-control" placeholder="No se eligió archivo" disabled="disabled" />
                 <span class="input-group-btn">
-                    <a href="javascript:void(0);" class="btn btn-success" onclick="uploadme();">Examinar..</a>
+                   <a href="javascript:void(0);" class="btn btn-success" onclick="uploadme();">Examinar..</a>
                 </span>
-            </div>
-        </div>
+            </div>--%>
+   
 
         <br />
         <asp:Button ID="btnInsertar" runat="server" Text="Insertar" CssClass="btn btn-primary" OnClick="btnInsertar_Click" />

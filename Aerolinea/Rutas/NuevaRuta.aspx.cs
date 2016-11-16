@@ -2,6 +2,7 @@
 using Aerolinea.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,10 +25,10 @@ namespace Aerolinea.Rutas
                 ruta.Origen = txtOrigen.Text;
                 ruta.Destino = txtDestino.Text;
                 ruta.Tarifa = decimal.Parse(txtTarifa.Text);
-                //var file = Uploadfile.PostedFile;
-                //var imagen = new byte[file.ContentLength];
-                //file.InputStream.Read(imagen, 0, file.ContentLength);
-                //ruta.Imagen = imagen;
+                if (fileUpload.HasFile)
+                {
+                    ruta.Imagen = fileUpload.FileBytes;
+                }
                 var rutas = new RutaRepository();
                 rutas.InsertarRuta(ruta);
                 mensajeError.Visible = false;
@@ -41,6 +42,8 @@ namespace Aerolinea.Rutas
                 textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
             }
         }
+
+      
 
         
     }
