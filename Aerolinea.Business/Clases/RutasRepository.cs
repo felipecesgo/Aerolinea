@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Aerolinea.Business
 {
-    public class RutaRepository : IRutaRepository
+    public class RutasRepository : IRutasRepository
     {
         private Repository<Ruta> rutas;
 
-        public RutaRepository()
+        public RutasRepository()
         {
             rutas = new Repository<Ruta>();
         }

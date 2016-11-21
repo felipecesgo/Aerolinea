@@ -1,0 +1,6 @@
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\bin\Release\Aerolinea.Data.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\bin\Release\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\bin\Release\ServiceStack.Interfaces.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Release\Aerolinea.Data.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Release\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Release\Aerolinea.Data.csprojResolveAssemblyReference.cache

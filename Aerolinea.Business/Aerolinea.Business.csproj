@@ -39,9 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IRutaRepository.cs" />
+    <Compile Include="Clases\VuelosRepository.cs" />
+    <Compile Include="Interfaces\IRutasRepository.cs" />
+    <Compile Include="Interfaces\IVuelosRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Clases\RutaRepository.cs" />
+    <Compile Include="Clases\RutasRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aerolinea.DataAccess\Aerolinea.DataAccess.csproj">

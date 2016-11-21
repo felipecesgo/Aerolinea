@@ -22,41 +22,44 @@
                 <tr class="header">
                     <td style="width: 60%;">
                         <div id="logo-header">
-                            <img alt="Logo Aerolinea" src="../Images/logo_Aerolineas.gif" /></div>
+                            <img alt="Logo Aerolinea" src="../Images/logo_Aerolineas.gif" />
+                        </div>
                     </td>
                     <td style="width: 40%; text-align: right">
-                        <asp:LinkButton CssClass="access-top" ID="lbtnLogIn" runat="server" PostBackUrl="~/Index.aspx" OnClientClick="location.href='Index.aspx'">Ingresá a tu cuenta</asp:LinkButton>
+                        <asp:LinkButton CssClass="access-top" ID="lbtnLogIn" runat="server" PostBackUrl="~/Index.aspx" OnClientClick="location.href='Index.aspx'">Ingresar al sistema</asp:LinkButton>
                     </td>
                 </tr>
-           
+
                 <tr style="width: 100%;">
                     <td colspan="2">
-                        <hr style="border: 0px; border-top: 1px solid #0077CB; width: 100%; margin: 0px; padding: 2px" />
-                        <asp:Menu ID="_mnuPrincipal" runat="server" Font-Names="Verdana" Orientation="Horizontal">
-                            <LevelMenuItemStyles>
-                                <asp:MenuItemStyle CssClass="main_menu" />
-                                <asp:MenuItemStyle CssClass="level_menu" />
-                            </LevelMenuItemStyles>
-                            <StaticSelectedStyle CssClass="selected" />
+                        <hr style="border-top: 1px solid #0077CB; margin: 0px; padding: 2px" />
+                        <asp:Menu ID="mnuPrincipal" runat="server" Font-Names="Verdana" Orientation="Horizontal">
+                            <LevelSelectedStyles>
+                                <asp:MenuItemStyle BackColor="#0060a9" ForeColor="White" VerticalPadding="10px" Font-Size="12px" HorizontalPadding="10px" Height="35px"  />
+                            </LevelSelectedStyles>
+                            <levelmenuitemstyles> 
+                                <asp:menuitemstyle BackColor="#e2e2e2" forecolor="#0077CB" VerticalPadding="10px" Font-Size="12px" HorizontalPadding="10px" Height="35px" />
+                              </levelmenuitemstyles>
                             <Items>
-                                <asp:MenuItem Selected="true" Text="La empresa" NavigateUrl="~/Index.aspx"></asp:MenuItem>
+                                <asp:MenuItem Selected="true" Text="Reserve su vuelo" NavigateUrl="~/Index.aspx"></asp:MenuItem>
+                                <asp:MenuItem Selected="False" Text="Estado de vuelos" NavigateUrl="~/InfoVuelos.aspx"></asp:MenuItem>
                             </Items>
                         </asp:Menu>
                     </td>
                 </tr>
             </table>
 
-            <div class="content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <h2>Titulo </h2>
-                <br />
-                <br />
-            </asp:ContentPlaceHolder>
-           </div>
-        
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <h2>Titulo </h2>
+                    <br />
+                    <br />
+                </asp:ContentPlaceHolder>
+            </div>
+
         </div>
         <div id="footer">
-            <p>aerolineas.com Sitio Oficial de Aerolineas. © 2016 Aerolíneas S.A.</p>
+            <p>Copyright © 2016 aerolineas.com. Todos los derechos reservados.</p>
             <br />
         </div>
 

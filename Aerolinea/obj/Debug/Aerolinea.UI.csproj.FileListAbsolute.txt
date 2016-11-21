@@ -16,3 +16,21 @@ C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea\bin\S
 C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea\obj\Debug\Aerolinea.UI.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea\obj\Debug\Aerolinea.dll
 C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea\obj\Debug\Aerolinea.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.Business.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.Data.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.DataAccess.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\ServiceStack.Interfaces.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\ServiceStack.OrmLite.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\ServiceStack.OrmLite.SqlServer.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\ServiceStack.Common.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\ServiceStack.Text.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.Business.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\Aerolinea.DataAccess.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\ServiceStack.Common.xml
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\bin\ServiceStack.Text.xml
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\obj\Debug\Aerolinea.UI.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\obj\Debug\Aerolinea.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea\obj\Debug\Aerolinea.pdb

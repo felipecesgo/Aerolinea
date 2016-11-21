@@ -10,7 +10,7 @@ body {
 }
 
 #container {
-    width: 78%;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 5px;
@@ -18,11 +18,6 @@ body {
     background-color: white;
     height: 100%;
     padding: 20px;
-}
-
-.content {
-    padding: 0px 20px 0px 15px;
-    height: 70%;
 }
 
 .header {
@@ -33,7 +28,7 @@ body {
 }
 
 #footer {
-    width: 78%;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
     background-color: #eee;
@@ -54,47 +49,6 @@ body {
 }
 
 
-.main_menu, .main_menu:hover {
-    width: 100px;
-    background-color: #FFF;
-    color: #4800ff;
-    text-align: center;
-    height: 30px;
-    line-height: 30px;
-    margin-right: 1px;
-}
-
-.main_menu:hover {
-    background-color: #ccc;
-}
-
-.level_menu, .level_menu:hover {
-    width: 110px;
-    background-color: #fff;
-    color: #333;
-    text-align: center;
-    height: 30px;
-    line-height: 30px;
-    margin-top: 5px;
-}
-
-.level_menu:hover {
-    background-color: #ccc;
-}
-
-.selected, .selected:hover {
-    background-color: #eeeeee !important;
-    color: #0077c9;
-}
-
-.level2 {
-    background-color: #fff;
-}
-
-
-
-
-
 #footer p {
     color: #393939;
     font-size: small;
@@ -111,3 +65,65 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.label {
+    float: left;
+    border: 0px;
+    margin: 30px 10px 5px 0px;
+    padding-left: 15px;
+    color: #21205f;
+    font-weight: bold;
+    font-size: 13px;
+}
+.depart{
+    float: right;
+    border: 0px;
+    margin: 30px 10px 5px 20px;
+    padding-right: 25px;
+    color: #21205f;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(../images/depart.png) no-repeat center right;
+}
+.form-control {
+    margin-top: 30px;
+}
+
+.return{
+    float: right;
+    border: 0px;
+    margin: 30px 10px 5px 20px;
+    padding-right: 25px;
+    color: #21205f;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(../images/return.png) no-repeat center right;
+}
+
+.salida{
+    float: right;
+    border: 0px;
+    margin: 30px 10px 5px 20px;
+    padding-right: 25px;
+    color: #21205f;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(../images/plane-right.png) no-repeat center right;
+    background-size: 20px 20px;
+}
+
+.regreso{
+    float: right;
+    border: 0px;
+    margin: 30px 10px 5px 20px;
+    padding-right: 25px;
+    color: #21205f;
+    font-weight: bold;
+    font-size: 13px;
+    background: url(../images/plane-left.png) no-repeat center right;
+    background-size: 20px 20px;
+}
+
+.depart-return {
+    color: #008712;
+    word-spacing: 8px;
+}

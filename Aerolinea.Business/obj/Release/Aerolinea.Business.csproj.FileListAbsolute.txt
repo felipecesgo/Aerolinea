@@ -1,0 +1,16 @@
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\Aerolinea.Business.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\Aerolinea.Business.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\Aerolinea.Data.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\Aerolinea.DataAccess.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\ServiceStack.OrmLite.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\ServiceStack.OrmLite.SqlServer.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\ServiceStack.Common.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\ServiceStack.Interfaces.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\ServiceStack.Text.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\Aerolinea.DataAccess.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\ServiceStack.Common.xml
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Release\ServiceStack.Text.xml
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\obj\Release\Aerolinea.Business.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\obj\Release\Aerolinea.Business.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\obj\Release\Aerolinea.Business.pdb

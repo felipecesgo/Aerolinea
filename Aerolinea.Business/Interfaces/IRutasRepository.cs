@@ -7,7 +7,7 @@ using Aerolinea.Data;
 
 namespace Aerolinea.Business
 {
-    public interface IRutaRepository
+    public interface IRutasRepository
     {
         List<Ruta> ListarRutas();
         void InsertarRuta(Ruta ruta);

@@ -29,7 +29,7 @@ namespace Aerolinea.Rutas
                 {
                     ruta.Imagen = fileUpload.FileBytes;
                 }
-                var rutas = new RutaRepository();
+                var rutas = new RutasRepository();
                 rutas.InsertarRuta(ruta);
                 mensajeError.Visible = false;
                 mensaje.Visible = true;

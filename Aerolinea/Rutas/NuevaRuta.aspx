@@ -25,15 +25,6 @@
         <asp:Label ID="lbImagen" runat="server" Text="Imagen: "></asp:Label>
         <asp:FileUpload ID="fileUpload" runat="server" />
 
-            <%--<input type="file" id="Uploadfile" runat="server" style="display: none;" onchange="updatemyname();" />
-            <div class="input-group">
-                <input id="txtImagen" type="text" class="form-control" placeholder="No se eligió archivo" disabled="disabled" />
-                <span class="input-group-btn">
-                   <a href="javascript:void(0);" class="btn btn-success" onclick="uploadme();">Examinar..</a>
-                </span>
-            </div>--%>
-   
-
         <br />
         <asp:Button ID="btnInsertar" runat="server" Text="Insertar" CssClass="btn btn-primary" OnClick="btnInsertar_Click" />
 

@@ -44,6 +44,12 @@ CREATE TABLE Cliente
     Contrasena nvarchar (256) NOT NULL
 );
 
+Create Table TipoViaje
+(
+   IdTipoViaje int primary key identity(1,1),
+   Nombre varchar(50)
+ );
+
 CREATE TABLE Vuelo
 (
 	IdVuelo int primary key  IDENTITY(1,1),
@@ -53,6 +59,8 @@ CREATE TABLE Vuelo
 	CapacidadAsientos int NOT NULL,
 	EstadoVuelo nvarchar (25),
     FechaSalida datetime NOT NULL,
+	FechaRegreso datetime,
+	IdTipoViaje int not null FOREIGN KEY (IdTipoViaje) REFERENCES TipoViaje (IdTipoViaje),
     Foreign key (IdAvion) REFERENCES Avion(IdAvion),
     Foreign key (IdPiloto) REFERENCES Piloto(IdPiloto),
 	Foreign key (IdRuta) REFERENCES Ruta(IdRuta)

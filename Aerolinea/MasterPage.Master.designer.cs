@@ -40,13 +40,13 @@ namespace Aerolinea {
         protected global::System.Web.UI.WebControls.LinkButton lbtnLogIn;
         
         /// <summary>
-        /// Control _mnuPrincipal.
+        /// Control mnuPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu _mnuPrincipal;
+        protected global::System.Web.UI.WebControls.Menu mnuPrincipal;
         
         /// <summary>
         /// Control ContentPlaceHolder1.

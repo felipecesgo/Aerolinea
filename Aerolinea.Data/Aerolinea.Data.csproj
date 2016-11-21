@@ -42,8 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agente.cs" />
+    <Compile Include="Avion.cs" />
+    <Compile Include="Piloto.cs" />
+    <Compile Include="Queja.cs" />
+    <Compile Include="Reserva.cs" />
+    <Compile Include="Rol.cs" />
     <Compile Include="Ruta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoViaje.cs" />
+    <Compile Include="Vuelo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

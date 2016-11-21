@@ -13,3 +13,18 @@ C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea.DataA
 C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.dll
 C:\Users\Felipe\Documents\Fidelitas\Progra V\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Aerolinea.DataAccess.dll.config
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Aerolinea.DataAccess.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Aerolinea.DataAccess.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Aerolinea.Data.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\ServiceStack.Common.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\ServiceStack.Interfaces.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\ServiceStack.OrmLite.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\ServiceStack.Text.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\ServiceStack.Common.xml
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\ServiceStack.Text.xml
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.pdb
