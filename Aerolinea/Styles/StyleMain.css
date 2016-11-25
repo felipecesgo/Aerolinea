@@ -55,7 +55,7 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
     font-size: 1.5em;
     color: #666666;
     font-variant: small-caps;
@@ -64,6 +64,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0px;
 }
 
+#title {
+    font-family: "AmericanSansLight",Helvetica,Arial,sans-serif;
+    font-size: 38px;
+    font-size: 2.71429rem;
+    line-height: 44px;
+    color: #0078d2;
+    font-weight: 200;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
 .label {
     float: left;
@@ -126,4 +136,23 @@ h1, h2, h3, h4, h5, h6 {
 .depart-return {
     color: #008712;
     word-spacing: 8px;
+    font-family:'Arial Rounded MT';
+    font-size: 2em;
 }
+
+.city-pair {
+    color: #00467f;
+    font-family: "AmericanSansLight",Helvetica,Arial,sans-serif;
+    font-size: 30px;
+    font-size: 2.14286rem;
+    line-height: 36px;
+}
+
+.date-info {
+    color: #627a88;
+    display: block;
+    font-size: 26px;
+    font-size: 1.7rem;
+    font-family: "AmericanSansLight",Helvetica,Arial,sans-serif;
+}
+

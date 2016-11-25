@@ -49,22 +49,22 @@ namespace Aerolinea {
         protected global::System.Web.UI.WebControls.DropDownList ddlNumPasajeros;
         
         /// <summary>
-        /// Control fechaSalida.
+        /// Control hdnfechaSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaSalida;
+        protected global::System.Web.UI.WebControls.HiddenField hdnfechaSalida;
         
         /// <summary>
-        /// Control fechaRegreso.
+        /// Control hdnfechaRegreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechaRegreso;
+        protected global::System.Web.UI.WebControls.HiddenField hdnfechaRegreso;
         
         /// <summary>
         /// Control btnBuscar.

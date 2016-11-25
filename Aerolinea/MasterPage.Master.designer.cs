@@ -40,6 +40,15 @@ namespace Aerolinea {
         protected global::System.Web.UI.WebControls.LinkButton lbtnLogIn;
         
         /// <summary>
+        /// Control lbtnLogOut.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnLogOut;
+        
+        /// <summary>
         /// Control mnuPrincipal.
         /// </summary>
         /// <remarks>

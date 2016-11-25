@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\AgentesRepository.cs" />
+    <Compile Include="Clases\MD5Generator.cs" />
     <Compile Include="Clases\VuelosRepository.cs" />
+    <Compile Include="Interfaces\IAgentesRepository.cs" />
     <Compile Include="Interfaces\IRutasRepository.cs" />
     <Compile Include="Interfaces\IVuelosRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

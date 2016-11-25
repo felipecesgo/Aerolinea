@@ -10,7 +10,7 @@
 namespace Aerolinea.Rutas {
     
     
-    public partial class NuevaRuta {
+    public partial class MantRuta {
         
         /// <summary>
         /// Control mensaje.

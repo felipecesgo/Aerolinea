@@ -2,21 +2,53 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>aerolineas.com</title>
-    <link href="Styles/StyleMain.css" rel="stylesheet" />
-    <script>
-        $(function () {
-            $("input[type='radio']").on('click', function (e) {
-                var value = $(this).val();
-                if (value == "2") {
-                    $("#lbRegreso")[0].style.display = 'none';
-                    $("#ContentPlaceHolder1_fechaRegreso")[0].style.display = 'none';
-                } else {
-                    $("#lbRegreso")[0].style.display = 'block';
-                    $("#ContentPlaceHolder1_fechaRegreso")[0].style.display = 'block';
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //$("input[type='radio']").on('click', function (e) {
+            //    var value = $(this).val();
+            //    if (value == "2") {
+            //        $("#lbRegreso")[0].style.display = 'none';
+            //        $("#fechaRegreso")[0].style.display = 'none';
+            //    } else {
+            //        $("#lbRegreso")[0].style.display = 'block';
+            //        $("#fechaRegreso")[0].style.display = 'block';
+            //    }
+            //});
+
+
+            var date = new Date();
+            $("#fechaSalida").datepicker({
+                minDate: 0,
+                dateFormat: "dd/mm/yy",
+                defaultDate: date,
+                onSelect: function () {
+                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
+                    var element = $("#hdnfechaSalida")[0];
+                    element.value = selectedDate;
                 }
-                
             });
+            $("#fechaSalida").datepicker("setDate", date);
+            $("#hdnfechaSalida")[0].value = date.toLocaleDateString();
+
+            var date = new Date();
+            $("#fechaRegreso").datepicker({
+                minDate: 0,
+                dateFormat: "dd/mm/yy",
+                defaultDate: date,
+                onSelect: function () {
+                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
+                    var element = $("#hdnfechaRegreso")[0];
+                    element.value = selectedDate;
+                }
+            });
+            $("#fechaRegreso").datepicker("setDate", date);
+            $("#hdnfechaRegreso")[0].value = date.toLocaleDateString();
         });
+
+     
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -61,14 +93,16 @@
                     <label class="salida">Salida</label>
                 </td>
                 <td>
-                    <input id="fechaSalida" type="date" runat="server" class="form-control" />
+                    <asp:HiddenField ID="hdnfechaSalida"  runat="server" ClientIDMode="Static" />
+                    <input id="fechaSalida" type="text" class="form-control"/>
                 </td>
 
                 <td>
                     <label id="lbRegreso" class="regreso">Regreso</label>
                 </td>
                <td>
-                   <input id="fechaRegreso" type="date" runat="server" class="form-control" />
+                   <asp:HiddenField ID="hdnfechaRegreso"  runat="server" ClientIDMode="Static" />
+                   <input id="fechaRegreso" type="text" class="form-control" />
                </td>
                <td colspan="2" style="text-align: center;  margin: 30px 20px 5px 20px; padding-top: 22px" > 
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar Vuelos" Width="190px" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />

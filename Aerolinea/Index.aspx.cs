@@ -64,8 +64,8 @@ namespace Aerolinea
         {
             var origen = ddlOrigen.SelectedValue;
             var destino = ddlDestino.SelectedValue;
-            var salida = fechaSalida.Value;
-            var regreso = fechaRegreso.Value;
+            var salida = hdnfechaSalida.Value;
+            var regreso = hdnfechaRegreso.Value;
             Session.Add("origen", origen);
             Session.Add("destino", destino);
             Session.Add("salida", salida);

@@ -12,6 +12,20 @@ namespace Aerolinea
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if(!IsPostBack)
+            {
+                if (Session["origen"] != null)
+                    lblOrigen.Text = Session["origen"].ToString();
+
+                if (Session["salida"] != null)
+                {
+                    var date = Convert.ToDateTime(Session["salida"].ToString());
+
+                    lblFechaSalida.Text = date.ToLongDateString();
+                }
+
+
+            }
         }
     }
 }
