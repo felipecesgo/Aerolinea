@@ -12,55 +12,80 @@ namespace Aerolinea
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string path = Request.AppRelativeCurrentExecutionFilePath;
-       
-            foreach (MenuItem item in mnuPrincipal.Items)
+         
+            string currentPage = Request.Url.AbsolutePath;
+            if (currentPage.Contains("Login"))
             {
-                item.Selected = item.NavigateUrl.Equals(path, StringComparison.InvariantCultureIgnoreCase);
+                lbtnLogIn.Visible = false;
+                mnuPrincipal.Items.Clear();
             }
 
-            if (Session["user"] != null)
+            if (Session["usuario"] != null)
             {
-                var usuario = (Agente)Session["user"];
-                lbtnLogOut.Text = string.Format("{0} {1}", usuario.Nombre, usuario.Apellido) + "Cerrar Sesión";
+                var usuario = (Agente)Session["usuario"];
+                lbtnLogOut.Text = string.Format("{0} {1} (Cerrar Sesión)", usuario.Nombre, usuario.Apellido);
                 lbtnLogIn.Visible = false;
                 lbtnLogOut.Visible = true;
 
-                mnuPrincipal.Items.Clear();
-                string currentPage = Request.Url.AbsolutePath;
                 if (usuario.IdRol == 1)
                 {
+                    mnuPrincipal.Items.Clear();
                     var menuRutas = new MenuItem
                     {
                         Value = "AdministrarRutas",
                         Text = "Rutas",
-                        NavigateUrl = "~/Mantenimientos/MantRutas.aspx",
-                        Selected = currentPage.Contains("MantRutas.aspx")
+                        NavigateUrl = "~/Mantenimientos/MantRuta.aspx",
+                        Selected = currentPage.Contains("MantRuta.aspx")
                     };
                     mnuPrincipal.Items.Add(menuRutas);
-
                     var menuAgentes = new MenuItem
                     {
                         Value = "AdministrarAgentes",
                         Text = "Agentes",
-                        NavigateUrl = "~/Mantenimientos/MantAgentes.aspx",
-                        Selected = currentPage.Contains("MantAgentes.aspx")
+                        NavigateUrl = "~/Mantenimientos/MantAgente.aspx",
+                        Selected = currentPage.Contains("MantAgente.aspx")
                     };
                     mnuPrincipal.Items.Add(menuAgentes);
-
-                  
                 }
             }
-        
+            else
+            {
+                if (!currentPage.Contains("Login"))
+                {
+                    mnuPrincipal.Items.Clear();
+                    var menuIndex = new MenuItem
+                    {
+                        Value = "ReservarVuelo",
+                        Text = "Reserve su vuelo",
+                        NavigateUrl = "~/Index.aspx",
+                        Selected = currentPage.Contains("Index.aspx")
+                    };
+                    mnuPrincipal.Items.Add(menuIndex);
+                    var menuEstadoVuelos = new MenuItem
+                    {
+                        Value = "EstadoVuelos",
+                        Text = "Estado de vuelos",
+                        NavigateUrl = "~/EstadoVuelos.aspx",
+                        Selected = currentPage.Contains("EstadoVuelos.aspx")
+                    };
+                    mnuPrincipal.Items.Add(menuEstadoVuelos);
+                }
+            }
 
 
+
+            foreach (MenuItem item in mnuPrincipal.Items)
+            {
+                item.Selected = item.NavigateUrl.Contains(currentPage);
+            }
         }
 
         protected void lbtnLogOut_Click(object sender, EventArgs e)
         {
-            Session.Remove("user");
-            lbtnLogIn.Visible = true;
+            Session.Remove("usuario");
             lbtnLogOut.Visible = false;
+            lbtnLogIn.Visible = true;
+            Response.Redirect("~/Index.aspx");
         }
     }
 }

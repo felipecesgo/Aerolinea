@@ -11,24 +11,32 @@ namespace Aerolinea.Business.Clases
     public class AgentesRepository: IAgentesRepository
     {
         private Repository<Agente> agentes;
+
+
+        public AgentesRepository()
+        {
+            agentes = new Repository<Agente>();
+        }
+
+
         public List<Agente> ListarAgentes()
         {
-            throw new NotImplementedException();
+            return agentes.GetAll();
         }
 
-        public void InsertarAgente(Agente agentes)
+        public void InsertarAgente(Agente agente)
         {
-            throw new NotImplementedException();
+            agentes.Save(agente);
         }
 
-        public void ActualizarAgente(Agente agentes)
+        public void ActualizarAgente(Agente agente)
         {
-            throw new NotImplementedException();
+            agentes.Save(agente);
         }
 
         public void EliminarAgente(int idAgente)
         {
-            throw new NotImplementedException();
+            agentes.Delete(idAgente);
         }
 
         public Agente BuscarAgente(string nombreUsuario)

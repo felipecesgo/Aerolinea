@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Clases\AgentesRepository.cs" />
     <Compile Include="Clases\MD5Generator.cs" />
+    <Compile Include="Clases\VueloData.cs" />
     <Compile Include="Clases\VuelosRepository.cs" />
     <Compile Include="Interfaces\IAgentesRepository.cs" />
     <Compile Include="Interfaces\IRutasRepository.cs" />

@@ -20,7 +20,7 @@ namespace Aerolinea.Data
 
         public int CapacidadAsientos { get; set; }
 
-       public string EstadoVuelo { get; set; }
+        public string EstadoVuelo { get; set; }
 
         public DateTime FechaSalida { get; set; }
 

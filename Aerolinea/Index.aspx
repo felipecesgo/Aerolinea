@@ -7,31 +7,16 @@
 
         $(document).ready(function () {
 
-            //$("input[type='radio']").on('click', function (e) {
-            //    var value = $(this).val();
-            //    if (value == "2") {
-            //        $("#lbRegreso")[0].style.display = 'none';
-            //        $("#fechaRegreso")[0].style.display = 'none';
-            //    } else {
-            //        $("#lbRegreso")[0].style.display = 'block';
-            //        $("#fechaRegreso")[0].style.display = 'block';
-            //    }
-            //});
-
-
-            var date = new Date();
-            $("#fechaSalida").datepicker({
-                minDate: 0,
-                dateFormat: "dd/mm/yy",
-                defaultDate: date,
-                onSelect: function () {
-                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
-                    var element = $("#hdnfechaSalida")[0];
-                    element.value = selectedDate;
+            $("input[type='radio']").on('click', function (e) {
+                var value = $(this).val();
+                if (value == "2") {
+                    $("#lbRegreso")[0].style.display = 'none';
+                    $("#fechaRegreso")[0].style.display = 'none';
+                } else {
+                    $("#lbRegreso")[0].style.display = 'block';
+                    $("#fechaRegreso")[0].style.display = 'block';
                 }
             });
-            $("#fechaSalida").datepicker("setDate", date);
-            $("#hdnfechaSalida")[0].value = date.toLocaleDateString();
 
             var date = new Date();
             $("#fechaRegreso").datepicker({
@@ -46,6 +31,24 @@
             });
             $("#fechaRegreso").datepicker("setDate", date);
             $("#hdnfechaRegreso")[0].value = date.toLocaleDateString();
+
+
+            var date = new Date();
+            $("#fechaSalida").datepicker({
+                minDate: 0,
+                dateFormat: "dd/mm/yy",
+                defaultDate: date,
+                onSelect: function () {
+                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
+                    var element = $("#hdnfechaSalida")[0];
+                    element.value = selectedDate;
+
+                }
+            });
+            $("#fechaSalida").datepicker("setDate", date);
+            $("#hdnfechaSalida")[0].value = date.toLocaleDateString();
+
+            
         });
 
      
@@ -57,25 +60,27 @@
             <tr>
                 <td colspan="4">
                     <asp:RadioButtonList ID="rblTipoViaje" runat="server" RepeatDirection="Horizontal">
+                        <asp:ListItem Selected="True" Value="1" style="margin-right:15px;">Ida y vuelta</asp:ListItem>
+                        <asp:ListItem Value="2">S&#243;lo ida</asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
             </tr>
       
             <tr>
                 <td>
-                    <label for="ddlOrigen" class="depart">Origen </label>
+                    <label for="ddlOrigen" class="depart" style="margin-top: 6px">Origen </label>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control"></asp:DropDownList>
                 </td>
                 <td>
-                    <label for="ddlDestino" class="return">Destino </label>
+                    <label for="ddlDestino" class="return" style="margin-top: 6px">Destino </label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlDestino" runat="server" class="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlDestino" runat="server" class="form-control" style="margin-top: 6px"></asp:DropDownList>
                 </td>
                 <td>
-                    <label for="ddlNumPasajeros" class="label">Número de pasajeros</label>
+                    <label for="ddlNumPasajeros" class="label" style="margin-top: 6px">Número de pasajeros</label>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlNumPasajeros" runat="server" class="form-control">
@@ -88,13 +93,13 @@
                     </asp:DropDownList>
                 </td>
             </tr>
-           <tr>
+           <tr >
                 <td>
                     <label class="salida">Salida</label>
                 </td>
                 <td>
                     <asp:HiddenField ID="hdnfechaSalida"  runat="server" ClientIDMode="Static" />
-                    <input id="fechaSalida" type="text" class="form-control"/>
+                    <input id="fechaSalida" type="text" class="form-control" style="margin-top: 25px" />
                 </td>
 
                 <td>
@@ -102,9 +107,9 @@
                 </td>
                <td>
                    <asp:HiddenField ID="hdnfechaRegreso"  runat="server" ClientIDMode="Static" />
-                   <input id="fechaRegreso" type="text" class="form-control" />
+                   <input id="fechaRegreso" type="text" class="form-control"  style="margin-top: 25px" />
                </td>
-               <td colspan="2" style="text-align: center;  margin: 30px 20px 5px 20px; padding-top: 22px" > 
+               <td colspan="2" style="text-align: center;  margin: 30px 20px 5px 20px; padding-top: 25px" > 
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar Vuelos" Width="190px" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />
                </td>
             </tr>
@@ -121,7 +126,7 @@
             <EmptyDataTemplate>
                 <table>
                     <tr>
-                        <td>No se encontraron vuelos para la venta.</td>
+                        <td></td>
                     </tr>
                 </table>
             </EmptyDataTemplate>

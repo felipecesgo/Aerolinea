@@ -16,21 +16,9 @@ namespace Aerolinea
             if (!IsPostBack)
             {
                 var rutasRepository = new RutasRepository();
-                var rutas = rutasRepository.ListarRutas();
+                var rutas = rutasRepository.ListarRutas().Take(8);
                 lvRutas.DataSource = rutas;
                 lvRutas.DataBind();
-
-                var vuelosRepository = new VuelosRepository();
-                var tiposViaje = vuelosRepository.ListarTiposViaje();
-
-                for (var x = 0; x < tiposViaje.Count; x++)
-                {
-                    var item = new ListItem(tiposViaje[x].Nombre, tiposViaje[x].IdTipoViaje.ToString());
-                    if (x == 0)
-                        item.Selected = true;
-                    item.Attributes.Add("style", "margin-right:15px;");
-                    rblTipoViaje.Items.Add(item);
-                }
 
                 ddlOrigen.DataSource = rutas.Select(x => x.Origen).ToList();
                 ddlOrigen.DataBind();
@@ -57,8 +45,8 @@ namespace Aerolinea
 
         protected void lkbtnSearch_Click(object sender, EventArgs e)
         {
-
-        }
+            
+        } 
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {

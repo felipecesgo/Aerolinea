@@ -13,10 +13,8 @@ namespace Aerolinea.Business
         void InsertarVuelo(Vuelo ruta);
         void ActualizarVuelo(Vuelo ruta);
         void EliminarVuelo(int idVuelo);
-        Ruta BuscarVuelo(int idVuelo);
+        Vuelo BuscarVuelo(int idVuelo);
 
-
-        List<TipoViaje> ListarTiposViaje();
 
     }
 }

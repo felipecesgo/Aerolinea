@@ -13,41 +13,35 @@ namespace Aerolinea.Business
     public class VuelosRepository : IVuelosRepository
     {
         private Repository<Vuelo> vuelos;
-        private Repository<TipoViaje> tiposViajes;
 
         public VuelosRepository()
         {
             vuelos = new Repository<Vuelo>();
-            tiposViajes = new Repository<TipoViaje>();
         }
         public List<Vuelo> ListarVuelos()
         {
             return vuelos.GetAll();
         }
 
-        public void InsertarVuelo(Vuelo ruta)
+        public void InsertarVuelo(Vuelo vuelo)
         {
-            throw new NotImplementedException();
+            vuelos.Save(vuelo);
         }
 
-        public void ActualizarVuelo(Vuelo ruta)
+        public void ActualizarVuelo(Vuelo vuelo)
         {
-            throw new NotImplementedException();
+            vuelos.Save(vuelo);
         }
 
         public void EliminarVuelo(int idVuelo)
         {
-            throw new NotImplementedException();
+            vuelos.Delete(idVuelo);
         }
 
-        public Ruta BuscarVuelo(int idVuelo)
+        public Vuelo BuscarVuelo(int idVuelo)
         {
-            throw new NotImplementedException();
+            return vuelos.GetById(idVuelo);
         }
-
-        public List<TipoViaje> ListarTiposViaje()
-        {
-            return tiposViajes.GetAll();
-        }
+        
     }
 }

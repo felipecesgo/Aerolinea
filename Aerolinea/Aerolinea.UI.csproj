@@ -67,6 +67,7 @@
     <Content Include="Images\return.png" />
     <Content Include="Index.aspx" />
     <Content Include="EstadoVuelos.aspx" />
+    <Content Include="Mantenimientos\MantAgente.aspx" />
     <Content Include="Mantenimientos\MantRuta.aspx" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.min.css" />
@@ -93,6 +94,7 @@
     <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui.theme.css" />
     <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
     <Content Include="Scripts\jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Include="Styles\EleccionVuelo.css" />
     <Content Include="Styles\StyleMain.css" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.min.css.map" />
@@ -140,6 +142,13 @@
     </Compile>
     <Compile Include="EstadoVuelos.aspx.designer.cs">
       <DependentUpon>EstadoVuelos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\MantAgente.aspx.cs">
+      <DependentUpon>MantAgente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MantAgente.aspx.designer.cs">
+      <DependentUpon>MantAgente.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

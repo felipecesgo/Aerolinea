@@ -10,8 +10,8 @@ namespace Aerolinea.Business
     public interface IAgentesRepository
     {
         List<Agente> ListarAgentes();
-        void InsertarAgente(Agente agentes);
-        void ActualizarAgente(Agente agentes);
+        void InsertarAgente(Agente agente);
+        void ActualizarAgente(Agente agente);
         void EliminarAgente(int idAgente);
         Agente BuscarAgente(string nombreUsuario);
 

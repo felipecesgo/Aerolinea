@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aerolinea.Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,16 +15,19 @@ namespace Aerolinea
 
             if(!IsPostBack)
             {
-                if (Session["origen"] != null)
-                    lblOrigen.Text = Session["origen"].ToString();
+                var origen = Session["origen"] != null ? Session["origen"].ToString() : "";
+                var destino = Session["destino"] != null ? Session["destino"].ToString() : "";
+                var salida = Session["salida"] != null ? Convert.ToDateTime(Session["salida"].ToString()) : DateTime.Now;
 
-                if (Session["salida"] != null)
-                {
-                    var date = Convert.ToDateTime(Session["salida"].ToString());
+                lblOrigen.Text = origen;
+                lblFechaSalida.Text = salida.ToLongDateString();
 
-                    lblFechaSalida.Text = date.ToLongDateString();
-                }
+                var vuelosRepository = new VuelosRepository();
+                var listaVuelos = vuelosRepository.ListarVuelos().Select(x => (VueloData)x)
+                    .Where(x => x.Ruta.Origen == origen && x.Ruta.Destino == destino);
 
+                lvVuelos.DataSource = listaVuelos;
+                lvVuelos.DataBind();
 
             }
         }

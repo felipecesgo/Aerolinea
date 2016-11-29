@@ -94,9 +94,7 @@ h1, h3, h4, h5, h6 {
     font-size: 13px;
     background: url(../images/depart.png) no-repeat center right;
 }
-.form-control {
-    margin-top: 30px;
-}
+
 
 .return{
     float: right;

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -16,37 +17,47 @@ namespace Aerolinea.Account
 
         }
 
-        protected void loginBox_Authenticate(object sender, AuthenticateEventArgs e)
+        protected void bntIngresar_Click(object sender, EventArgs e)
         {
+            userError.Visible = false;
+            passwdError.Visible = false;
+            loginErrorMsg.Visible = false;
+            
             try
             {
+
                 var agentes = new AgentesRepository();
-                var user = agentes.BuscarAgente(loginBox.UserName);
-                if (string.IsNullOrEmpty(user.Nombre))
+                var user = agentes.BuscarAgente(username.Value);
+                 
+                if (user == null)
                 {
-                    loginBox.FailureText = "No existe ningun usuario registrado con ese email.";
+                    userError.Visible = true;
+                    userError.InnerHtml = "Nombre de Usuario Incorrecto.";
                     return;
                 }
 
-                if (validateUser(user.Contrasena, loginBox.Password))
+                if (user.Contrasena.Equals(password.Value))
                 {
                     user.Contrasena = "";
-                    Session.Add("user", user);
-                    //UserLogged.Usuario = user;
-                    e.Authenticated = true;
-                    Response.Redirect("Mantenimientos/MantRuta.aspx");
+                    Session.Add("usuario", user);
+                    FormsAuthentication.SetAuthCookie(user.Nombre, remember.Checked);
+                    Response.Redirect("../Mantenimientos/MantRuta.aspx");
                 }
                 else
                 {
-                    loginBox.FailureText = "La contraseña es incorrecta.";
-                    e.Authenticated = false;
+                    passwdError.Visible = true;
+                    passwdError.InnerHtml = "La contraseña es incorrecta.";
+                    return;
                 }
 
             }
             catch (Exception ex)
             {
-                loginBox.FailureText = string.Format("Error Inesperado: {0}", ex.Message);
+                loginErrorMsg.Visible = true;
+                loginErrorMsg.InnerHtml = string.Format("Error Inesperado: {0}", ex.Message);
             }
+
+            
         }
 
         public bool validateUser(string userPassword, string passwordToValidate)
@@ -56,5 +67,9 @@ namespace Aerolinea.Account
                 return true;
             return false;
         }
+
+
+
+    
     }
 }
