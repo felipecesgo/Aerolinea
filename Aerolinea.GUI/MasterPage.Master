@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Aerolinea.GUI.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link href="Scripts/bootstrap-3.3.7/content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Scripts/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" />
+        <link href="Styles/StyleMain.css" rel="stylesheet" />
+
+        <script src="Scripts/jquery-3.1.1/jquery-3.1.1.js"></script>
+        <script src="Scripts/bootstrap-3.3.7/scripts/bootstrap.js"></script>
+        <script src="Scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <title></title>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="container">
+
+            <table style="width: 100%;">
+                <tr class="header">
+                    <td style="width: 60%;">
+                        <div id="logo-header">
+                            <img alt="Logo Aerolinea" src="../Images/logo_Aerolineas.gif" />
+                        </div>
+                    </td>
+                    <td style="width: 40%; text-align: right">
+                        <asp:LinkButton CssClass="access-top" ID="lbtnLogIn" runat="server" PostBackUrl="Account/Login.aspx" OnClientClick="location.href='Account/Login.aspx'">Ingresar al sistema</asp:LinkButton>
+                        <asp:LinkButton CssClass="access-top" ID="lbtnLogOut" runat="server" OnClick="lbtnLogOut_Click" Visible="false" Font-Size="10px">Cerrar Sesión</asp:LinkButton>
+                    </td>
+                </tr>
+
+                <tr style="width: 100%;">
+                    <td colspan="2">
+                        <hr style="border-top: 1px solid #0077CB; margin: 0px; padding: 2px" />
+
+                        <asp:Menu ID="mnuPrincipal" runat="server" Font-Names="Verdana" Orientation="Horizontal">
+                            <LevelSelectedStyles>
+                                <asp:MenuItemStyle BackColor="#0060a9" ForeColor="White" VerticalPadding="10px" Font-Size="12px" HorizontalPadding="10px" Height="35px"  />
+                            </LevelSelectedStyles>
+                            <levelmenuitemstyles> 
+                                <asp:menuitemstyle BackColor="#e2e2e2" forecolor="#0077CB" VerticalPadding="10px" Font-Size="12px" HorizontalPadding="10px" Height="35px" />
+                            </levelmenuitemstyles>
+                            <Items>
+                                <asp:MenuItem Selected="true" Text="Reserve su vuelo" NavigateUrl="~/Index.aspx"></asp:MenuItem>
+                                <asp:MenuItem Selected="False" Text="Estado de vuelos" NavigateUrl="~/EstadoVuelos.aspx"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+
+                    </td>
+                </tr>
+            </table>
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <h2>Titulo </h2>
+                    <br />
+                    <br />
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+        <div id="footer">
+            <p>Copyright © 2016 aerolineas.com. Todos los derechos reservados.</p>
+            <br />
+        </div>
+
+    </form>
+</body>
+</html>

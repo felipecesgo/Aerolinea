@@ -28,3 +28,6 @@ C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Servi
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.pdb
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.csprojResolveAssemblyReference.cache
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.pdb

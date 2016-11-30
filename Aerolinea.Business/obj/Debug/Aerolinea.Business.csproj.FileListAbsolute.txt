@@ -30,3 +30,11 @@ C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Service
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\obj\Debug\Aerolinea.Business.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\obj\Debug\Aerolinea.Business.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\obj\Debug\Aerolinea.Business.pdb
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\obj\Debug\Aerolinea.Business.csprojResolveAssemblyReference.cache
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\obj\Debug\Aerolinea.Business.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\obj\Debug\Aerolinea.Business.pdb
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Aerolinea.Business.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Aerolinea.Business.pdb
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Aerolinea.Data.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\ServiceStack.Interfaces.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Aerolinea.Data.pdb

@@ -10,3 +10,9 @@ C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\bin\Debug\ServiceStac
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.pdb
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Data\bin\Debug\Aerolinea.Data.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Data\bin\Debug\Aerolinea.Data.pdb
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Data\bin\Debug\ServiceStack.Interfaces.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.csprojResolveAssemblyReference.cache
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.pdb

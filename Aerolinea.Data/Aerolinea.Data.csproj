@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aerolinea.Data</RootNamespace>
     <AssemblyName>Aerolinea.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,11 +46,9 @@
     <Compile Include="Avion.cs" />
     <Compile Include="Piloto.cs" />
     <Compile Include="Queja.cs" />
-    <Compile Include="Reserva.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Ruta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TipoViaje.cs" />
     <Compile Include="Vuelo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
