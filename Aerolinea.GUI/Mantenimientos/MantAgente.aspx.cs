@@ -1,4 +1,5 @@
 ﻿using Aerolinea.Business.Clases;
+using Aerolinea.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,84 +14,163 @@ namespace Aerolinea.GUI.Mantenimientos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Business.Interfaces.IAgente iChofer = new Business.Clases.Agente();
-            //List<Data.Agente> lista = iChofer.ListarAgente();
-            //ddl_Agente.DataSource = lista.Select(x => x.IdAgente).ToList();
-            //ddl_Agente.DataBind();
-            ////this.ddl_Piloto.SelectedItem = null;
+            if (!IsPostBack)
+            {
+                try
+                {
+                    var crud = new AgentesCRUD();
+                    limpiarForm(crud.ListarAgentes());
+                    cargarRoles();
+                }
+                catch (Exception ex)
+                {
+                    mensaje.Visible = false;
+                    mensajeError.Visible = true;
+                    textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+                }
+            }
+        }
 
+        private void limpiarForm(List<Agente> datos)
+        {
 
-            //Business.Interfaces.IAgente eChofer = new Business.Clases.Agente();
-            //List<Data.Agente> lista2 = eChofer.ListarAgente();
-            //ddl_Agente.DataSource = lista2.ToList();
-            //ddl_Agente.DataBind();
+            var allTextBoxes = new List<TextBox>();
+            FindTextBoxes(Page, allTextBoxes);
+            foreach (var control in allTextBoxes)
+            {
+                control.Text = "";
+            }
+            ViewState.Add("Id", -1);
+            textoMensajeError.InnerHtml = "";
+            textoMensaje.InnerHtml = "";
+            gvDatos.DataSource = null;
+            gvDatos.DataSource = datos;
+            gvDatos.DataBind();
+        }
 
-            //Business.Interfaces.IAgente iChofer2 = new Business.Clases.Agente();
-            //List<Data.Agente> lista1 = iChofer2.ListarAgente();
-            //ddl_Rol.DataSource = lista.Select(x => x.IdRol).ToList();
-            //ddl_Rol.DataBind();
-            ////this.ddl_Piloto.SelectedItem = null;
+        private void cargarRoles()
+        {
+            ddlRol.DataSource = null;
+            ddlRol.DataValueField = "IdRol";
+            ddlRol.DataTextField = "Nombre";
+            var crud = new RolesCRUD();
+            ddlRol.DataSource = crud.Listar();
+            ddlRol.DataBind();
+        }
 
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var agente = new Agente();
+                agente.IdAgente = (int)ViewState["Id"];
+                agente.Nombre = txtNombre.Text;
+                agente.Apellido = txtApellido.Text;
+                agente.Cedula = txtCedula.Text;
+                agente.IdRol = Convert.ToInt32(ddlRol.SelectedValue);
+                agente.Telefono = txtTelefono.Text;
+                agente.Email = txtEmail.Text;
+                agente.Residencia = txtResidencia.Text;
+                agente.Usuario = txtUsuario.Text;
+                agente.Contrasena = txtContrasena.Text;
 
-            //Business.Interfaces.IAgente Chofer = new Business.Clases.Agente();
-            //List<Data.Agente> listam = Chofer.ListarAgente();
-            //ddl_Rol.DataSource = lista2.ToList();
-            //ddl_Rol.DataBind();
+                var crud = new AgentesCRUD();
+                crud.GuardarAgente(agente);
+                limpiarForm(crud.ListarAgentes());
+                mensajeError.Visible = false;
+                mensaje.Visible = true;
+                textoMensaje.InnerHtml = "Se ha guardado correctamente";
+            }
+            catch (Exception ex)
+            {
+                mensaje.Visible = false;
+                mensajeError.Visible = true;
+                textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+            }
+        }
 
-
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = (int)ViewState["Id"];
+                var crud = new AgentesCRUD();
+                crud.EliminarAgente(id);
+                limpiarForm(crud.ListarAgentes());
+                mensajeError.Visible = false;
+                mensaje.Visible = true;
+                textoMensaje.InnerHtml = "Se eliminó correctamente";
+            }
+            catch (Exception ex)
+            {
+                mensaje.Visible = false;
+                mensajeError.Visible = true;
+                textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+            }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            
-                //Business.Interfaces.IAgente iChofer = new Business.Clases.Agente();
-                //List<Data.Agente> lista = iChofer.ListarAgente();
-                //gb_Agentes.DataSource = lista.Where(X => X.IdAgente == Convert.ToInt32(ddl_Agente.Text)).ToList();
-                // gb_Agentes.DataBind();
-
-            
+            try
+            {
+                var textoAbuscar = txtBuscar.Text;
+                var crud = new AgentesCRUD();
+                var lista = crud.ListarAgentes().Where(x => x.Cedula.Contains(textoAbuscar) || x.Nombre.Contains(textoAbuscar) ||
+                                                       x.Apellido.Contains(textoAbuscar)).ToList();
+                limpiarForm(lista);
+            }
+            catch (Exception ex)
+            {
+                mensaje.Visible = false;
+                mensajeError.Visible = true;
+                textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+            }
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        protected void gvDatos_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-
-                Data.Agente agente = new Data.Agente
+                if (gvDatos.SelectedIndex > -1)
                 {
-                    Nombre = TextBox1.Text,
-                    Apellido = TextBox2.Text,
-                    Telefono = TextBox4.Text,
-                    Cedula = TextBox3.Text,
-                    Email = TextBox5.Text,
-                    Residencia = TextBox6.Text,
-                    Usuario = TextBox7.Text,
-                    Contrasena = TextBox8.Text
-                };
-                var agentes = new AgentesRepository();
-                agentes.InsertarAgente(agente);
+                    ViewState["Id"] = Convert.ToInt32(gvDatos.SelectedDataKey.Value);
+
+                    ddlRol.SelectedValue = ((HiddenField)gvDatos.SelectedRow.Cells[1].FindControl("IdRol")).Value;
+
+                    txtCedula.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[2].Text);
+                    txtNombre.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[3].Text);
+                    txtApellido.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[4].Text);
+                    txtTelefono.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[5].Text);
+
+                    txtEmail.Text = ((HiddenField)gvDatos.SelectedRow.Cells[6].FindControl("Email")).Value;
+
+                }
+            }
+            catch (Exception ex)
+            {
                 mensaje.Visible = false;
                 mensajeError.Visible = true;
-                textoMensajeError.InnerHtml = "Agente creado con exito";
-
-
-            }
-
-            catch (SqlException)
-            {
-                Response.Write("<script>window.alert('No se logro agregar un nuevo agente');</script>");
-
-            }
-            catch (Exception)
-            {
-                Response.Write("<script>window.alert('La operacion no se ha logrado realizar');</script>");
-
+                textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
             }
         }
 
-        protected void ddl_Agente_SelectedIndexChanged(object sender, EventArgs e)
+        private void FindTextBoxes(Control Parent, List<TextBox> ListOfTextBoxes)
         {
-
+            foreach (Control c in Parent.Controls)
+            {
+                if (c.HasControls())
+                {
+                    FindTextBoxes(c, ListOfTextBoxes);
+                }
+                else
+                {
+                    if (c is TextBox)
+                    {
+                        ListOfTextBoxes.Add(c as TextBox);
+                    }
+                }
+            }
         }
+    
     }
 }

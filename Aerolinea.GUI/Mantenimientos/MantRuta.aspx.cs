@@ -15,78 +15,62 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (!IsPostBack)
             {
-                limpiarForm();
+                try
+                {
+                    var rutas = new RutasRepository();
+                    limpiarForm(rutas.ListarRutas());
+                }
+                catch (Exception ex)
+                {
+                    mensaje.Visible = false;
+                    mensajeError.Visible = true;
+                    textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+                }
             }
-            catch (Exception ex)
-            {
-               mensaje.Visible = false;
-               mensajeError.Visible = true;
-               textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
-           }
         }
 
-        private void limpiarForm()
+        private void limpiarForm(List<Ruta> rutas)
         {
             txtOrigen.Text = "";
             txtDestino.Text = "";
             txtTarifa.Text = "";
+            ViewState.Add("IdRuta", -1);
             textoMensajeError.InnerHtml = "";
             textoMensaje.InnerHtml = "";
-            var rutas = new RutasRepository();
-            gvRutas.DataSource = rutas.ListarRutas();
+            gvRutas.DataSource = null;
+            gvRutas.DataSource = rutas;
             gvRutas.DataBind();
         }
 
-        protected void btnInsertar_Click(object sender, EventArgs e)
+  
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 var ruta = new Ruta();
+                ruta.IdRuta = (int)ViewState["IdRuta"];
                 ruta.Origen = txtOrigen.Text;
                 ruta.Destino = txtDestino.Text;
                 ruta.Tarifa = decimal.Parse(txtTarifa.Text);
+                var rutas = new RutasRepository();
                 if (fileUpload.HasFile)
                 {
                     ruta.Imagen = fileUpload.FileBytes;
                 }
-                var rutas = new RutasRepository();
-                rutas.InsertarRuta(ruta);
-                limpiarForm();
-                mensajeError.Visible = false;
-                mensaje.Visible = true;
-                textoMensaje.InnerHtml = "Se insertó correctamente";
-            }
-            catch (Exception ex)
-            {
-                mensaje.Visible = false;
-                mensajeError.Visible = true;
-                textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
-            }
-        }
-
-        protected void btnActualizar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var rutaSelected = (Ruta) gvRutas.SelectedValue;
-
-                var ruta = new Ruta();
-                ruta.IdRuta = 1;
-                ruta.Origen = txtOrigen.Text;
-                ruta.Destino = txtDestino.Text;
-                ruta.Tarifa = decimal.Parse(txtTarifa.Text);
-                if (fileUpload.HasFile)
+                else
                 {
-                    ruta.Imagen = fileUpload.FileBytes;
+                    var rutaAnt = rutas.BuscarRuta(ruta.IdRuta);
+                    if (rutaAnt != null)
+                        ruta.Imagen = rutaAnt.Imagen;
                 }
-                var rutas = new RutasRepository();
-                rutas.ActualizarRuta(ruta);
-                limpiarForm();
+          
+                rutas.GuardarRuta(ruta);
+                limpiarForm(rutas.ListarRutas());
                 mensajeError.Visible = false;
                 mensaje.Visible = true;
-                textoMensaje.InnerHtml = "Se actualizó correctamente";
+                textoMensaje.InnerHtml = "Se ha guardado correctamente";
             }
             catch (Exception ex)
             {
@@ -100,10 +84,10 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
         {
             try
             {
-                var rutaSelected = (Ruta) gvRutas.SelectedValue;
+                var idRuta = (int)ViewState["IdRuta"];
                 var rutas = new RutasRepository();
-                rutas.EliminarRuta(rutaSelected.IdRuta);
-                limpiarForm();
+                rutas.EliminarRuta(idRuta);
+                limpiarForm(rutas.ListarRutas());
                 mensajeError.Visible = false;
                 mensaje.Visible = true;
                 textoMensaje.InnerHtml = "Se eliminó correctamente";
@@ -116,46 +100,14 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
             }
         }
 
-
-        protected void gvRutas_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            foreach (GridViewRow row in gvRutas.Rows)
-            {
-                if (row.RowIndex == gvRutas.SelectedIndex)
-                {
-                    row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
-                    row.ToolTip = string.Empty;
-                }
-                else
-                {
-                    row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
-                    row.ToolTip = "Click to select this row.";
-                }
-            }
-        }
-
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-               
                 var textoAbuscar = txtBuscar.Text;
-
                 var rutas = new RutasRepository();
-                var listaVuelos = rutas.ListarRutas().Where(x => x.Origen.Contains(textoAbuscar) || x.Destino.Contains(textoAbuscar));
-
-                mensajeError.Visible = false;
-                mensaje.Visible = false;
-                txtOrigen.Text = "";
-                txtDestino.Text = "";
-                txtTarifa.Text = "";
-                textoMensajeError.InnerHtml = "";
-                textoMensaje.InnerHtml = "";
-
-                gvRutas.DataSource = listaVuelos;
-                gvRutas.DataBind();
+                var listaVuelos = rutas.ListarRutas().Where(x => x.Origen.Contains(textoAbuscar) || x.Destino.Contains(textoAbuscar)).ToList();
+                limpiarForm(listaVuelos);
             }
             catch (Exception ex)
             {
@@ -164,6 +116,27 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
                 textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
             }
         }
-        
+
+        protected void gvRutas_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+           try
+           {
+               if (gvRutas.SelectedIndex > -1)
+               {
+                   ViewState["IdRuta"] = Convert.ToInt32(gvRutas.SelectedDataKey.Value);
+                   txtOrigen.Text = Page.Server.HtmlDecode(gvRutas.SelectedRow.Cells[1].Text);
+                   txtDestino.Text = Page.Server.HtmlDecode(gvRutas.SelectedRow.Cells[2].Text);
+                   txtTarifa.Text = Page.Server.HtmlDecode(gvRutas.SelectedRow.Cells[3].Text.Replace("$", ""));
+
+               }
+           }
+           catch (Exception ex)
+           {
+               mensaje.Visible = false;
+               mensajeError.Visible = true;
+               textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+           }
+        }
+
     }
 }

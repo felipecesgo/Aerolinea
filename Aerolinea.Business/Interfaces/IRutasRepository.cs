@@ -10,8 +10,7 @@ namespace Aerolinea.Business
     public interface IRutasRepository
     {
         List<Ruta> ListarRutas();
-        void InsertarRuta(Ruta ruta);
-        void ActualizarRuta(Ruta ruta);
+        void GuardarRuta(Ruta ruta);
         void EliminarRuta(int idRuta);
         Ruta BuscarRuta(int idRuta);
 

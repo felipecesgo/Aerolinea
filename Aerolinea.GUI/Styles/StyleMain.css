@@ -159,9 +159,17 @@ h1, h3, h4, h5, h6 {
     color: Red;
 }
 
-.btnSearch
+.labelform {
+    float: left;
+    border: 0px;
+    color: #21205f;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.dataTable 
 {
-    width: 20px;
-    height: 20px;
-    margin-top: 20px;
+   width: 100%;
+   margin-right: 5px;
+   margin-top: 5px;
 }

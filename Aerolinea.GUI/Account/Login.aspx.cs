@@ -26,7 +26,7 @@ namespace Aerolinea.GUI.Account
             try
             {
 
-                var agentes = new AgentesRepository();
+                var agentes = new AgentesCRUD();
                 var user = agentes.BuscarAgente(username.Value);
                  
                 if (user == null)

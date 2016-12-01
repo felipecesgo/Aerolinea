@@ -59,12 +59,7 @@ namespace Aerolinea.Business
             return rutas.GetAll();
         }
 
-        public void InsertarRuta(Ruta ruta)
-        {
-            rutas.Save(ruta);
-        }
-
-        public void ActualizarRuta(Ruta ruta)
+        public void GuardarRuta(Ruta ruta)
         {
             rutas.Save(ruta);
         }

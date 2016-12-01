@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aerolinea.Business</RootNamespace>
     <AssemblyName>Aerolinea.Business</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -39,17 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\AgentesRepository.cs" />
+    <Compile Include="Clases\AgentesCRUD.cs" />
     <Compile Include="Clases\MD5Generator.cs" />
+    <Compile Include="Clases\RolesCRUD.cs" />
     <Compile Include="Clases\VueloData.cs" />
     <Compile Include="Clases\VuelosRepository.cs" />
-    <Compile Include="Interfaces\IAgentesRepository.cs" />
+    <Compile Include="Interfaces\IAgentesCRUD.cs" />
+    <Compile Include="Interfaces\IRolesCRUD.cs" />
     <Compile Include="Interfaces\IRutasRepository.cs" />
     <Compile Include="Interfaces\IVuelosRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\RutasRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Aerolinea.DataAccess\Aerolinea.DataAccess.csproj">
+      <Project>{874869e8-301f-4b2c-95b1-146181d9ab3f}</Project>
+      <Name>Aerolinea.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Aerolinea.Data\Aerolinea.Data.csproj">
       <Project>{b4f9b8ee-a158-4e2b-9f5b-a9c14a3a0a0b}</Project>
       <Name>Aerolinea.Data</Name>
