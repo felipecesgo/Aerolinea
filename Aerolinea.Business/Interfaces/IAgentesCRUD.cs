@@ -10,7 +10,7 @@ namespace Aerolinea.Business
     public interface IAgentesCRUD
     {
         List<Agente> ListarAgentes();
-        void GuardarAgente(Agente ruta);
+        void GuardarAgente(Agente agente);
         void EliminarAgente(int idAgente);
         Agente BuscarAgente(string nombreUsuario);
 

@@ -93,7 +93,7 @@
                     </asp:DropDownList>
                 </td>
             </tr>
-           <tr >
+           <tr>
                 <td>
                     <label class="salida">Salida</label>
                 </td>

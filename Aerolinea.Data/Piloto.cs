@@ -13,6 +13,8 @@ namespace Aerolinea.Data
         [PrimaryKey, AutoIncrement]
         public int IdPiloto { get; set; }
 
+        public string Cedula { get; set; }
+
         public string Nombre { get; set; }
 
         public string Apellido { get; set; }

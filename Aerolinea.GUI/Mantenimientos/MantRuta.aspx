@@ -2,7 +2,7 @@
     CodeBehind="MantRuta.aspx.cs" Inherits="Aerolinea.GUI.Mantenimientos.Rutas.MantRuta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Administrar Rutas</title>
+    <title>Rutas</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -14,22 +14,22 @@
       
             <div>
                 <div>
-                    <asp:Label ID="lbOrigen" runat="server" Text="Origen: " CssClass="labelform"></asp:Label>
+                    <asp:Label  runat="server" Text="Origen: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtOrigen" runat="server" class="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvOrigen" runat="server" CssClass="error" ControlToValidate="txtOrigen" Text="*Ingrese el Origen." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
                 </div>
                 <div>
-                    <asp:Label ID="lbDestino" runat="server" Text="Destino: " CssClass="labelform"></asp:Label>
+                    <asp:Label runat="server" Text="Destino: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtDestino" runat="server" class="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvDestino" runat="server" CssClass="error" ControlToValidate="txtDestino" Text="*Ingrese el Destino." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
                 </div>
                 <div>
-                    <asp:Label ID="lbTarifa" runat="server" Text="Tarifa: " CssClass="labelform"></asp:Label>
+                    <asp:Label runat="server" Text="Tarifa: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtTarifa" runat="server" class="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvTarifa" runat="server" CssClass="error" ControlToValidate="txtTarifa" Text="*Ingrese la Tarifa." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
                 </div>
                 <div>
-                    <asp:Label ID="lbImagen" runat="server" Text="Imagen: " CssClass="labelform"></asp:Label>
+                    <asp:Label runat="server" Text="Imagen: " CssClass="labelform"></asp:Label>
                     <asp:FileUpload ID="fileUpload" runat="server" class="form-control" />
                 </div>
                  <br />

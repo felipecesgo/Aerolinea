@@ -15,7 +15,7 @@ namespace Aerolinea.GUI
         {
             if (!IsPostBack)
             {
-                var rutasRepository = new RutasRepository();
+                var rutasRepository = new RutasCRUD();
                 var rutas = rutasRepository.ListarRutas().Take(8);
                 lvRutas.DataSource = rutas;
                 lvRutas.DataBind();

@@ -19,7 +19,7 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
             {
                 try
                 {
-                    var rutas = new RutasRepository();
+                    var rutas = new RutasCRUD();
                     limpiarForm(rutas.ListarRutas());
                 }
                 catch (Exception ex)
@@ -54,7 +54,7 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
                 ruta.Origen = txtOrigen.Text;
                 ruta.Destino = txtDestino.Text;
                 ruta.Tarifa = decimal.Parse(txtTarifa.Text);
-                var rutas = new RutasRepository();
+                var rutas = new RutasCRUD();
                 if (fileUpload.HasFile)
                 {
                     ruta.Imagen = fileUpload.FileBytes;
@@ -85,7 +85,7 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
             try
             {
                 var idRuta = (int)ViewState["IdRuta"];
-                var rutas = new RutasRepository();
+                var rutas = new RutasCRUD();
                 rutas.EliminarRuta(idRuta);
                 limpiarForm(rutas.ListarRutas());
                 mensajeError.Visible = false;
@@ -105,7 +105,7 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas
             try
             {
                 var textoAbuscar = txtBuscar.Text;
-                var rutas = new RutasRepository();
+                var rutas = new RutasCRUD();
                 var listaVuelos = rutas.ListarRutas().Where(x => x.Origen.Contains(textoAbuscar) || x.Destino.Contains(textoAbuscar)).ToList();
                 limpiarForm(listaVuelos);
             }

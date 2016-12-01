@@ -41,6 +41,7 @@ namespace Aerolinea.GUI
                         Selected = currentPage.Contains("MantRuta.aspx")
                     };
                     mnuPrincipal.Items.Add(menuRutas);
+
                     var menuAgentes = new MenuItem
                     {
                         Value = "Agentes",
@@ -49,14 +50,33 @@ namespace Aerolinea.GUI
                         Selected = currentPage.Contains("MantAgente.aspx")
                     };
                     mnuPrincipal.Items.Add(menuAgentes);
+
                     var menuAvion = new MenuItem
                     {
-                        Value = "Avion",
-                        Text = "Avion",
+                        Value = "Aviones",
+                        Text = "Aviones",
                         NavigateUrl = "~/Mantenimientos/MantAvion.aspx",
                         Selected = currentPage.Contains("MantAvion.aspx")
                     };
                     mnuPrincipal.Items.Add(menuAvion);
+
+                    var menuPiloto = new MenuItem
+                    {
+                        Value = "Pilotos",
+                        Text = "Pilotos",
+                        NavigateUrl = "~/Mantenimientos/MantPiloto.aspx",
+                        Selected = currentPage.Contains("MantPiloto.aspx")
+                    };
+                    mnuPrincipal.Items.Add(menuPiloto);
+
+                    var menuVuelo = new MenuItem
+                    {
+                        Value = "Vuelos",
+                        Text = "Vuelos",
+                        NavigateUrl = "~/Mantenimientos/MantVuelo.aspx",
+                        Selected = currentPage.Contains("MantVuelo.aspx")
+                    };
+                    mnuPrincipal.Items.Add(menuVuelo);
                 }
             }
             else

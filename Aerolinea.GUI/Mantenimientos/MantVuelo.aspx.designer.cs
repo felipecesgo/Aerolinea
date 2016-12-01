@@ -7,73 +7,100 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Aerolinea.GUI.Mantenimientos.Rutas {
+namespace Aerolinea.GUI.Mantenimientos {
     
     
-    public partial class MantRuta {
+    public partial class MantVuelo {
         
         /// <summary>
-        /// Control txtOrigen.
+        /// Control ddlOrigen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrigen;
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrigen;
         
         /// <summary>
-        /// Control rfvOrigen.
+        /// Control ddlDestino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOrigen;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDestino;
         
         /// <summary>
-        /// Control txtDestino.
+        /// Control hdnfechaSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDestino;
+        protected global::System.Web.UI.WebControls.HiddenField hdnfechaSalida;
         
         /// <summary>
-        /// Control rfvDestino.
+        /// Control txtHoraSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDestino;
+        protected global::System.Web.UI.WebControls.TextBox txtHoraSalida;
         
         /// <summary>
-        /// Control txtTarifa.
+        /// Control hdnfechaLlegada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTarifa;
+        protected global::System.Web.UI.WebControls.HiddenField hdnfechaLlegada;
         
         /// <summary>
-        /// Control rfvTarifa.
+        /// Control txtHoraLlegada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTarifa;
+        protected global::System.Web.UI.WebControls.TextBox txtHoraLlegada;
         
         /// <summary>
-        /// Control fileUpload.
+        /// Control ddlAvion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileUpload;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAvion;
+        
+        /// <summary>
+        /// Control ddlPiloto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPiloto;
+        
+        /// <summary>
+        /// Control ddlEstadoVuelo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstadoVuelo;
+        
+        /// <summary>
+        /// Control ddlCapacidadAsientos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCapacidadAsientos;
         
         /// <summary>
         /// Control btnGuardar.
@@ -157,12 +184,12 @@ namespace Aerolinea.GUI.Mantenimientos.Rutas {
         protected global::System.Web.UI.WebControls.LinkButton lbtnBuscar;
         
         /// <summary>
-        /// Control gvRutas.
+        /// Control gvDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRutas;
+        protected global::System.Web.UI.WebControls.GridView gvDatos;
     }
 }

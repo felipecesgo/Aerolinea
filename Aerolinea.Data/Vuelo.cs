@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Aerolinea.Data
 {
+
    public class Vuelo
-    {
+   {
         [PrimaryKey, AutoIncrement]
         public int IdVuelo { get; set; }
 
@@ -18,11 +19,13 @@ namespace Aerolinea.Data
 
         public int IdRuta { get; set; }
 
-        public int CapacidadAsientos { get; set; }
-
         public string EstadoVuelo { get; set; }
 
         public DateTime FechaSalida { get; set; }
+
+        public DateTime FechaLlegada { get; set; }
+
+        public int CapacidadAsientos { get; set; }
 
     }
 }

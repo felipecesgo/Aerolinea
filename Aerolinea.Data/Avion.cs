@@ -18,8 +18,5 @@ namespace Aerolinea.Data
 
         public string Modelo { get; set; }
 
-        public int Año { get; set; }
-
-
     }
 }

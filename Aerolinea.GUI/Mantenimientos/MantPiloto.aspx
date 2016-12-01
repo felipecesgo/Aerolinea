@@ -1,44 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="MantAgente.aspx.cs" Inherits="Aerolinea.GUI.Mantenimientos.MantAgente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="MantPiloto.aspx.cs" Inherits="Aerolinea.GUI.Mantenimientos.MantPiloto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     <title>Agentes</title>
+ <title>Pilotos</title>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
+
 <table class="dataTable" cellpadding="5">
     <tr>
         <td style="max-width: 50%">
-            <span id="title">Agentes</span>
+            <span id="title">Pilotos</span>
             <br />
-      
             <div>
-                <div>
-                    <asp:Label runat="server" Text="Rol: " CssClass="labelform"></asp:Label>
-                    <asp:DropDownList ID="ddlRol" runat="server" class="form-control"></asp:DropDownList>
-                </div>
-
                 <div style="margin-top: 15px">
                     <asp:Label runat="server" Text="Cedula: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtCedula" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtCedula" Text="*Ingrese la Cedula." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="error" ControlToValidate="txtCedula" Text="*Ingrese la Cedula." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
-                    <asp:Label runat="server" Text="Nombre: " CssClass="labelform"></asp:Label>
+                    <asp:Label  runat="server" Text="Nombre: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtNombre" Text="*Ingrese el Nombre." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="error" ControlToValidate="txtNombre" Text="*Ingrese el Nombre." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
                     <asp:Label runat="server" Text="Apellido: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtApellido" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtApellido" Text="*Ingrese el Apellido." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="error" ControlToValidate="txtApellido" Text="*Ingrese el Apellido." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                  <div>
                     <asp:Label runat="server" Text="Telefono: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtTelefono" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtTelefono" Text="*Ingrese el Telefono." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="error" ControlToValidate="txtTelefono" Text="*Ingrese el Telefono." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
@@ -51,17 +44,6 @@
                     <asp:TextBox ID="txtResidencia" runat="server" class="form-control"></asp:TextBox>
                 </div>
 
-                 <div style="margin-top: 15px">
-                    <asp:Label runat="server" Text="Usuario: " CssClass="labelform"></asp:Label>
-                    <asp:TextBox ID="txtUsuario" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" CssClass="error" ControlToValidate="txtUsuario" Text="*Ingrese el Usuario." ValidationGroup="formData"></asp:RequiredFieldValidator>
-                </div>
-                 
-                <div>
-                    <asp:Label runat="server" Text="Contraseña: " CssClass="labelform"></asp:Label>
-                    <asp:TextBox ID="txtContrasena" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvContrasena" runat="server" CssClass="error" ControlToValidate="txtContrasena" Text="*Ingrese la Contraseña." ValidationGroup="formData"></asp:RequiredFieldValidator>
-                </div>
                  <br />
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" ValidationGroup="formData" />
                 <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" ValidationGroup="formData" />
@@ -87,7 +69,7 @@
              <br />
             <asp:GridView ID="gvDatos" runat="server" CellPadding="4" ForeColor="#333333"
                 GridLines="None" AutoGenerateColumns="False" CssClass="table"
-                DataKeyNames="IdAgente"
+                DataKeyNames="IdPiloto"
                 OnSelectedIndexChanged="gvDatos_OnSelectedIndexChanged">
                 <RowStyle BackColor="#EFF3FB" />
                 <Columns>
@@ -97,18 +79,11 @@
                         InsertVisible="False" ShowCancelButton="False">
                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
                     </asp:CommandField>
-
-                    <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:HiddenField ID="IdRol" runat="server" Value='<%# Bind("IdRol") %>' />
-                            </ItemTemplate>
-                    </asp:TemplateField>
-
+           
                     <asp:BoundField DataField="Cedula" HeaderText="Cédula" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
                     <asp:BoundField DataField="Telefono" HeaderText="Telefono" />
-
                    
                     <asp:TemplateField>
                             <ItemTemplate>
@@ -121,12 +96,6 @@
                             </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:BoundField DataField="Usuario" HeaderText="Usuario" />
-                    <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:HiddenField ID="Contrasena" runat="server" Value='<%# Bind("Contrasena") %>' />
-                            </ItemTemplate>
-                    </asp:TemplateField>
                 </Columns>
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
@@ -139,5 +108,4 @@
         </td>
     </tr>
 </table>
-
 </asp:Content>

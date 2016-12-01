@@ -1,16 +1,15 @@
-﻿using Aerolinea.Business.Clases;
-using Aerolinea.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Aerolinea.Business.Clases;
+using Aerolinea.Data;
 
 namespace Aerolinea.GUI.Mantenimientos
 {
-    public partial class MantAgente : System.Web.UI.Page
+    public partial class MantPiloto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,9 +17,8 @@ namespace Aerolinea.GUI.Mantenimientos
             {
                 try
                 {
-                    var crud = new AgentesCRUD();
-                    limpiarForm(crud.ListarAgentes());
-                    cargarRoles();
+                    var crud = new PilotosCRUD();
+                    limpiarForm(crud.Listar());
                 }
                 catch (Exception ex)
                 {
@@ -31,7 +29,7 @@ namespace Aerolinea.GUI.Mantenimientos
             }
         }
 
-        private void limpiarForm(List<Agente> datos)
+        private void limpiarForm(List<Piloto> datos)
         {
             var allTextBoxes = new List<TextBox>();
             FindTextBoxes(Page, allTextBoxes);
@@ -45,36 +43,23 @@ namespace Aerolinea.GUI.Mantenimientos
             gvDatos.DataBind();
         }
 
-        private void cargarRoles()
-        {
-            ddlRol.DataSource = null;
-            ddlRol.DataValueField = "IdRol";
-            ddlRol.DataTextField = "Nombre";
-            var crud = new RolesCRUD();
-            ddlRol.DataSource = crud.Listar();
-            ddlRol.DataBind();
-        }
-
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                var agente = new Agente();
-                agente.IdAgente = (int)ViewState["Id"];
-                agente.Nombre = txtNombre.Text;
-                agente.Apellido = txtApellido.Text;
-                agente.Cedula = txtCedula.Text;
-                agente.IdRol = Convert.ToInt32(ddlRol.SelectedValue);
-                agente.Telefono = txtTelefono.Text;
-                agente.Email = txtEmail.Text;
-                agente.Residencia = txtResidencia.Text;
-                agente.Usuario = txtUsuario.Text;
-                agente.Contrasena = txtContrasena.Text;
+                var piloto = new Piloto();
+                piloto.IdPiloto = (int)ViewState["Id"];
+                piloto.Nombre = txtNombre.Text;
+                piloto.Apellido = txtApellido.Text;
+                piloto.Cedula = txtCedula.Text;
+                piloto.Telefono = txtTelefono.Text;
+                piloto.Email = txtEmail.Text;
+                piloto.Residencia = txtResidencia.Text;
 
-                var crud = new AgentesCRUD();
-                crud.GuardarAgente(agente);
-                limpiarForm(crud.ListarAgentes());
-                cargarRoles();
+                var crud = new PilotosCRUD();
+                crud.Guardar(piloto);
+                limpiarForm(crud.Listar());
+               
                 mensajeError.Visible = false;
                 mensaje.Visible = true;
                 textoMensaje.InnerHtml = "Se ha guardado correctamente";
@@ -92,9 +77,9 @@ namespace Aerolinea.GUI.Mantenimientos
             try
             {
                 var id = (int)ViewState["Id"];
-                var crud = new AgentesCRUD();
-                crud.EliminarAgente(id);
-                limpiarForm(crud.ListarAgentes());
+                var crud = new PilotosCRUD();
+                crud.Eliminar(id);
+                limpiarForm(crud.Listar());
                 mensajeError.Visible = false;
                 mensaje.Visible = true;
                 textoMensaje.InnerHtml = "Se eliminó correctamente";
@@ -112,9 +97,8 @@ namespace Aerolinea.GUI.Mantenimientos
             try
             {
                 var textoAbuscar = txtBuscar.Text;
-                var crud = new AgentesCRUD();
-                var lista = crud.ListarAgentes().Where(x => x.Cedula.Contains(textoAbuscar) || x.Nombre.Contains(textoAbuscar) ||
-                                                       x.Apellido.Contains(textoAbuscar)).ToList();
+                var crud = new PilotosCRUD();
+                var lista = crud.Buscar(textoAbuscar);
                 limpiarForm(lista);
             }
             catch (Exception ex)
@@ -132,15 +116,12 @@ namespace Aerolinea.GUI.Mantenimientos
                 if (gvDatos.SelectedIndex > -1)
                 {
                     ViewState["Id"] = Convert.ToInt32(gvDatos.SelectedDataKey.Value);
-                    ddlRol.SelectedValue = ((HiddenField)gvDatos.SelectedRow.Cells[1].FindControl("IdRol")).Value;
-                    txtCedula.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[2].Text);
-                    txtNombre.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[3].Text);
-                    txtApellido.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[4].Text);
-                    txtTelefono.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[5].Text);
-                    txtEmail.Text = ((HiddenField)gvDatos.SelectedRow.Cells[6].FindControl("Email")).Value;
-                    txtResidencia.Text = ((HiddenField)gvDatos.SelectedRow.Cells[7].FindControl("Residencia")).Value;
-                    txtUsuario.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[8].Text);
-                    txtContrasena.Text = ((HiddenField)gvDatos.SelectedRow.Cells[9].FindControl("Contrasena")).Value;
+                    txtCedula.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[1].Text);
+                    txtNombre.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[2].Text);
+                    txtApellido.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[3].Text);
+                    txtTelefono.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[4].Text);
+                    txtEmail.Text = ((HiddenField)gvDatos.SelectedRow.Cells[5].FindControl("Email")).Value;
+                    txtResidencia.Text = ((HiddenField)gvDatos.SelectedRow.Cells[6].FindControl("Residencia")).Value;
                 }
             }
             catch (Exception ex)
@@ -168,6 +149,7 @@ namespace Aerolinea.GUI.Mantenimientos
                 }
             }
         }
-    
+
+
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Aerolinea.Business.Clases;
 
 namespace Aerolinea.Business
 {
@@ -12,10 +13,23 @@ namespace Aerolinea.Business
 
         public VueloData(Vuelo vuelo)
         {
-            var rutas = new RutasRepository();
+            var rutas = new RutasCRUD();
             Ruta = rutas.BuscarRuta(vuelo.IdRuta);
+
+            var aviones = new AvionesCRUD();
+            Avion = aviones.Buscar(vuelo.IdAvion);
+
+            var pilotos = new PilotosCRUD();
+            Piloto = pilotos.Buscar(vuelo.IdPiloto);
         }
 
         public Ruta Ruta { get; set; }
+
+        public Avion Avion { get; set; }
+
+        public Piloto Piloto { get; set; }
+
+      
+
     }
 }

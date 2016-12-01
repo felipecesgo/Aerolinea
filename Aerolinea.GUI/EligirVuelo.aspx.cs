@@ -22,11 +22,8 @@ namespace Aerolinea.GUI
                 lblOrigen.Text = origen;
                 lblFechaSalida.Text = salida.ToLongDateString();
 
-                var vuelosRepository = new VuelosRepository();
-                var listaVuelos = vuelosRepository.ListarVuelos().Select(x => (VueloData)x)
-                    .Where(x => x.Ruta.Origen == origen && x.Ruta.Destino == destino);
-
-                lvVuelos.DataSource = listaVuelos;
+                var vuelosRepository = new VuelosCRUD();
+                lvVuelos.DataSource = vuelosRepository.Listar().Where(x => x.Ruta.Origen == origen && x.Ruta.Destino == destino); ;
                 lvVuelos.DataBind();
 
             }
