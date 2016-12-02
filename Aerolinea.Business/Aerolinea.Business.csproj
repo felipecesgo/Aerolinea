@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{874869E8-301F-4B2C-95B1-146181D9AB3F}</ProjectGuid>
+    <ProjectGuid>{B48812A5-BF55-4345-A493-0B6CB11277C6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aerolinea.DataAccess</RootNamespace>
-    <AssemblyName>Aerolinea.DataAccess</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>Aerolinea.Business</RootNamespace>
+    <AssemblyName>Aerolinea.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -32,25 +32,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceStack.Common, Version=4.0.56.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\resources\ServiceStack.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\resources\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite, Version=4.0.56.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\resources\ServiceStack.OrmLite.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=4.0.56.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\resources\ServiceStack.OrmLite.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\resources\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,22 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>BD.settings</DependentUpon>
-    </Compile>
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Clases\AgentesCRUD.cs" />
+    <Compile Include="Clases\AvionesCRUD.cs" />
+    <Compile Include="Clases\MD5Generator.cs" />
+    <Compile Include="Clases\PilotosCRUD.cs" />
+    <Compile Include="Clases\RolesCRUD.cs" />
+    <Compile Include="Clases\VueloData.cs" />
+    <Compile Include="Clases\VuelosCRUD.cs" />
+    <Compile Include="Interfaces\IAgentesCRUD.cs" />
+    <Compile Include="Interfaces\IAvionesCRUD.cs" />
+    <Compile Include="Interfaces\IPilotosCRUD.cs" />
+    <Compile Include="Interfaces\IRolesCRUD.cs" />
+    <Compile Include="Interfaces\IRutasCRUD.cs" />
+    <Compile Include="Interfaces\IVuelosCRUD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="Clases\RutasCRUD.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="BD.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>BD.Designer.cs</LastGenOutput>
-    </None>
+    <ProjectReference Include="..\Aerolinea.DataAccess\Aerolinea.DataAccess.csproj">
+      <Project>{874869e8-301f-4b2c-95b1-146181d9ab3f}</Project>
+      <Name>Aerolinea.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aerolinea.Data\Aerolinea.Data.csproj">
+      <Project>{b4f9b8ee-a158-4e2b-9f5b-a9c14a3a0a0b}</Project>
+      <Name>Aerolinea.Data</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

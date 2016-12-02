@@ -12,11 +12,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aerolinea.GUI</RootNamespace>
     <AssemblyName>Aerolinea.GUI</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <OldToolsVersion>4.0</OldToolsVersion>
+    <OldToolsVersion>4.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -51,9 +51,9 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -213,7 +213,7 @@
       <Name>Aerolinea.Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\Aerolinea.Data\Aerolinea.Data.csproj">
-      <Project>{B4F9B8EE-A158-4E2B-9F5B-A9C14A3A0A0B}</Project>
+      <Project>{b4f9b8ee-a158-4e2b-9f5b-a9c14a3a0a0b}</Project>
       <Name>Aerolinea.Data</Name>
     </ProjectReference>
   </ItemGroup>

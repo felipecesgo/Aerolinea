@@ -24,5 +24,8 @@ namespace Aerolinea.Data
         public string Email { get; set; }
 
         public string Residencia { get; set; }
+
+        [Ignore]
+        public string NombreCompleto { get { return string.Format("{0} {1}", Nombre, Apellido); } }
     }
 }

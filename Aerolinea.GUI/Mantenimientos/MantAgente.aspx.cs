@@ -69,6 +69,7 @@ namespace Aerolinea.GUI.Mantenimientos
                 agente.Email = txtEmail.Text;
                 agente.Residencia = txtResidencia.Text;
                 agente.Usuario = txtUsuario.Text;
+
                 agente.Contrasena = txtContrasena.Text;
 
                 var crud = new AgentesCRUD();
@@ -140,7 +141,7 @@ namespace Aerolinea.GUI.Mantenimientos
                     txtEmail.Text = ((HiddenField)gvDatos.SelectedRow.Cells[6].FindControl("Email")).Value;
                     txtResidencia.Text = ((HiddenField)gvDatos.SelectedRow.Cells[7].FindControl("Residencia")).Value;
                     txtUsuario.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[8].Text);
-                    txtContrasena.Text = ((HiddenField)gvDatos.SelectedRow.Cells[9].FindControl("Contrasena")).Value;
+                    txtContrasena.Attributes.Add("value", ((HiddenField)gvDatos.SelectedRow.Cells[9].FindControl("Contrasena")).Value);
                 }
             }
             catch (Exception ex)

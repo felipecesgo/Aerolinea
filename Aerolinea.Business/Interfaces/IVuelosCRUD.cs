@@ -9,9 +9,9 @@ namespace Aerolinea.Business
 {
     public interface IVuelosCRUD
     {
-        List<VueloData> Listar();
+        List<Vuelo> Listar();
         void Guardar(Vuelo vuelo);
         void Eliminar(int idVuelo);
-        VueloData Buscar(int idVuelo);
+        Vuelo Buscar(int idVuelo);
     }
 }

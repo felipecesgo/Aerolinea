@@ -1,6 +1,54 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="MantVuelo.aspx.cs" Inherits="Aerolinea.GUI.Mantenimientos.MantVuelo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <title>Vuelos</title>
+
+       <link href="../Scripts/bootstrap-3.3.7/content/bootstrap.min.css" rel="stylesheet" />
+        <link href="../Scripts/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" />
+        <link href="../Styles/StyleMain.css" rel="stylesheet" />
+
+       <script src="../Scripts/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+       <script src="../Scripts/bootstrap-3.3.7/scripts/bootstrap.min.js"></script>
+        <script src="../Scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+     
+            var date = new Date();
+            $("#fechaSalida").datepicker({
+                minDate: 0,
+                dateFormat: "dd/mm/yy",
+                defaultDate: date,
+                onSelect: function () {
+                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
+                    var element = $("#hdnfechaSalida")[0];
+                    element.value = selectedDate;
+                }
+            });
+            $("#fechaSalida").datepicker("setDate", date);
+            $("#hdnfechaSalida")[0].value = date.toLocaleDateString();
+
+
+            var date = new Date();
+            $("#fechaLlegada").datepicker({
+                minDate: 0,
+                dateFormat: "dd/mm/yy",
+                defaultDate: date,
+                onSelect: function () {
+                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
+                    var element = $("#hdnfechaLlegada")[0];
+                    element.value = selectedDate;
+
+                }
+            });
+            $("#fechaLlegada").datepicker("setDate", date);
+            $("#hdnfechaLlegada")[0].value = date.toLocaleDateString();
+
+            
+        });
+
+      </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -16,18 +64,18 @@
                     <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control"></asp:DropDownList>
                 </div>
 
-                <div>
+                <div style="margin-top: 15px">
                     <asp:Label runat="server" Text="Destino: " CssClass="labelform"></asp:Label>
                     <asp:DropDownList ID="ddlDestino" runat="server" class="form-control"></asp:DropDownList>
                 </div>
 
-                <div>
+                <div style="margin-top: 15px">
                     <asp:Label runat="server" Text="Fecha de salida: " CssClass="labelform"></asp:Label>
                     <asp:HiddenField ID="hdnfechaSalida"  runat="server" ClientIDMode="Static" />
                     <input id="fechaSalida" type="text" class="form-control" />
                 </div>
 
-                <div>
+                <div style="margin-top: 15px">
                     <asp:Label runat="server" Text="Hora de salida: " CssClass="labelform"></asp:Label>
                    <asp:TextBox ID="txtHoraSalida" runat="server" class="form-control" TextMode="Time"></asp:TextBox>
                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtHoraSalida" Text="*Ingrese la hora de salida." ValidationGroup="formData"></asp:RequiredFieldValidator>
@@ -39,7 +87,7 @@
                     <input id="fechaLlegada" type="text" class="form-control" />
                 </div>
 
-                 <div>
+                 <div style="margin-top: 15px">
                     <asp:Label  runat="server" Text="Hora de llegada: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtHoraLlegada" runat="server" class="form-control" TextMode="Time"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtHoraLlegada" Text="*Ingrese la hora de llegada." ValidationGroup="formData"></asp:RequiredFieldValidator>
@@ -56,7 +104,7 @@
                 </div>
 
                 <div style="margin-top: 15px">
-                    <asp:Label runat="server" Text="Estado Vuelo: " CssClass="labelform"></asp:Label>
+                    <asp:Label runat="server" Text="Estado del Vuelo: " CssClass="labelform"></asp:Label>
                     <asp:DropDownList ID="ddlEstadoVuelo" runat="server" class="form-control"></asp:DropDownList>
                 </div>
 
@@ -106,18 +154,34 @@
 
                     <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:HiddenField ID="IdRol" runat="server" Value='<%# Bind("IdRuta") %>' />
+                                <asp:HiddenField ID="IdRuta" runat="server" Value='<%# Bind("IdRuta") %>' />
                             </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:BoundField DataField='<%# Bind("Ruta.Origen") %>' HeaderText="Origen" />
-                    <asp:BoundField DataField='<%# Bind("Ruta.Destino") %>' HeaderText="Destino" />
+                    <asp:BoundField DataField="Ruta.Origen" HeaderText="Origen" />
 
-                    <asp:BoundField DataField="FechaSalida" HeaderText="Fecha de Salida" />
+                    <asp:BoundField DataField="Ruta.Destino" HeaderText="Destino" />
 
-                    <asp:BoundField DataField="FechaLlegada" HeaderText="Fecha de Llegada" />
+                    <asp:BoundField DataField="FechaSalida" HeaderText="Salida" />
 
-                    <asp:BoundField DataField="EstadoVuelo" HeaderText="Estado" /
+                    <asp:BoundField DataField="FechaLlegada" HeaderText="Llegada" />
+
+                    <asp:BoundField DataField="EstadoVuelo" HeaderText="Estado" />
+
+                    <asp:BoundField DataField="CapacidadAsientos" HeaderText="Asientos" />
+                     <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:HiddenField ID="IdAvion" runat="server" Value='<%# Bind("IdAvion") %>' />
+                            </ItemTemplate>
+                    </asp:TemplateField>
+                  
+                    
+                    <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:HiddenField ID="IdPiloto" runat="server" Value='<%# Bind("IdPiloto") %>' />
+                            </ItemTemplate>
+                    </asp:TemplateField>
+
                
                 </Columns>
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

@@ -91,7 +91,7 @@ CREATE TABLE Piloto
 
 CREATE TABLE Vuelo
 (
-	IdVuelo int primary key  IDENTITY(1,1),
+	IdVuelo int primary key  IDENTITY(1000,1),
 	IdAvion int NOT NULL,
 	IdPiloto int NOT NULL,
 	IdRuta int NOT NULL,

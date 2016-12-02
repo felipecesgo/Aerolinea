@@ -18,5 +18,8 @@ namespace Aerolinea.Data
 
         public string Modelo { get; set; }
 
+        [Ignore]
+        public string Nombre { get { return string.Format("{0} {1}", Marca, Modelo); } }
+
     }
 }

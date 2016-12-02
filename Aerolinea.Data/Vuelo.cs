@@ -27,5 +27,7 @@ namespace Aerolinea.Data
 
         public int CapacidadAsientos { get; set; }
 
+       [Ignore]
+        public Ruta Ruta { get; set; }
     }
 }

@@ -13,17 +13,17 @@
                 <div>
                     <asp:Label  runat="server" Text="Matricula: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtMatricula" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvMatricula" runat="server" CssClass="error" ControlToValidate="txtOrigen" Text="*Ingrese la Matricula." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvMatricula" runat="server" CssClass="error" ControlToValidate="txtMatricula" Text="*Ingrese la Matricula." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
                 </div>
                 <div>
                     <asp:Label  runat="server" Text="Marca: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtMarca" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvMarca" runat="server" CssClass="error" ControlToValidate="txtDestino" Text="*Ingrese la Marca." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvMarca" runat="server" CssClass="error" ControlToValidate="txtMarca" Text="*Ingrese la Marca." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
                 </div>
                 <div>
                     <asp:Label runat="server" Text="Modelo: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtModelo" runat="server" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvModelo" runat="server" CssClass="error" ControlToValidate="txtTarifa" Text="*Ingrese el Modelo." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvModelo" runat="server" CssClass="error" ControlToValidate="txtModelo" Text="*Ingrese el Modelo." ValidationGroup="rutaData"></asp:RequiredFieldValidator>
                 </div>
                  <br />
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" ValidationGroup="rutaData" />
