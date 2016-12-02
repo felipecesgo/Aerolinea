@@ -11,44 +11,7 @@
         <script src="../Scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
     <script type="text/javascript">
-
-        $(document).ready(function () {
-
-     
-            var date = new Date();
-            $("#fechaSalida").datepicker({
-                minDate: 0,
-                dateFormat: "dd/mm/yy",
-                defaultDate: date,
-                onSelect: function () {
-                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
-                    var element = $("#hdnfechaSalida")[0];
-                    element.value = selectedDate;
-                }
-            });
-            $("#fechaSalida").datepicker("setDate", date);
-            $("#hdnfechaSalida")[0].value = date.toLocaleDateString();
-
-
-            var date = new Date();
-            $("#fechaLlegada").datepicker({
-                minDate: 0,
-                dateFormat: "dd/mm/yy",
-                defaultDate: date,
-                onSelect: function () {
-                    var selectedDate = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker('getDate'));
-                    var element = $("#hdnfechaLlegada")[0];
-                    element.value = selectedDate;
-
-                }
-            });
-            $("#fechaLlegada").datepicker("setDate", date);
-            $("#hdnfechaLlegada")[0].value = date.toLocaleDateString();
-
-            
-        });
-
-      </script>
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -61,7 +24,7 @@
 
                 <div>
                     <asp:Label runat="server" Text="Origen: " CssClass="labelform"></asp:Label>
-                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control" OnSelectedIndexChanged="ddlOrigen_OnSelectedIndexChanged"></asp:DropDownList>
                 </div>
 
                 <div style="margin-top: 15px">
@@ -71,26 +34,14 @@
 
                 <div style="margin-top: 15px">
                     <asp:Label runat="server" Text="Fecha de salida: " CssClass="labelform"></asp:Label>
-                    <asp:HiddenField ID="hdnfechaSalida"  runat="server" ClientIDMode="Static" />
-                    <input id="fechaSalida" type="text" class="form-control" />
-                </div>
-
-                <div style="margin-top: 15px">
-                    <asp:Label runat="server" Text="Hora de salida: " CssClass="labelform"></asp:Label>
-                   <asp:TextBox ID="txtHoraSalida" runat="server" class="form-control" TextMode="Time"></asp:TextBox>
-                   <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtHoraSalida" Text="*Ingrese la hora de salida." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtFechaSalida" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtFechaSalida" Text="*Ingrese la hora de salida." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
                     <asp:Label runat="server" Text="Fecha de llegada: " CssClass="labelform"></asp:Label>
-                    <asp:HiddenField ID="hdnfechaLlegada" runat="server" ClientIDMode="Static" />
-                    <input id="fechaLlegada" type="text" class="form-control" />
-                </div>
-
-                 <div style="margin-top: 15px">
-                    <asp:Label  runat="server" Text="Hora de llegada: " CssClass="labelform"></asp:Label>
-                    <asp:TextBox ID="txtHoraLlegada" runat="server" class="form-control" TextMode="Time"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtHoraLlegada" Text="*Ingrese la hora de llegada." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtFechaLLegada" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtFechaLLegada" Text="*Ingrese la hora de salida." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
@@ -169,6 +120,7 @@
                     <asp:BoundField DataField="EstadoVuelo" HeaderText="Estado" />
 
                     <asp:BoundField DataField="CapacidadAsientos" HeaderText="Asientos" />
+
                      <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:HiddenField ID="IdAvion" runat="server" Value='<%# Bind("IdAvion") %>' />

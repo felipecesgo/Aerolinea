@@ -31,40 +31,22 @@ namespace Aerolinea.GUI.Mantenimientos {
         protected global::System.Web.UI.WebControls.DropDownList ddlDestino;
         
         /// <summary>
-        /// Control hdnfechaSalida.
+        /// Control txtFechaSalida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnfechaSalida;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaSalida;
         
         /// <summary>
-        /// Control txtHoraSalida.
+        /// Control txtFechaLLegada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoraSalida;
-        
-        /// <summary>
-        /// Control hdnfechaLlegada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnfechaLlegada;
-        
-        /// <summary>
-        /// Control txtHoraLlegada.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoraLlegada;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaLLegada;
         
         /// <summary>
         /// Control ddlAvion.

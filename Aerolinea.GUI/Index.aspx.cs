@@ -29,7 +29,26 @@ namespace Aerolinea.GUI
             }
         }
 
-       
+        private void cargarDestinos()
+        {
+            try
+            {
+                if (ddlOrigen.SelectedIndex > -1)
+                {
+                    var crud = new RutasCRUD();
+                    var origen = ddlOrigen.SelectedItem.Text;
+                    ddlDestino.DataSource = null;
+                    ddlDestino.DataValueField = "IdRuta";
+                    ddlDestino.DataTextField = "Destino";
+                    ddlDestino.DataSource = crud.BuscarRutasOrigen(origen);
+                    ddlDestino.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
 
         protected void lvRutas_ItemCreated(object sender, ListViewItemEventArgs e)
         {

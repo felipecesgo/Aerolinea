@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aerolinea.Business</RootNamespace>
     <AssemblyName>Aerolinea.Business</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -46,7 +46,6 @@
     <Compile Include="Clases\MD5Generator.cs" />
     <Compile Include="Clases\PilotosCRUD.cs" />
     <Compile Include="Clases\RolesCRUD.cs" />
-    <Compile Include="Clases\VueloData.cs" />
     <Compile Include="Clases\VuelosCRUD.cs" />
     <Compile Include="Interfaces\IAgentesCRUD.cs" />
     <Compile Include="Interfaces\IAvionesCRUD.cs" />
@@ -58,10 +57,6 @@
     <Compile Include="Clases\RutasCRUD.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aerolinea.DataAccess\Aerolinea.DataAccess.csproj">
-      <Project>{874869e8-301f-4b2c-95b1-146181d9ab3f}</Project>
-      <Name>Aerolinea.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Aerolinea.Data\Aerolinea.Data.csproj">
       <Project>{b4f9b8ee-a158-4e2b-9f5b-a9c14a3a0a0b}</Project>
       <Name>Aerolinea.Data</Name>

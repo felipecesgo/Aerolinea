@@ -45,12 +45,12 @@ namespace Aerolinea.GUI.Mantenimientos
             ViewState.Add("Id", -1);
             textoMensajeError.InnerHtml = "";
             textoMensaje.InnerHtml = "";
+      
             gvDatos.DataSource = null;
             gvDatos.DataSource = datos;
             gvDatos.DataBind();
             ddlEstadoVuelo.SelectedIndex = 0;
             ddlOrigen.SelectedIndex = 0;
-            ddlDestino.SelectedIndex = 0;
             ddlPiloto.SelectedIndex = 0;
             ddlAvion.SelectedIndex = 0;
             ddlCapacidadAsientos.SelectedValue = "100";
@@ -60,17 +60,42 @@ namespace Aerolinea.GUI.Mantenimientos
         {
             var crud = new RutasCRUD();
 
-            ddlDestino.DataSource = null;
-            ddlDestino.DataValueField = "IdRuta";
-            ddlDestino.DataTextField = "Destino";
-            ddlDestino.DataSource = crud.ListarRutas();
-            ddlDestino.DataBind();
+            //ddlDestino.DataSource = null;
+            //ddlDestino.DataValueField = "IdRuta";
+            //ddlDestino.DataTextField = "Destino";
+            //ddlDestino.DataSource = crud.ListarRutas();
+            //ddlDestino.DataBind();
 
             ddlOrigen.DataSource = null;
             ddlOrigen.DataValueField = "IdRuta";
             ddlOrigen.DataTextField = "Origen";
             ddlOrigen.DataSource = crud.ListarRutas();
             ddlOrigen.DataBind();
+            ddlOrigen.SelectedIndex = 0;
+            cargarDestinos();
+        }
+
+        private void cargarDestinos()
+        {
+            try
+            {
+                if (ddlOrigen.SelectedIndex > -1)
+                {
+                    var crud = new RutasCRUD();
+                    var origen = ddlOrigen.SelectedItem.Text;
+                    ddlDestino.DataSource = null;
+                    ddlDestino.DataValueField = "IdRuta";
+                    ddlDestino.DataTextField = "Destino";
+                    ddlDestino.DataSource = crud.BuscarRutasOrigen(origen);
+                    ddlDestino.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje.Visible = false;
+                mensajeError.Visible = true;
+                textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+            }
         }
 
 
@@ -120,23 +145,17 @@ namespace Aerolinea.GUI.Mantenimientos
             try
             {
                 var crud = new RutasCRUD();
-                var ruta = crud.BuscarRutaOrigenYDestino(ddlOrigen.SelectedItem.Text, ddlDestino.SelectedItem.Text);
-
-                if (ruta != null)
-                {
+            
                     var vuelo = new Vuelo();
                     vuelo.IdVuelo = (int)ViewState["Id"];
 
-                    vuelo.IdRuta = ruta.IdRuta;
+                    vuelo.IdRuta = Convert.ToInt32(ddlDestino.SelectedValue);
 
                     vuelo.IdAvion = Convert.ToInt32(ddlAvion.SelectedValue);
                     vuelo.IdPiloto = Convert.ToInt32(ddlPiloto.SelectedValue);
 
-                    var fechaSalida = string.Format("{0} {1}", hdnfechaSalida.Value, txtHoraSalida.Text);
-                    vuelo.FechaSalida = Convert.ToDateTime(fechaSalida);
-                    
-                    var fechaLlegada = string.Format("{0} {1}", hdnfechaSalida.Value, txtHoraSalida.Text);
-                    vuelo.FechaLlegada = Convert.ToDateTime(fechaLlegada);
+                    vuelo.FechaSalida = Convert.ToDateTime(txtFechaSalida.Text);
+                    vuelo.FechaLlegada = Convert.ToDateTime(txtFechaLLegada.Text);
 
                     vuelo.EstadoVuelo = ddlEstadoVuelo.SelectedItem.Text;
                     vuelo.CapacidadAsientos = Convert.ToInt32(ddlCapacidadAsientos.SelectedValue);
@@ -148,13 +167,7 @@ namespace Aerolinea.GUI.Mantenimientos
                     mensajeError.Visible = false;
                     mensaje.Visible = true;
                     textoMensaje.InnerHtml = "Se ha guardado correctamente";
-                }
-                else
-                {
-                    mensaje.Visible = false;
-                    mensajeError.Visible = true;
-                    textoMensajeError.InnerHtml = "no se encontro ninguna ruta con ese origen y destino.";
-                }
+             
             }
             catch (Exception ex)
             {
@@ -207,17 +220,20 @@ namespace Aerolinea.GUI.Mantenimientos
                 if (gvDatos.SelectedIndex > -1)
                 {
                     ViewState["Id"] = Convert.ToInt32(gvDatos.SelectedDataKey.Value);
-                    ddlOrigen.SelectedItem.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[3].Text);
-                    ddlDestino.SelectedItem.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[4].Text);
+
+                    ddlOrigen.SelectedValue = ((HiddenField)gvDatos.SelectedRow.Cells[2].FindControl("IdRuta")).Value;
+                    ddlDestino.SelectedValue = ((HiddenField)gvDatos.SelectedRow.Cells[2].FindControl("IdRuta")).Value;
+                   
                     var fechaSalida = Convert.ToDateTime(Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[5].Text));
-                    var hora = fechaSalida.ToShortTimeString();
-                    txtHoraSalida.Text = hora;
-                    hdnfechaSalida.Value = fechaSalida.ToShortDateString();
+                    txtFechaSalida.Text = fechaSalida.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+
                     var fechallegada = Convert.ToDateTime(Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[6].Text));
+                    txtFechaLLegada.Text = fechallegada.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+            
                     ddlEstadoVuelo.SelectedItem.Text = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[7].Text);
                     ddlCapacidadAsientos.SelectedValue = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[8].Text);
-                    ddlAvion.SelectedValue = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[9].Text);
-                    ddlPiloto.SelectedValue = Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[10].Text);
+                    ddlAvion.SelectedValue =  ((HiddenField)gvDatos.SelectedRow.Cells[9].FindControl("IdAvion")).Value;
+                    ddlPiloto.SelectedValue = ((HiddenField)gvDatos.SelectedRow.Cells[10].FindControl("IdPiloto")).Value;
                 }
             }
             catch (Exception ex)
@@ -227,6 +243,12 @@ namespace Aerolinea.GUI.Mantenimientos
                 textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
             }
         }
+
+        protected void ddlOrigen_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDestinos();
+        }
+
 
         private void FindTextBoxes(Control Parent, List<TextBox> ListOfTextBoxes)
         {
