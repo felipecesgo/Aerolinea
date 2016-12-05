@@ -1998,3 +1998,11 @@ li.flight-search-results {
         margin-left: 0;
     }
 }
+
+
+
+.flight-airport-code {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "AmericanSans",Helvetica,Arial,sans-serif;
+}

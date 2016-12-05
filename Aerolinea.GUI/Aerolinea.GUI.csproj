@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aerolinea.GUI</RootNamespace>
     <AssemblyName>Aerolinea.GUI</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -64,6 +64,8 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="EligirVuelo.aspx" />
     <Content Include="EstadoVuelos.aspx" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="Images\arrowright.jpg" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\Delete.gif" />
     <Content Include="Images\depart.png" />

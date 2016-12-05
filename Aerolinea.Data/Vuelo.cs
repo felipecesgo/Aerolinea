@@ -29,5 +29,19 @@ namespace Aerolinea.Data
 
        [Ignore]
         public Ruta Ruta { get; set; }
+
+       [Ignore]
+       public string Duration
+       {
+           get
+           {
+               var duration = FechaLlegada - FechaSalida;
+               if (duration.Days > 0)
+                   return string.Format("{0:%d} d {0:%h} h {0:%m} minutes", duration);
+               else
+                   return string.Format("{0:%h} h {0:%m} m", duration);
+           }
+       }
+
     }
 }

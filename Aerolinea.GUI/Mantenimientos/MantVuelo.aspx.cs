@@ -59,13 +59,6 @@ namespace Aerolinea.GUI.Mantenimientos
         private void cargarRutas()
         {
             var crud = new RutasCRUD();
-
-            //ddlDestino.DataSource = null;
-            //ddlDestino.DataValueField = "IdRuta";
-            //ddlDestino.DataTextField = "Destino";
-            //ddlDestino.DataSource = crud.ListarRutas();
-            //ddlDestino.DataBind();
-
             ddlOrigen.DataSource = null;
             ddlOrigen.DataValueField = "IdRuta";
             ddlOrigen.DataTextField = "Origen";
@@ -222,6 +215,8 @@ namespace Aerolinea.GUI.Mantenimientos
                     ViewState["Id"] = Convert.ToInt32(gvDatos.SelectedDataKey.Value);
 
                     ddlOrigen.SelectedValue = ((HiddenField)gvDatos.SelectedRow.Cells[2].FindControl("IdRuta")).Value;
+                    cargarDestinos();
+                  
                     ddlDestino.SelectedValue = ((HiddenField)gvDatos.SelectedRow.Cells[2].FindControl("IdRuta")).Value;
                    
                     var fechaSalida = Convert.ToDateTime(Page.Server.HtmlDecode(gvDatos.SelectedRow.Cells[5].Text));
@@ -244,11 +239,6 @@ namespace Aerolinea.GUI.Mantenimientos
             }
         }
 
-        protected void ddlOrigen_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarDestinos();
-        }
-
 
         private void FindTextBoxes(Control Parent, List<TextBox> ListOfTextBoxes)
         {
@@ -266,6 +256,12 @@ namespace Aerolinea.GUI.Mantenimientos
                     }
                 }
             }
+        }
+
+        protected void ddlOrigen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            cargarDestinos();
         }
     
     }

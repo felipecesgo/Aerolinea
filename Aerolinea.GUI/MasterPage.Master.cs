@@ -20,8 +20,8 @@ namespace Aerolinea.GUI
                 mnuPrincipal.Items.Clear();
             }
 
-            var usuarioTest = new Agente() { Nombre = "Felipe", Apellido = "Cespedes", Usuario = "lfcg", Contrasena = "123", IdRol = 1 };
-            Session.Add("usuario", usuarioTest);
+            //var usuarioTest = new Agente() { Nombre = "Felipe", Apellido = "Cespedes", Usuario = "lfcg", Contrasena = "123", IdRol = 1 };
+            //Session.Add("usuario", usuarioTest);
                                       
             if (Session["usuario"] != null)
             {

@@ -24,7 +24,7 @@
 
                 <div>
                     <asp:Label runat="server" Text="Origen: " CssClass="labelform"></asp:Label>
-                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control" OnSelectedIndexChanged="ddlOrigen_OnSelectedIndexChanged"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlOrigen_SelectedIndexChanged"></asp:DropDownList>
                 </div>
 
                 <div style="margin-top: 15px">
@@ -35,13 +35,13 @@
                 <div style="margin-top: 15px">
                     <asp:Label runat="server" Text="Fecha de salida: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtFechaSalida" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtFechaSalida" Text="*Ingrese la hora de salida." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtFechaSalida" Text="*Ingrese la fecha de salida." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>
                     <asp:Label runat="server" Text="Fecha de llegada: " CssClass="labelform"></asp:Label>
                     <asp:TextBox ID="txtFechaLLegada" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtFechaLLegada" Text="*Ingrese la hora de salida." ValidationGroup="formData"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator runat="server" CssClass="error" ControlToValidate="txtFechaLLegada" Text="*Ingrese la fecha de llegada." ValidationGroup="formData"></asp:RequiredFieldValidator>
                 </div>
 
                 <div>

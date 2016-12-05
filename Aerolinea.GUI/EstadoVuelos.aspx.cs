@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Aerolinea
+namespace Aerolinea.GUI
 {
     public partial class EstadoVuelos : System.Web.UI.Page
     {
