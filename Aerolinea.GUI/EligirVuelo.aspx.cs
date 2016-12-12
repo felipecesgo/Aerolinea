@@ -32,7 +32,7 @@ namespace Aerolinea.GUI
 
         protected void btnVueloSalida_Click(object sender, EventArgs e)
         {
-           //lblTitle.Text = "Usted eligió";
+            lblTitle.Text = "Usted eligió";
            //ViewState["IdVueloSalida"] = 1000;
            //var vuelosRepository = new VuelosCRUD();
 

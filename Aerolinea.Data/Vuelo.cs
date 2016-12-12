@@ -27,6 +27,8 @@ namespace Aerolinea.Data
 
         public int CapacidadAsientos { get; set; }
 
+        public int Escalas { get; set; }
+
        [Ignore]
         public Ruta Ruta { get; set; }
 
@@ -43,5 +45,16 @@ namespace Aerolinea.Data
            }
        }
 
+       [Ignore]
+       public string CantidadEscalas
+       {
+           get
+           {
+               if (Escalas == 0)
+                   return "Sin Escalas";
+               else
+                   return string.Format("{0} Escalas", Escalas);
+           }
+       }
     }
 }

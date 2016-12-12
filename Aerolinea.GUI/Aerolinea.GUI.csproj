@@ -65,7 +65,6 @@
     <Content Include="EligirVuelo.aspx" />
     <Content Include="EstadoVuelos.aspx" />
     <Content Include="Images\arrow.png" />
-    <Content Include="Images\arrowright.jpg" />
     <Content Include="Images\background.jpg" />
     <Content Include="Images\Delete.gif" />
     <Content Include="Images\depart.png" />

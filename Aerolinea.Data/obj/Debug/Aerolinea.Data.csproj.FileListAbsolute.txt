@@ -15,3 +15,4 @@ C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\bin\Debug\Aerolinea.D
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\bin\Debug\ServiceStack.Interfaces.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Data\obj\Debug\Aerolinea.Data.csprojResolveAssemblyReference.cache

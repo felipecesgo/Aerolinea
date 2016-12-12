@@ -43,8 +43,7 @@
                                   <image src="Images/arrowright.jpg" style="width: 30px; height: 30px;  margin: auto;" />
                               </td>
                                <td><span class="flight-airport-code"> <%#: Item.Ruta.Destino %></span></td>
-                                <td style="text-align: center;"><span class="flight-airport-code">Duración</span></td>
-                                  <td><span class="flight-airport-code">Tarifa</span></td>
+                 
                            </tr>
                            <tr>
                                <td>
@@ -61,8 +60,14 @@
 	                                    </span>
                                     </div>
                                </td>
-                               <td style="width: 150px; text-align: center;"><span class="flight-airport-code"> <%#:  Item.Duration %></span></td>
-                                <td>
+                               <td style="text-align: center; padding-left: 30px">
+                                   <span class="flight-airport-code"> <%#:  Item.Duration %></span>
+                               </td>
+                               <td style="width: 150px; text-align: center;">
+                                   <span class="flight-airport-code"> <%#: Item.CantidadEscalas %></span>
+                               </td>
+
+                                <td style="text-align: center; margin-left: 15px;">
                                     <span class="flight-time gamma aa-strong"> 
                                         <%#: Item.Ruta.Tarifa.ToString("$ 0") %>
                                     </span>
@@ -73,8 +78,10 @@
                                    </div>
                                </td>
                            </tr>
+                           <tr>
 
 
+                           </tr>
                        </table>
                 </td>
             </ItemTemplate>

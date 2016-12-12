@@ -1,8 +1,9 @@
 USE master;
 GO
 CREATE DATABASE Aerolinea;
+GO
 USE Aerolinea;
-
+GO
 CREATE TABLE Avion
 (
     IdAvion int primary key  IDENTITY(1,1),
@@ -10,7 +11,7 @@ CREATE TABLE Avion
     Marca nvarchar (20),
 	Modelo nvarchar (20)
 );
-
+GO
 INSERT INTO Avion(Matricula, Marca, Modelo) VALUES
 ('A01', 'Boeing', '747'),
 ('A02', 'Boeing', '737'),
@@ -18,7 +19,6 @@ INSERT INTO Avion(Matricula, Marca, Modelo) VALUES
 ('A04', 'Embraer', 'ER145'),
 ('A05', 'Embraer', 'ER560');
 GO
-
 CREATE TABLE Ruta
 (
 	IdRuta int primary key  IDENTITY(1,1),
@@ -27,18 +27,18 @@ CREATE TABLE Ruta
 	Tarifa money NOT NULL,
 	Imagen image
 );
-
+GO
 CREATE TABLE Rol
 (
 	IdRol int primary key  IDENTITY(1,1),
 	Nombre nvarchar (50) NOT NULL,
 	Descripcion nvarchar (256)
 );
+GO
 INSERT INTO Rol(Nombre, Descripcion) VALUES
 ('Administrador', 'Administrador del sistema'),
 ('Agente de Ventas', 'Agente de ventas');
 GO
-
 CREATE TABLE Agente
 (
 	IdAgente int primary key  IDENTITY(1,1),
@@ -53,7 +53,10 @@ CREATE TABLE Agente
     Contrasena nvarchar (256)  NOT NULL,
 	Foreign key (IdRol) REFERENCES Rol(IdRol)
 );
-
+GO
+INSERT INTO Agente(IdRol, Cedula, Nombre, Apellido, Telefono, Email, Residencia, Usuario, Contrasena) VALUES
+(1, '1 1505 0504', 'Felipe', 'Cespedes', '8721-9751', 'felipe9206@gmail.com', 'Costa Rica, Cartago, Orosi', 'admin', 'admin');
+GO
 CREATE TABLE Cliente
 (
 	IdCliente int primary key  IDENTITY(1,1),
@@ -66,18 +69,7 @@ CREATE TABLE Cliente
 	Usuario nvarchar (25) NOT NULL,
     Contrasena nvarchar (256) NOT NULL
 );
-
-CREATE TABLE Queja
-(
-  IdQueja int primary key  IDENTITY(1,1),
-  IdVuelo int  NOT NULL , 
-  IdCliente  int  NOT NULL ,
-  Motivo nvarchar (256),
-  Descripcion nvarchar (256),
-  Foreign key (IdVuelo) REFERENCES Vuelo(IdVuelo),
-  Foreign key (IdCliente) REFERENCES Cliente(IdCliente)
-);
-
+GO
 CREATE TABLE Piloto
 (
 	IdPiloto int primary key  IDENTITY(1,1),
@@ -88,7 +80,7 @@ CREATE TABLE Piloto
     Email nvarchar (20),
     Residencia nvarchar (256),
 );
-
+GO
 CREATE TABLE Vuelo
 (
 	IdVuelo int primary key  IDENTITY(1000,1),
@@ -99,13 +91,23 @@ CREATE TABLE Vuelo
     FechaSalida datetime NOT NULL,
 	FechaLlegada datetime NOT NULL,
     CapacidadAsientos int NOT NULL,
+    Escalas int NOT NULL DEFAULT 0,
     Foreign key (IdAvion) REFERENCES Avion(IdAvion),
     Foreign key (IdPiloto) REFERENCES Piloto(IdPiloto),
 	Foreign key (IdRuta) REFERENCES Ruta(IdRuta)
 );
-
-
-
+GO
+CREATE TABLE Queja
+(
+  IdQueja int primary key  IDENTITY(1,1),
+  IdVuelo int  NOT NULL , 
+  IdCliente int  NOT NULL ,
+  Motivo nvarchar (256),
+  Descripcion nvarchar (256),
+  Foreign key (IdVuelo) REFERENCES Vuelo(IdVuelo),
+  Foreign key (IdCliente) REFERENCES Cliente(IdCliente)
+);
+GO
 CREATE TABLE Tiquete
 (
   IdTiquete int primary key  IDENTITY(1,1),
@@ -116,7 +118,7 @@ CREATE TABLE Tiquete
   Foreign key (IdVuelo) REFERENCES Vuelo(IdVuelo),
   Foreign key (IdCliente) REFERENCES Cliente(IdCliente)
 );
-
+GO
 CREATE TABLE Pago
 (
 	IdPago int primary key  IDENTITY(1,1),
@@ -125,3 +127,4 @@ CREATE TABLE Pago
 	Monto MONEY NOT NULL,
 	Foreign key (IdTiquete) REFERENCES Tiquete(IdTiquete)
 )
+GO

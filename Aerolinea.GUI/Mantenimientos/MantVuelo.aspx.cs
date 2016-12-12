@@ -137,7 +137,6 @@ namespace Aerolinea.GUI.Mantenimientos
         {
             try
             {
-                var crud = new RutasCRUD();
             
                     var vuelo = new Vuelo();
                     vuelo.IdVuelo = (int)ViewState["Id"];
@@ -152,7 +151,9 @@ namespace Aerolinea.GUI.Mantenimientos
 
                     vuelo.EstadoVuelo = ddlEstadoVuelo.SelectedItem.Text;
                     vuelo.CapacidadAsientos = Convert.ToInt32(ddlCapacidadAsientos.SelectedValue);
-                    
+
+                    vuelo.Escalas = Convert.ToInt32(ddlEscalas.Text); 
+
                     var crudvuelos = new VuelosCRUD();
                     crudvuelos.Guardar(vuelo);
                     limpiarForm(crudvuelos.Listar());

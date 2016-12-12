@@ -119,7 +119,7 @@
     </div>
 
     
-    <div style="margin-top: 20px">
+    <div>
         <asp:ListView ID="lvRutas" runat="server"
             GroupItemCount="2" OnItemCreated="lvRutas_ItemCreated"
             ItemType="Aerolinea.Data.Ruta" DataKeyNames="IdRuta">
@@ -139,14 +139,14 @@
                 </tr>
             </GroupTemplate>
             <ItemTemplate>
-                <td id="Td1" runat="server">
-                    <table>
+                <td runat="server">
+                    <table  style="width: 50%; margin-top: 15px">
                         <tr>
                             <td>
-                                <asp:Image ID="imgRuta" runat="server" Height="150px" Width="150px" />
+                                <asp:Image ID="imgRuta" runat="server" Height="150px" Width="210px" />
                             </td>
-                            <td style="background-color: #e2e2e2; vertical-align: top; padding: 15px 15px 0px 15px;">
-                                <table>
+                            <td style="background-color: #e2e2e2; vertical-align: top; padding: 15px 15px 0px 15px; min-width: 220px">
+                                <table style="width: 100%">
                                     <tr>
                                         <td style="font-weight: 600; color: #757575; font-size: 13px; font-family: Regular-Semibold,'Open Sans',sans-serif;">
                                             <%#: Item.Origen %>
@@ -168,9 +168,10 @@
                                     <tr>
                                         <td style="color: #0079ca; font-size: 25px; margin-top: 0px;">$&nbsp;<%#: Convert.ToInt32(Item.Tarifa) %></td>
                                     </tr>
-                                    <tr>
+
+                                    <tr style="text-align: right;">
                                         <td style="text-align: right; font-size: 12px; margin-top: 12px; color: #0079ca;">
-                                            <asp:LinkButton ID="lkbtnSearch" runat="server" OnClick="lkbtnSearch_Click" CommandArgument="<%# Item.IdRuta %>"><span style="font-weight: 600">Comprar</span></asp:LinkButton>
+                                            <asp:LinkButton ID="lkbtnSearch" runat="server" OnClick="lkbtnSearch_Click" CommandArgument="<%# Item.IdRuta %>"><span style="font-weight: 600; margin-right: 5px; width: 90px;">Comprar</span></asp:LinkButton>
                                         </td>
                                     </tr>
                                 </table>

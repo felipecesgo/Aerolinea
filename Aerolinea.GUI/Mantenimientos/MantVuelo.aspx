@@ -8,7 +8,7 @@
 
        <script src="../Scripts/jquery-3.1.1/jquery-3.1.1.min.js"></script>
        <script src="../Scripts/bootstrap-3.3.7/scripts/bootstrap.min.js"></script>
-        <script src="../Scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+       <script src="../Scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
     <script type="text/javascript">
     </script>
@@ -62,6 +62,16 @@
                 <div style="margin-top: 15px">
                     <asp:Label runat="server" Text="Capacidad Asientos: " CssClass="labelform"></asp:Label>
                     <asp:DropDownList ID="ddlCapacidadAsientos" runat="server" class="form-control"></asp:DropDownList>
+                </div>
+
+               <div style="margin-top: 15px">
+                    <asp:Label runat="server" Text="Escalas: " CssClass="labelform"></asp:Label>
+                    <asp:DropDownList ID="ddlEscalas" runat="server" class="form-control">
+                        <asp:ListItem>0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
 
                  <br />
