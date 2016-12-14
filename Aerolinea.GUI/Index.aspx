@@ -71,10 +71,10 @@
                     <label for="ddlOrigen" class="depart" style="margin-top: 6px">Origen </label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control" AutoPostBack="true"></asp:DropDownList>
                 </td>
                 <td>
-                    <label for="ddlDestino" class="return" style="margin-top: 6px">Destino </label>
+                    <label for="ddlDestino" class="return" style="margin-top: 6px">Destino</label>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlDestino" runat="server" class="form-control" style="margin-top: 6px"></asp:DropDownList>

@@ -16,16 +16,16 @@ namespace Aerolinea.GUI
             if (!IsPostBack)
             {
                 var rutasRepository = new RutasCRUD();
-                var rutas = rutasRepository.ListarRutas().Take(8);
-                lvRutas.DataSource = rutas;
+                var rutas = rutasRepository.ListarRutas();
+                lvRutas.DataSource = rutas.Take(8);
                 lvRutas.DataBind();
 
-                ddlOrigen.DataSource = rutas.Select(x => x.Origen).ToList();
+                var origenes = rutas.Select(x => x.Origen).Distinct().ToList();
+           
+                ddlOrigen.DataSource = origenes;
                 ddlOrigen.DataBind();
-
-                ddlDestino.DataSource = rutas.Select(x => x.Destino).ToList();
-                ddlDestino.DataBind();
-
+                ddlOrigen.SelectedIndex = 0;
+                cargarDestinos();
             }
         }
 
@@ -38,9 +38,7 @@ namespace Aerolinea.GUI
                     var crud = new RutasCRUD();
                     var origen = ddlOrigen.SelectedItem.Text;
                     ddlDestino.DataSource = null;
-                    ddlDestino.DataValueField = "IdRuta";
-                    ddlDestino.DataTextField = "Destino";
-                    ddlDestino.DataSource = crud.BuscarRutasOrigen(origen);
+                    ddlDestino.DataSource = crud.BuscarRutasOrigen(origen).Select(x => x.Destino).Distinct().ToList();
                     ddlDestino.DataBind();
                 }
             }
@@ -73,6 +71,9 @@ namespace Aerolinea.GUI
             var destino = ddlDestino.SelectedValue;
             var salida = hdnfechaSalida.Value;
             var regreso = hdnfechaRegreso.Value;
+
+
+
             Session.Add("origen", origen);
             Session.Add("destino", destino);
             Session.Add("salida", salida);
@@ -80,6 +81,8 @@ namespace Aerolinea.GUI
 
             Session.Add("tipo", rblTipoViaje.SelectedValue);
             Response.Redirect("EligirVuelo.aspx");
+
+
         }
 
 

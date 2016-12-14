@@ -16,3 +16,6 @@ C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\ServiceStack.Text.
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.pdb
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.csprojResolveAssemblyReference.cache
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.pdb

@@ -132,7 +132,7 @@ namespace Aerolinea
 
         protected void btnAsiento_Click(object sender, EventArgs e)
         {
-           var idVuelo = Convert.ToInt32( ViewState["vueloID"]);
+           var idVuelo = Convert.ToInt32(ViewState["vueloID"]);
 
             var tiquetes = new TiquetesCRUD();
             var asientosOcupados = tiquetes.ListarAsientosOcupados(idVuelo);

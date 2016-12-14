@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aerolinea.Data", "Aerolinea.Data\Aerolinea.Data.csproj", "{B4F9B8EE-A158-4E2B-9F5B-A9C14A3A0A0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aerolinea.Business", "Aerolinea.Business\Aerolinea.Business.csproj", "{B48812A5-BF55-4345-A493-0B6CB11277C6}"

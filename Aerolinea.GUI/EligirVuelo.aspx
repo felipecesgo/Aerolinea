@@ -13,7 +13,6 @@
     <asp:Label ID="lblFechaSalida" runat="server" CssClass="date-info"></asp:Label>
 
     <div id="vueloSalida" runat="server" visible="false">
-
         <table>
             <tr>
                 <td>
@@ -60,8 +59,48 @@
         <asp:Label ID="lblFechaRegreso" runat="server" CssClass="date-info"></asp:Label>
     </div>
 
+    <div id="vueloRegreso" runat="server" visible="false">
+        <table>
+            <tr>
+                <td>
+                    <span id="origenRegreso" runat="server" class="flight-airport-code"></span>
+                </td>
+                <td rowspan="3" style="width: 100px; text-align: center;">
+                    <image src="Images/arrowright.jpg" style="width: 30px; height: 30px; margin: auto;" />
+                </td>
+                <td><span id="destinoRegreso" runat="server" class="flight-airport-code"></span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="span3 span-phone5">
+                        <span id="horaSalida2" runat="server" class="flight-time gamma aa-strong">
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div class="span3 span-phone5">
+                        <span id="horaLlegada2" runat="server" class="flight-time gamma aa-strong">
+                        </span>
+                    </div>
+                </td>
+                <td style="text-align: center; padding-left: 30px">
+                    <span id="duration2" runat="server" class="flight-airport-code"></span>
+                </td>
+                <td style="width: 150px; text-align: center;">
+                    <span  id="escalas2" runat="server" class="flight-airport-code"></span>
+                </td>
+                 <td style="width: 150px; text-align: center;">
+                    <span  id="tipoCabina2" runat="server" class="flight-airport-code"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+      
 
-    <div id="listaVuuelos" runat="server" visible="true" style="margin-top: 10px">
+    <div id="listaVuelos" runat="server" visible="true" style="margin-top: 10px">
         <div style="width: 85%; text-align: right;">
             <label style="width: 150px; text-align: right; margin-bottom: 0px; padding-bottom: 0px; height: 30px">Cabina Principal </label>
             <label style="width: 150px; text-align: right; margin-bottom: 0px; margin-left: 0px; padding-bottom: 0px; height: 30px">Cabina Ejecutiva </label>
@@ -75,7 +114,7 @@
                 <table>
                     <tr>
                         <td>
-                            <div class="alert-danger">No Existen vuelos para este día</div>
+                            <div class="error">No Existen vuelos para ese día</div>
                         </td>
                     </tr>
                 </table>
@@ -106,7 +145,7 @@
                         </td>
                         <td rowspan="2" style="width: 150px; text-align: center;">
                             <div style="margin-left: 20px">
-                                <asp:LinkButton ID="btnComprarEjecutiva" runat="server" CssClass="btn btn-default" OnClick="btnComprarEjecutiva_Click" CommandArgument="<%# Item.IdVuelo %>" >
+                                <asp:LinkButton ID="btnComprarEjecutiva" runat="server" CssClass="btn btn-default" OnClick="btnComprarEjecutiva_Click" CommandArgument="<%# Item.IdVuelo %>">
                                         <span class="content">
                                             <span class="triptype" style="font-size: 14px; font-weight: 500"><%#: Session["tipo"]  %></span>
                                             <span class="amount">
@@ -133,7 +172,7 @@
                             </div>
                         </td>
                         <td style="text-align: center; padding-left: 30px">
-                            <span class="flight-airport-code"><%#:Item.Duration %></span>
+                            <span class="flight-airport-code"><%#: Item.Duration %></span>
                         </td>
                         <td style="width: 150px; text-align: center;">
                             <span class="flight-airport-code"><%#: Item.CantidadEscalas %></span>
@@ -147,7 +186,13 @@
         </asp:ListView>
     </div>
 
+    <asp:Label ID="lblMensajeError" runat="server" Text="" CssClass="error"></asp:Label>
 
-    <asp:Button ID="btnEligirAsientos" runat="server" Text="ElegirAsientos"  Visible="false" />
+    <div>
+        <asp:Button ID="btnEligirAsientos" runat="server" Text="ElegirAsientos"  Visible="false" CssClass="btn btn-primary" />
+
+        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  Visible="false" PostBackUrl="~/Index.aspx" CssClass="btn btn-default" />
+    </div>
+
 
 </asp:Content>
