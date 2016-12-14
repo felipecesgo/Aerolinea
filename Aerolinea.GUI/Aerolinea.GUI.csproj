@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
+    <Content Include="ElegirAsiento.aspx" />
     <Content Include="EligirVuelo.aspx" />
     <Content Include="EstadoVuelos.aspx" />
     <Content Include="Images\arrow.png" />
@@ -75,12 +76,17 @@
     <Content Include="Images\plane-right.png" />
     <Content Include="Images\return.png" />
     <Content Include="Images\search.png" />
+    <Content Include="Images\seat-available%402x.png" />
+    <Content Include="Images\seat-mpp-L%402x.png" />
+    <Content Include="Images\seat-mpp-P%402x.png" />
     <Content Include="Index.aspx" />
     <Content Include="Mantenimientos\MantAgente.aspx" />
     <Content Include="Mantenimientos\MantAvion.aspx" />
+    <Content Include="Mantenimientos\MantenimientoAsientos.aspx" />
     <Content Include="Mantenimientos\MantPiloto.aspx" />
     <Content Include="Mantenimientos\MantRuta.aspx" />
     <Content Include="Mantenimientos\MantVuelo.aspx" />
+    <Content Include="Mantenimientos\Queja.aspx" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.min.css" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap.css" />
@@ -129,6 +135,13 @@
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ElegirAsiento.aspx.cs">
+      <DependentUpon>ElegirAsiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElegirAsiento.aspx.designer.cs">
+      <DependentUpon>ElegirAsiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EligirVuelo.aspx.cs">
       <DependentUpon>EligirVuelo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +177,13 @@
     <Compile Include="Mantenimientos\MantAvion.aspx.designer.cs">
       <DependentUpon>MantAvion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\MantenimientoAsientos.aspx.cs">
+      <DependentUpon>MantenimientoAsientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MantenimientoAsientos.aspx.designer.cs">
+      <DependentUpon>MantenimientoAsientos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\MantPiloto.aspx.cs">
       <DependentUpon>MantPiloto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,6 +204,13 @@
     </Compile>
     <Compile Include="Mantenimientos\MantVuelo.aspx.designer.cs">
       <DependentUpon>MantVuelo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Queja.aspx.cs">
+      <DependentUpon>Queja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Queja.aspx.designer.cs">
+      <DependentUpon>Queja.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

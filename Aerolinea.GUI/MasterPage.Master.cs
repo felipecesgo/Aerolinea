@@ -12,7 +12,7 @@ namespace Aerolinea.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-         
+
             string currentPage = Request.Url.AbsolutePath;
             if (currentPage.Contains("Login"))
             {
@@ -22,7 +22,7 @@ namespace Aerolinea.GUI
 
             //var usuarioTest = new Agente() { Nombre = "Felipe", Apellido = "Cespedes", Usuario = "lfcg", Contrasena = "123", IdRol = 1 };
             //Session.Add("usuario", usuarioTest);
-                                      
+
             if (Session["usuario"] != null)
             {
                 var usuario = (Agente)Session["usuario"];
@@ -77,35 +77,86 @@ namespace Aerolinea.GUI
                         Selected = currentPage.Contains("MantVuelo.aspx")
                     };
                     mnuPrincipal.Items.Add(menuVuelo);
-                }
-            }
-            else
-            {
-                if (!currentPage.Contains("Login"))
+                
+                var menuQueja = new MenuItem
                 {
-                    mnuPrincipal.Items.Clear();
-                    var menuIndex = new MenuItem
-                    {
-                        Value = "ReservarVuelo",
-                        Text = "Reserve su vuelo",
-                        NavigateUrl = "~/Index.aspx",
-                        Selected = currentPage.Contains("Index.aspx")
-                    };
-                    mnuPrincipal.Items.Add(menuIndex);
-                    var menuEstadoVuelos = new MenuItem
-                    {
-                        Value = "EstadoVuelos",
-                        Text = "Estado de vuelos",
-                        NavigateUrl = "~/EstadoVuelos.aspx",
-                        Selected = currentPage.Contains("EstadoVuelos.aspx")
-                    };
-                    mnuPrincipal.Items.Add(menuEstadoVuelos);
-                }
-            }
+                    Value = "Queja",
+                    Text = "Quejas",
+                    NavigateUrl = "~/Mantenimientos/Queja.aspx",
+                    Selected = currentPage.Contains("Queja.aspx")
+                };
+                mnuPrincipal.Items.Add(menuQueja);
 
-            foreach (MenuItem item in mnuPrincipal.Items)
-            {
-                item.Selected = item.NavigateUrl.Contains(currentPage);
+                    var menuAsientos = new MenuItem
+                    {
+                        Value = "Asientos",
+                        Text = "Asientos",
+                        NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
+                        Selected = currentPage.Contains("mantenimientoAsientos.aspx")
+                    };
+                    mnuPrincipal.Items.Add(menuAsientos);
+                }
+            else if (usuario.IdRol == 2)
+                {
+                    {
+                        if (!currentPage.Contains("Login"))
+                        {
+                            mnuPrincipal.Items.Clear();
+                            var menuIndex = new MenuItem
+                            {
+                                Value = "ReservarVuelo",
+                                Text = "Reserve su vuelo",
+                                NavigateUrl = "~/Index.aspx",
+                                Selected = currentPage.Contains("Index.aspx")
+                            };
+                            mnuPrincipal.Items.Add(menuIndex);
+                            var menuEstadoVuelos = new MenuItem
+                            {
+                                Value = "EstadoVuelos",
+                                Text = "Estado de vuelos",
+                                NavigateUrl = "~/EstadoVuelos.aspx",
+                                Selected = currentPage.Contains("EstadoVuelos.aspx")
+                            };
+                            mnuPrincipal.Items.Add(menuEstadoVuelos);
+                        }
+                        var menuAsientos = new MenuItem
+                        {
+                            Value = "Asientos",
+                            Text = "Asientos",
+                            NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
+                            Selected = currentPage.Contains("mantenimientoAsientos.aspx")
+                        };
+                        mnuPrincipal.Items.Add(menuAsientos);
+                    }
+                }
+                else if (usuario.IdRol == 3)
+                            {
+                                {
+                                    if (!currentPage.Contains("Login"))
+                                    {
+                                        mnuPrincipal.Items.Clear();
+                                        var menuIndex = new MenuItem
+                                        {
+                                            Value = "ReservarVuelo",
+                                            Text = "Reserve su vuelo",
+                                            NavigateUrl = "~/Index.aspx",
+                                            Selected = currentPage.Contains("Index.aspx")
+                                        };
+                            var menuAsientos = new MenuItem
+                            {
+                                Value = "Asientos",
+                                Text = "Asientos",
+                                NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
+                                Selected = currentPage.Contains("mantenimientoAsientos.aspx")
+                            };
+                            mnuPrincipal.Items.Add(menuAsientos);
+                        }
+                                }
+                                foreach (MenuItem item in mnuPrincipal.Items)
+                                {
+                                    item.Selected = item.NavigateUrl.Contains(currentPage);
+                                }
+                }
             }
         }
 

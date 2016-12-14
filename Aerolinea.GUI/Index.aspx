@@ -60,8 +60,8 @@
             <tr>
                 <td colspan="4">
                     <asp:RadioButtonList ID="rblTipoViaje" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem Selected="True" Value="1" style="margin-right:15px;">Ida y vuelta</asp:ListItem>
-                        <asp:ListItem Value="2">S&#243;lo ida</asp:ListItem>
+                        <asp:ListItem Selected="True" Value="Ida y vuelta" style="margin-right:15px;">Ida y vuelta</asp:ListItem>
+                        <asp:ListItem Value="Solo ida">S&#243;lo ida</asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
             </tr>

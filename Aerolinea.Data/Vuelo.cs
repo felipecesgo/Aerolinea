@@ -29,6 +29,8 @@ namespace Aerolinea.Data
 
         public int Escalas { get; set; }
 
+        public string EstadoAsientos { get; set; }
+
        [Ignore]
         public Ruta Ruta { get; set; }
 
@@ -52,9 +54,13 @@ namespace Aerolinea.Data
            {
                if (Escalas == 0)
                    return "Sin Escalas";
+               if (Escalas == 1)
+                   return "Una Escala";
                else
                    return string.Format("{0} Escalas", Escalas);
            }
        }
+
+
     }
 }

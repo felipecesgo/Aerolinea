@@ -5,106 +5,149 @@
     <title>Eligir Vuelo</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <asp:Label runat="server" ID="lblTitle" Text="Elegir vuelo" CssClass="title"></asp:Label>
-    
+    <asp:Label runat="server" ID="lblTitle" Text="Elegir vuelo" CssClass="title"></asp:Label>
     <br />
     <span class="depart-return">Salida </span>
     <asp:Label ID="lblOrigen" runat="server" CssClass="city-pair"></asp:Label>
     <br />
     <asp:Label ID="lblFechaSalida" runat="server" CssClass="date-info"></asp:Label>
-    <br />
-    <div style="margin-top: 20px">
+
+    <div id="vueloSalida" runat="server" visible="false">
+
+        <table>
+            <tr>
+                <td>
+                    <span id="origenSalida" runat="server" class="flight-airport-code"></span>
+                </td>
+                <td rowspan="3" style="width: 100px; text-align: center;">
+                    <image src="Images/arrowright.jpg" style="width: 30px; height: 30px; margin: auto;" />
+                </td>
+                <td><span id="destinoSalida" runat="server" class="flight-airport-code"></span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="span3 span-phone5">
+                        <span id="horaSalida1" runat="server" class="flight-time gamma aa-strong">
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div class="span3 span-phone5">
+                        <span id="horaLlegada1" runat="server" class="flight-time gamma aa-strong">
+                        </span>
+                    </div>
+                </td>
+                <td style="text-align: center; padding-left: 30px">
+                    <span id="duration" runat="server" class="flight-airport-code"></span>
+                </td>
+                <td style="width: 150px; text-align: center;">
+                    <span  id="escalas" runat="server" class="flight-airport-code"></span>
+                </td>
+                 <td style="width: 150px; text-align: center;">
+                    <span  id="tipoCabina" runat="server" class="flight-airport-code"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="titulosVuelta" runat="server" visible="false">
+        <span class="depart-return">Regreso</span>
+        <asp:Label ID="lblDestino" runat="server" CssClass="city-pair"></asp:Label>
+        <br />
+        <asp:Label ID="lblFechaRegreso" runat="server" CssClass="date-info"></asp:Label>
+    </div>
+
+
+    <div id="listaVuuelos" runat="server" visible="true" style="margin-top: 10px">
+        <div style="width: 85%; text-align: right;">
+            <label style="width: 150px; text-align: right; margin-bottom: 0px; padding-bottom: 0px; height: 30px">Cabina Principal </label>
+            <label style="width: 150px; text-align: right; margin-bottom: 0px; margin-left: 0px; padding-bottom: 0px; height: 30px">Cabina Ejecutiva </label>
+            <br />
+            <hr style="border: 0px; border-top: 1px solid gray; margin-top: 0px; padding-top: 0px" />
+        </div>
         <asp:ListView ID="lvVuelos" runat="server"
             GroupItemCount="1"
             ItemType="Aerolinea.Data.Vuelo" DataKeyNames="IdVuelo">
             <EmptyDataTemplate>
                 <table>
                     <tr>
-                        <td> <div class="alert-danger">No Existen vuelos para este día</div> </td>
+                        <td>
+                            <div class="alert-danger">No Existen vuelos para este día</div>
+                        </td>
                     </tr>
                 </table>
             </EmptyDataTemplate>
-            <EmptyItemTemplate>
-                <td />
-            </EmptyItemTemplate>
-            <GroupTemplate>
-                <tr id="itemPlaceholderContainer" runat="server">
-                    <td id="itemPlaceholder" runat="server"></td>
-                </tr>
-            </GroupTemplate>
             <ItemTemplate>
-                <td id="Td1" runat="server">
-                       <table>
-                           <tr>
-                              <td>
-                                  <span class="flight-airport-code"> <%#: Item.Ruta.Origen %></span>
-                              </td>
-                              <td rowspan="3" style="width: 100px; text-align: center;  "> 
-                                  <image src="Images/arrowright.jpg" style="width: 30px; height: 30px;  margin: auto;" />
-                              </td>
-                               <td><span class="flight-airport-code"> <%#: Item.Ruta.Destino %></span></td>
-                 
-                           </tr>
-                           <tr>
-                               <td>
-                                    <div class="span3 span-phone5">
-	                                    <span class="flight-time gamma aa-strong">
-		                                    <%#: Item.FechaSalida.ToShortTimeString() %>
-	                                    </span>
-                                    </div>
-                               </td>
-                               <td>
-                                    <div class="span3 span-phone5">
-	                                    <span class="flight-time gamma aa-strong">
-		                                    <%#: Item.FechaLlegada.ToShortTimeString() %>
-	                                    </span>
-                                    </div>
-                               </td>
-                               <td style="text-align: center; padding-left: 30px">
-                                   <span class="flight-airport-code"> <%#:  Item.Duration %></span>
-                               </td>
-                               <td style="width: 150px; text-align: center;">
-                                   <span class="flight-airport-code"> <%#: Item.CantidadEscalas %></span>
-                               </td>
-
-                                <td style="text-align: center; margin-left: 15px;">
-                                    <span class="flight-time gamma aa-strong"> 
-                                        <%#: Item.Ruta.Tarifa.ToString("$ 0") %>
-                                    </span>
-                                </td>
-                               <td style="width: 200px; text-align: center;">
-                                   <div style="margin-left: 20px">
-                                       <asp:Button runat="server" CssClass="btn btn-success" ID="btnVueloSalida" Text="Eligir este vuelo" OnClick="btnVueloSalida_Click" />
-                                   </div>
-                               </td>
-                           </tr>
-                           <tr>
-
-
-                           </tr>
-                       </table>
-                </td>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <table style="width: 100%;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
-                                    <tr id="groupPlaceholder"></tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                        <tr></tr>
-                    </tbody>
+                <table style="width: 85%">
+                    <tr>
+                        <td>
+                            <span class="flight-airport-code"><%#: Item.Ruta.Origen %></span>
+                        </td>
+                        <td rowspan="3" style="width: 100px; text-align: center;">
+                            <image src="Images/arrowright.jpg" style="width: 30px; height: 30px; margin: auto;" />
+                        </td>
+                        <td><span class="flight-airport-code"><%#: Item.Ruta.Destino %></span></td>
+                        <td></td>
+                        <td></td>
+                        <td rowspan="2" style="width: 150px; text-align: center;">
+                            <div style="margin-left: 20px">
+                                <asp:LinkButton ID="btnComprarPrincipal" runat="server" CssClass="btn btn-default" OnClick="btnComprarPrincipal_Click" CommandArgument="<%# Item.IdVuelo %>">
+                                        <span class="content">
+                                            <span class="triptype" style="font-size: 14px; font-weight: 500"><%#: Session["tipo"]  %></span>
+                                            <span class="amount">
+                                                <span class="price"> <%#: Item.Ruta.Tarifa.ToString("$ 0") %></span>
+                                            </span>
+                                        </span>
+                                </asp:LinkButton>
+                            </div>
+                        </td>
+                        <td rowspan="2" style="width: 150px; text-align: center;">
+                            <div style="margin-left: 20px">
+                                <asp:LinkButton ID="btnComprarEjecutiva" runat="server" CssClass="btn btn-default" OnClick="btnComprarEjecutiva_Click" CommandArgument="<%# Item.IdVuelo %>" >
+                                        <span class="content">
+                                            <span class="triptype" style="font-size: 14px; font-weight: 500"><%#: Session["tipo"]  %></span>
+                                            <span class="amount">
+                                                <span class="price"> <%#: Item.Ruta.Tarifa.ToString("$ 0") %></span>
+                                            </span>
+                                        </span>
+                                </asp:LinkButton>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="span3 span-phone5">
+                                <span class="flight-time gamma aa-strong">
+                                    <%#: Item.FechaSalida.ToShortTimeString() %>
+                                </span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="span3 span-phone5">
+                                <span class="flight-time gamma aa-strong">
+                                    <%#: Item.FechaLlegada.ToShortTimeString() %>
+                                </span>
+                            </div>
+                        </td>
+                        <td style="text-align: center; padding-left: 30px">
+                            <span class="flight-airport-code"><%#:Item.Duration %></span>
+                        </td>
+                        <td style="width: 150px; text-align: center;">
+                            <span class="flight-airport-code"><%#: Item.CantidadEscalas %></span>
+                        </td>
+                    </tr>
                 </table>
-            </LayoutTemplate>
+                <div style="text-align: left; width: 85%">
+                    <hr style="border: 0px; border-top: 1px solid gray;" />
+                </div>
+            </ItemTemplate>
         </asp:ListView>
     </div>
 
-                 
+
+    <asp:Button ID="btnEligirAsientos" runat="server" Text="ElegirAsientos"  Visible="false" />
 
 </asp:Content>

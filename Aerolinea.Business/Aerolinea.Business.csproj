@@ -45,13 +45,17 @@
     <Compile Include="Clases\AvionesCRUD.cs" />
     <Compile Include="Clases\MD5Generator.cs" />
     <Compile Include="Clases\PilotosCRUD.cs" />
+    <Compile Include="Clases\ReservaCRUD.cs" />
     <Compile Include="Clases\RolesCRUD.cs" />
+    <Compile Include="Clases\TiquetesCRUD.cs" />
     <Compile Include="Clases\VuelosCRUD.cs" />
     <Compile Include="Interfaces\IAgentesCRUD.cs" />
     <Compile Include="Interfaces\IAvionesCRUD.cs" />
     <Compile Include="Interfaces\IPilotosCRUD.cs" />
+    <Compile Include="Interfaces\IReserva.cs" />
     <Compile Include="Interfaces\IRolesCRUD.cs" />
     <Compile Include="Interfaces\IRutasCRUD.cs" />
+    <Compile Include="Interfaces\ITiquetesCRUD.cs" />
     <Compile Include="Interfaces\IVuelosCRUD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\RutasCRUD.cs" />
