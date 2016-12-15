@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<br />
+    <br />
 <div class="row"  style="width: 42%; margin:0 auto;">
 
     <br />
@@ -29,6 +29,13 @@
                 </label>
             </div>
             <asp:Button ID="bntIngresar" runat="server" Text="Iniciar sesión" OnClick="bntIngresar_Click" CssClass="btn btn-primary btn-block"></asp:Button>
+              <br />
+              <asp:Label  runat="server" Text="Eres nuevo? "></asp:Label>
+             <asp:LinkButton runat="server" PostBackUrl="~/Account/NuevoUsuario.aspx">Registrese aqui</asp:LinkButton>
+              <br />
+              <br />
+              <br />
+           
         </div>
 
 

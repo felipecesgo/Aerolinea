@@ -22,18 +22,20 @@ namespace Aerolinea.GUI
                 var regreso = Session["regreso"] != null ? Convert.ToDateTime(Session["regreso"].ToString()) : new DateTime();
                 var tipo = Session["tipo"] != null ? Session["tipo"].ToString() : "";
 
-                lblOrigen.Text = origen;
+                lblOrigen.Text = origen + " a " + destino;
                 lblFechaSalida.Text = salida.ToLongDateString();
 
                 var fechasalida = salida.ToShortDateString();
                 var vuelosRepository = new VuelosCRUD();
-                var vuelosSalida = vuelosRepository.Listar().Where(x => x.Ruta.Origen == origen && x.Ruta.Destino == destino && x.FechaSalida.ToShortDateString() == fechasalida);
+                var vuelosSalida = vuelosRepository.Listar().Where(x => x.Ruta.Origen == origen && x.Ruta.Destino == destino && x.FechaSalida.ToShortDateString() == fechasalida).ToList();
 
                 if (vuelosSalida.Count() == 0)
                 {
                     lblMensajeError.Text = string.Format("No se encontraron vuelos de {0} a {1} para el día {2}.", origen, destino, fechasalida);
                     return;
                 }
+
+                vuelosSalida.ForEach(x => x.Ruta.TarifaEjecutiva = x.Ruta.Tarifa * (decimal)1.2);
 
                 if (tipo == "Ida y vuelta")
                 {
@@ -44,6 +46,8 @@ namespace Aerolinea.GUI
                         lblMensajeError.Text = string.Format("No se encontraron vuelos de {0} a {1} para el día {2}.", destino, origen, fechaRegreso);
                         return;
                     }
+                    vuelosSalida.ForEach(x => x.Ruta.Tarifa = x.Ruta.Tarifa * (decimal)1.8);
+                    vuelosSalida.ForEach(x => x.Ruta.TarifaEjecutiva = x.Ruta.TarifaEjecutiva * (decimal)1.8);
                 }
 
                 lvVuelos.DataSource = vuelosSalida;
@@ -63,7 +67,7 @@ namespace Aerolinea.GUI
 
         protected void btnComprarEjecutiva_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+            LinkButton btn = (LinkButton)sender;
             int idVuelo = Convert.ToInt32(btn.CommandArgument);
 
             cargarInfoVuelo(idVuelo, "Cabina Ejecutiva");
@@ -79,6 +83,7 @@ namespace Aerolinea.GUI
             {
                 lblTitle.Text = "Usted eligió";
                 tipoCabina.InnerHtml = cabina;
+                Session.Add("Cabina", cabina);
                 mostrarVueloSalida(vuelo);
                 listaVuelos.Visible = false;
                 btnEligirAsientos.Visible = true;
@@ -89,21 +94,26 @@ namespace Aerolinea.GUI
                 {
                     lblTitle.Text = "Usted eligió";
                     tipoCabina.InnerHtml = cabina;
+                    Session.Add("Cabina", cabina);
                     mostrarVueloSalida(vuelo);
                     var regreso = Session["regreso"] != null ? Convert.ToDateTime(Session["regreso"].ToString()) : new DateTime();
 
-                    lblDestino.Text = vuelo.Ruta.Destino;
+                    lblDestino.Text =  vuelo.Ruta.Destino + " a " +  vuelo.Ruta.Origen;
                     lblFechaRegreso.Text = regreso.ToLongDateString();
                     titulosVuelta.Visible = true;
 
                     var fechaRegreso = regreso.ToShortDateString();
-                    var vuelosRegreso = vuelosRepository.Listar().Where(x => x.Ruta.Origen == vuelo.Ruta.Destino && x.Ruta.Destino == vuelo.Ruta.Origen && x.FechaLlegada.ToShortDateString() == fechaRegreso);
+                    var vuelosRegreso = vuelosRepository.Listar().Where(x => x.Ruta.Origen == vuelo.Ruta.Destino && x.Ruta.Destino == vuelo.Ruta.Origen && x.FechaLlegada.ToShortDateString() == fechaRegreso).ToList();
+                    vuelosRegreso.ForEach(x => x.Ruta.TarifaEjecutiva = x.Ruta.Tarifa * (decimal)1.2);
+
+                    vuelosRegreso.ForEach(x => x.Ruta.Tarifa = x.Ruta.Tarifa * (decimal)1.8);
+                    vuelosRegreso.ForEach(x => x.Ruta.TarifaEjecutiva = x.Ruta.TarifaEjecutiva * (decimal)1.8);
                     lvVuelos.DataSource = vuelosRegreso;
                     lvVuelos.DataBind();
                 }
                 else
                 {
-                    tipoCabina2.InnerHtml = "Cabina Ejecutiva";
+                    tipoCabina2.InnerHtml = cabina;
                     mostrarVueloRegreso(vuelo);
                     listaVuelos.Visible = false;
                     btnEligirAsientos.Visible = true;

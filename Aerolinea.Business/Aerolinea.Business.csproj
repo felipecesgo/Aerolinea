@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Clases\AgentesCRUD.cs" />
     <Compile Include="Clases\AvionesCRUD.cs" />
+    <Compile Include="Clases\ClientesCRUD.cs" />
     <Compile Include="Clases\MD5Generator.cs" />
     <Compile Include="Clases\PilotosCRUD.cs" />
     <Compile Include="Clases\ReservaCRUD.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Clases\VuelosCRUD.cs" />
     <Compile Include="Interfaces\IAgentesCRUD.cs" />
     <Compile Include="Interfaces\IAvionesCRUD.cs" />
+    <Compile Include="Interfaces\IClienteCRUD.cs" />
     <Compile Include="Interfaces\IPilotosCRUD.cs" />
     <Compile Include="Interfaces\IReserva.cs" />
     <Compile Include="Interfaces\IRolesCRUD.cs" />

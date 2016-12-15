@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="EligirVuelo.aspx.cs" Inherits="Aerolinea.GUI.EligirVuelo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ElegirVuelo.aspx.cs" Inherits="Aerolinea.GUI.EligirVuelo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/EleccionVuelo.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
     </div>
 
     <div id="titulosVuelta" runat="server" visible="false">
-        <span class="depart-return">Regreso</span>
+        <span class="depart-return">Retorno</span>
         <asp:Label ID="lblDestino" runat="server" CssClass="city-pair"></asp:Label>
         <br />
         <asp:Label ID="lblFechaRegreso" runat="server" CssClass="date-info"></asp:Label>
@@ -101,7 +101,7 @@
       
 
     <div id="listaVuelos" runat="server" visible="true" style="margin-top: 10px">
-        <div style="width: 85%; text-align: right;">
+        <div style="width: 95%; text-align: right;">
             <label style="width: 150px; text-align: right; margin-bottom: 0px; padding-bottom: 0px; height: 30px">Cabina Principal </label>
             <label style="width: 150px; text-align: right; margin-bottom: 0px; margin-left: 0px; padding-bottom: 0px; height: 30px">Cabina Ejecutiva </label>
             <br />
@@ -120,7 +120,7 @@
                 </table>
             </EmptyDataTemplate>
             <ItemTemplate>
-                <table style="width: 85%">
+                <table style="width: 95%">
                     <tr>
                         <td>
                             <span class="flight-airport-code"><%#: Item.Ruta.Origen %></span>
@@ -149,7 +149,7 @@
                                         <span class="content">
                                             <span class="triptype" style="font-size: 14px; font-weight: 500"><%#: Session["tipo"]  %></span>
                                             <span class="amount">
-                                                <span class="price"> <%#: Item.Ruta.Tarifa.ToString("$ 0") %></span>
+                                                <span class="price"> <%#: Item.Ruta.TarifaEjecutiva.ToString("$ 0") %></span>
                                             </span>
                                         </span>
                                 </asp:LinkButton>
@@ -179,7 +179,7 @@
                         </td>
                     </tr>
                 </table>
-                <div style="text-align: left; width: 85%">
+                <div style="text-align: left; width: 95%">
                     <hr style="border: 0px; border-top: 1px solid gray;" />
                 </div>
             </ItemTemplate>
@@ -188,10 +188,10 @@
 
     <asp:Label ID="lblMensajeError" runat="server" Text="" CssClass="error"></asp:Label>
 
-    <div>
-        <asp:Button ID="btnEligirAsientos" runat="server" Text="ElegirAsientos"  Visible="false" CssClass="btn btn-primary" />
+    <div style="margin-top: 20px">
+        <asp:Button ID="btnEligirAsientos" runat="server" Text="ElegirAsientos"  Visible="false" CssClass="btn btn-primary" PostBackUrl="~/ElegirAsiento.aspx" />
 
-        <asp:Button ID="btnRegresar" runat="server" Text="Regresar"  Visible="false" PostBackUrl="~/Index.aspx" CssClass="btn btn-default" />
+        <asp:Button ID="btnRegresar" runat="server" Text="Cancelar"  Visible="true" PostBackUrl="~/Index.aspx" CssClass="btn btn-default" />
     </div>
 
 
