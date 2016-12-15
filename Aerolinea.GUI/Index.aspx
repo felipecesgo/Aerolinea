@@ -71,7 +71,7 @@
                     <label for="ddlOrigen" class="depart" style="margin-top: 6px">Origen </label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control" AutoPostBack="true"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlOrigen" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlOrigen_SelectedIndexChanged"></asp:DropDownList>
                 </td>
                 <td>
                     <label for="ddlDestino" class="return" style="margin-top: 6px">Destino</label>
@@ -112,6 +112,14 @@
                <td colspan="2" style="text-align: center;  margin: 30px 20px 5px 20px; padding-top: 25px" > 
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar Vuelos" Width="190px" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />
                </td>
+            </tr>
+            <tr>
+                <td colspan="5"> 
+                    <asp:Label ID="lblError" runat="server" Text="" CssClass="error">
+
+                    </asp:Label>
+                   
+                </td>
             </tr>
          
         </table>

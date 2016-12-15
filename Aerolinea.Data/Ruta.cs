@@ -20,5 +20,8 @@ namespace Aerolinea.Data
 
         public byte[] Imagen { get; set; }
 
+        [Ignore]
+        public decimal TarifaEjecutiva { get; set; }
+
     }
 }

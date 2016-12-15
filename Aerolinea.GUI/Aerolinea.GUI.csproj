@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aerolinea.GUI</RootNamespace>
     <AssemblyName>Aerolinea.GUI</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -62,8 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
+    <Content Include="ConfirmarReserva.aspx" />
     <Content Include="ElegirAsiento.aspx" />
-    <Content Include="EligirVuelo.aspx" />
+    <Content Include="ElegirVuelo.aspx" />
     <Content Include="EstadoVuelos.aspx" />
     <Content Include="Images\arrow.png" />
     <Content Include="Images\arrowright.jpg" />
@@ -141,6 +142,13 @@
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmarReserva.aspx.cs">
+      <DependentUpon>ConfirmarReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmarReserva.aspx.designer.cs">
+      <DependentUpon>ConfirmarReserva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ElegirAsiento.aspx.cs">
       <DependentUpon>ElegirAsiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,12 +156,12 @@
     <Compile Include="ElegirAsiento.aspx.designer.cs">
       <DependentUpon>ElegirAsiento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EligirVuelo.aspx.cs">
-      <DependentUpon>EligirVuelo.aspx</DependentUpon>
+    <Compile Include="ElegirVuelo.aspx.cs">
+      <DependentUpon>ElegirVuelo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EligirVuelo.aspx.designer.cs">
-      <DependentUpon>EligirVuelo.aspx</DependentUpon>
+    <Compile Include="ElegirVuelo.aspx.designer.cs">
+      <DependentUpon>ElegirVuelo.aspx</DependentUpon>
     </Compile>
     <Compile Include="EstadoVuelos.aspx.cs">
       <DependentUpon>EstadoVuelos.aspx</DependentUpon>

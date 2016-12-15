@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aerolinea.Data;
 using Aerolinea.DataAccess;
+using Aerolinea.Business.Clases;
 
 namespace Aerolinea.Business
 {
@@ -56,10 +57,13 @@ namespace Aerolinea.Business
 
         private Repository<Vuelo> vuelos;
         private RutasCRUD rutas;
+        private AvionesCRUD aviones;
+
         public VuelosCRUD()
         {
             vuelos = new Repository<Vuelo>();
             rutas = new RutasCRUD();
+            aviones = new AvionesCRUD();
         }
 
         public List<Vuelo> Listar()
@@ -67,8 +71,10 @@ namespace Aerolinea.Business
 
             var listavuelos = vuelos.GetAll();
             listavuelos.ForEach(x => x.Ruta = rutas.BuscarRuta(x.IdRuta));
+            listavuelos.ForEach(x => x.Avion = aviones.Buscar(x.IdAvion));
             return listavuelos;
         }
+
 
         public void Guardar(Vuelo vuelo)
         {
@@ -84,6 +90,7 @@ namespace Aerolinea.Business
         {
             var vuelo = vuelos.Get(x => x.IdVuelo == idVuelo).FirstOrDefault();
             vuelo.Ruta = rutas.BuscarRuta(vuelo.IdRuta);
+            vuelo.Avion = aviones.Buscar(vuelo.IdAvion);
             return vuelo;
         }
 

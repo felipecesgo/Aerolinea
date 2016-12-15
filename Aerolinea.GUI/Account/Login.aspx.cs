@@ -22,42 +22,82 @@ namespace Aerolinea.GUI.Account
             userError.Visible = false;
             passwdError.Visible = false;
             loginErrorMsg.Visible = false;
-            
-            try
+
+            var loginCliente = Session["LoginCliente"] != null ? Convert.ToBoolean(Session["LoginCliente"]) : false;
+
+            if (loginCliente)
             {
+                try
+                {
 
-                var agentes = new AgentesCRUD();
-                var user = agentes.BuscarAgente(username.Value);
-                 
-                if (user == null)
-                {
-                    userError.Visible = true;
-                    userError.InnerHtml = "Nombre de Usuario Incorrecto.";
-                    return;
-                }
+                    var agentes = new AgentesCRUD();
+                    var user = agentes.BuscarAgente(username.Value);
 
-                if (user.Contrasena.Equals(password.Value))
-                {
-                    user.Contrasena = "";
-                    Session.Add("usuario", user);
-                    FormsAuthentication.SetAuthCookie(user.Nombre, remember.Checked);
-                    Response.Redirect("../Mantenimientos/MantRuta.aspx");
+                    if (user == null)
+                    {
+                        userError.Visible = true;
+                        userError.InnerHtml = "Nombre de Usuario Incorrecto.";
+                        return;
+                    }
+
+                    if (user.Contrasena.Equals(password.Value))
+                    {
+                        user.Contrasena = "";
+                        Session.Add("usuario", user);
+                        FormsAuthentication.SetAuthCookie(user.Nombre, remember.Checked);
+                        Response.Redirect("../Mantenimientos/MantRuta.aspx");
+                    }
+                    else
+                    {
+                        passwdError.Visible = true;
+                        passwdError.InnerHtml = "La contraseña es incorrecta.";
+                        return;
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    passwdError.Visible = true;
-                    passwdError.InnerHtml = "La contraseña es incorrecta.";
-                    return;
+                    loginErrorMsg.Visible = true;
+                    loginErrorMsg.InnerHtml = string.Format("Error Inesperado: {0}", ex.Message);
+                }
+            }
+            else
+            {
+                try
+                {
+
+                    var agentes = new AgentesCRUD();
+                    var user = agentes.BuscarAgente(username.Value);
+
+                    if (user == null)
+                    {
+                        userError.Visible = true;
+                        userError.InnerHtml = "Nombre de Usuario Incorrecto.";
+                        return;
+                    }
+
+                    if (user.Contrasena.Equals(password.Value))
+                    {
+                        user.Contrasena = "";
+                        Session.Add("usuario", user);
+                        FormsAuthentication.SetAuthCookie(user.Nombre, remember.Checked);
+                        Response.Redirect("../Mantenimientos/MantRuta.aspx");
+                    }
+                    else
+                    {
+                        passwdError.Visible = true;
+                        passwdError.InnerHtml = "La contraseña es incorrecta.";
+                        return;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    loginErrorMsg.Visible = true;
+                    loginErrorMsg.InnerHtml = string.Format("Error Inesperado: {0}", ex.Message);
                 }
 
             }
-            catch (Exception ex)
-            {
-                loginErrorMsg.Visible = true;
-                loginErrorMsg.InnerHtml = string.Format("Error Inesperado: {0}", ex.Message);
-            }
-
-            
         }
 
         public bool validateUser(string userPassword, string passwordToValidate)
