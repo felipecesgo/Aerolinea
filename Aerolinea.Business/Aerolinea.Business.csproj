@@ -32,6 +32,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.0.1.29147, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCodeNet.0.3\lib\Gma.QrCodeNet.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +49,7 @@
     <Compile Include="Clases\AvionesCRUD.cs" />
     <Compile Include="Clases\ClientesCRUD.cs" />
     <Compile Include="Clases\MD5Generator.cs" />
+    <Compile Include="Clases\PagosCRUD.cs" />
     <Compile Include="Clases\PilotosCRUD.cs" />
     <Compile Include="Clases\ReservaCRUD.cs" />
     <Compile Include="Clases\RolesCRUD.cs" />
@@ -72,7 +77,6 @@
       <Name>Aerolinea.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -116,13 +116,18 @@ namespace Aerolinea.GUI
             if (lbAsientos.SelectedIndex > -1)
             {
                 lbAsientos.Items.RemoveAt(lbAsientos.SelectedIndex);
+                cargarAsientosOcupados();
             }
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Session.Add("LoginCliente", true);
-            Response.Redirect("Account/Login.aspx");
+
+            var asientosSalida = string.Join(",", lbAsientos.Items);
+            Session.Add("asientosSalida", asientosSalida);
+
+            Response.Redirect("Account/Login.aspx?LoginCliente=true");
 
         }
 

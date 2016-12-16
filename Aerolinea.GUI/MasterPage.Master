@@ -49,7 +49,9 @@
                             </levelmenuitemstyles>
                             <Items>
                                 <asp:MenuItem Selected="true" Text="Reserve su vuelo" NavigateUrl="~/Index.aspx"></asp:MenuItem>
-                                <asp:MenuItem Selected="False" Text="Estado de vuelos" NavigateUrl="~/EstadoVuelos.aspx"></asp:MenuItem>
+                                <asp:MenuItem Selected="False" Text="Estado de vuelos" NavigateUrl="~/EstadoVuelos.aspx">
+                                   
+                                </asp:MenuItem>
                             </Items>
                         </asp:Menu>
 

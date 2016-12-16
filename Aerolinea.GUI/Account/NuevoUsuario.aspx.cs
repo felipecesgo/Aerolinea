@@ -16,61 +16,72 @@ namespace Aerolinea.GUI.Account
         {
             if (!IsPostBack)
             {
-                try
-                {
-                    var crud = new ClientesCRUD();
-                    limpiarForm(crud.ListarCliente());
-                }
-                catch (Exception ex)
-                {
-                    mensaje.Visible = false;
-                    mensajeError.Visible = true;
-                    textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
-                }
+                limpiarForm();
             }
         }
 
-        private void limpiarForm(List<Cliente> datos)
+        private void limpiarForm()
         {
             var allTextBoxes = new List<TextBox>();
-           //FindTextBoxes(Page, allTextBoxes);
+            FindTextBoxes(Page, allTextBoxes);
             foreach (var control in allTextBoxes)
                 control.Text = "";
             ViewState.Add("Id", -1);
             textoMensajeError.InnerHtml = "";
             textoMensaje.InnerHtml = "";
         }
-    
-    protected void Button1_Click(object sender, EventArgs e)
+
+
+    protected void btnRegistrar_Click(object sender, EventArgs e)
+    {
+        try
         {
-            try
+            var cliente = new Cliente();
+            cliente.Nombre = txtNombre.Text;
+            cliente.Apellido = txtApellido.Text;
+            cliente.Cedula = txtCedula.Text;
+            cliente.Telefono = txtTelefono.Text;
+            cliente.Email = txtEmail.Text;
+            cliente.Residencia = txtResidencia.Text;
+            cliente.Usuario = txtUsuario.Text;
+            cliente.Contrasena = txtContrasena.Text;
+
+            var crud = new ClientesCRUD();
+            crud.GuardarCliente(cliente);
+            limpiarForm();
+
+            mensajeError.Visible = false;
+            mensaje.Visible = true;
+            textoMensaje.InnerHtml = "Se ha registrado correctamente.";
+        }
+        catch (Exception ex)
+        {
+            mensaje.Visible = false;
+            mensajeError.Visible = true;
+            textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+        }
+    }
+
+
+    private void FindTextBoxes(Control Parent, List<TextBox> ListOfTextBoxes)
+    {
+        foreach (Control c in Parent.Controls)
+        {
+            if (c.HasControls())
             {
-                var piloto = new Cliente();
-                piloto.IdCliente = (int)ViewState["Id"];
-                piloto.Nombre = TextBox1.Text;
-                piloto.Apellido = TextBox2.Text;
-                piloto.Cedula = TextBox3.Text;
-                piloto.Telefono = TextBox4.Text;
-                piloto.Email = TextBox7.Text;
-                piloto.Residencia = TextBox8.Text;
-                piloto.Usuario = TextBox6.Text;
-                piloto.Contrasena = TextBox9.Text;
-
-                var crud = new ClientesCRUD();
-                crud.GuardarCliente(piloto);
-                limpiarForm(crud.ListarCliente());
-
-                mensajeError.Visible = false;
-                mensaje.Visible = true;
-                textoMensaje.InnerHtml = "Se ha guardado correctamente";
+                FindTextBoxes(c, ListOfTextBoxes);
             }
-            catch (Exception ex)
+            else
             {
-                mensaje.Visible = false;
-                mensajeError.Visible = true;
-                textoMensajeError.InnerHtml = "Ocurrio un error: " + ex.Message;
+                if (c is TextBox)
+                {
+                    ListOfTextBoxes.Add(c as TextBox);
+                }
             }
         }
+    }
+
+
 
     }
 

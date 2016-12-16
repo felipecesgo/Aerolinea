@@ -38,3 +38,4 @@ D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Deb
 D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Aerolinea.Data.dll
 D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\ServiceStack.Interfaces.dll
 D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.Business\bin\Debug\Gma.QrCodeNet.Encoding.dll

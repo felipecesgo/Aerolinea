@@ -88,6 +88,7 @@ namespace Aerolinea.GUI
             Session.Add("salida", salida);
             Session.Add("regreso", regreso);
             Session.Add("pasajeros", numPasajeros);
+         
             Session.Add("tipo", rblTipoViaje.SelectedValue);
             Response.Redirect("ElegirVuelo.aspx");
 

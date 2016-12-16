@@ -44,6 +44,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gma.QrCodeNet.0.4.1.2\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,6 +80,7 @@
     <Content Include="Images\editar.jpg" />
     <Content Include="Images\logo_Aerolineas.gif" />
     <Content Include="Images\NoDisponible.jpg" />
+    <Content Include="Images\payment_logos.jpg" />
     <Content Include="Images\plane-left.png" />
     <Content Include="Images\plane-right.png" />
     <Content Include="Images\return.png" />
@@ -101,6 +106,10 @@
     <Content Include="Scripts\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\bootstrap-3.3.7\scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap-3.3.7\scripts\bootstrap.min.js" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1\jquery-3.1.1.min.js" />
@@ -128,8 +137,10 @@
     <Content Include="Scripts\MessiJS-2.0.1\messi.js" />
     <Content Include="Scripts\MessiJS-2.0.1\messi.min.css" />
     <Content Include="Scripts\MessiJS-2.0.1\messi.min.js" />
+    <Content Include="Scripts\nugetexample.js" />
     <Content Include="Styles\EleccionVuelo.css" />
     <Content Include="Styles\StyleMain.css" />
+    <Content Include="Styles\style_main2.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -160,6 +171,7 @@
     <Compile Include="ConfirmarReserva.aspx.designer.cs">
       <DependentUpon>ConfirmarReserva.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Correos.cs" />
     <Compile Include="ElegirAsiento.aspx.cs">
       <DependentUpon>ElegirAsiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -270,6 +282,7 @@
     <None Include="Scripts\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Scripts\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Scripts\jquery-3.1.1\jquery-3.1.1.min.map" />
     <None Include="Scripts\jquery-3.1.1\jquery-3.1.1.slim.min.map" />
     <None Include="Scripts\jquery-ui-1.12.1\package.json" />

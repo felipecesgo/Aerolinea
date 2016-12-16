@@ -9,7 +9,7 @@
 
             $("input[type='radio']").on('click', function (e) {
                 var value = $(this).val();
-                if (value == "2") {
+                if (value == "Solo ida") {
                     $("#lbRegreso")[0].style.display = 'none';
                     $("#fechaRegreso")[0].style.display = 'none';
                 } else {
@@ -59,10 +59,11 @@
         <table style="padding: 20px; ">
             <tr>
                 <td colspan="4">
-                    <asp:RadioButtonList ID="rblTipoViaje" runat="server" RepeatDirection="Horizontal">
+             <asp:RadioButtonList ID="rblTipoViaje" runat="server" RepeatDirection="Horizontal">
                         <asp:ListItem Selected="True" Value="Ida y vuelta" style="margin-right:15px;">Ida y vuelta</asp:ListItem>
                         <asp:ListItem Value="Solo ida">S&#243;lo ida</asp:ListItem>
                     </asp:RadioButtonList>
+                   
                 </td>
             </tr>
       
@@ -103,11 +104,15 @@
                 </td>
 
                 <td>
+                    <div id="lblregreso" runat="server" visible="true">
                     <label id="lbRegreso" class="regreso">Regreso</label>
+                   </div>
                 </td>
                <td>
+                   <div id="txtregreso" runat="server" visible="true">
                    <asp:HiddenField ID="hdnfechaRegreso"  runat="server" ClientIDMode="Static" />
                    <input id="fechaRegreso" type="text" class="form-control"  style="margin-top: 25px" />
+                    </div>
                </td>
                <td colspan="2" style="text-align: center;  margin: 30px 20px 5px 20px; padding-top: 25px" > 
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar Vuelos" Width="190px" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />

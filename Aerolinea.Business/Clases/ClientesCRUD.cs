@@ -19,9 +19,9 @@ namespace Aerolinea.Business.Clases
             clientes = new Repository<Cliente>();
         }
 
-        public Cliente BuscarCliente(string cedula)
+        public Cliente BuscarCliente(string usuario)
         {
-            var cliente = clientes.Get(x => x.Nombre == cedula).FirstOrDefault();
+            var cliente = clientes.Get(x => x.Usuario == usuario).FirstOrDefault();
             return cliente;
         }
 
@@ -32,7 +32,7 @@ namespace Aerolinea.Business.Clases
 
         public void GuardarCliente(Cliente cliente)
         {
-            //cliente.Save(cliente);
+            clientes.Save(cliente);
         }
 
         public List<Cliente> ListarCliente()

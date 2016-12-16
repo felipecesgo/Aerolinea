@@ -10,6 +10,17 @@ using Aerolinea.Business.Interfaces;
 using Aerolinea.Business;
 using Aerolinea.Business.Clases;
 using Aerolinea.Data;
+//BIBLIOTECAS PARA QR
+using System.Drawing.Imaging;///Agregar biblioteca
+using Gma.QrCodeNet.Encoding;///Agregar biblioteca
+using Gma.QrCodeNet.Encoding.Windows.Render;///Agregar biblioteca
+using System.IO;///Agregar biblioteca
+//BIBLIOTECAS PARA CORREOS
+using System.Net.Mail;///Agregar biblioteca
+using System.Net.Mime;
+using Aerolinea.GUI;
+using System.Text;
+using Aerolinea.GUI.Mantenimientos;
 
 namespace Aerolinea
 {
@@ -84,6 +95,111 @@ namespace Aerolinea
 
         protected void btn_Reservar_Click(object sender, EventArgs e)
         {
+
+            //Aqui se combina se debe llamar los valores CodigoTiquete + Numero Cedula Cliente y concatenarlos
+            string codigoConvertir = "Aqui va la concatenacion";
+            // 
+
+            //Aqui debe venir el correo del cliente que fue asociado o solicitado
+            string correoCliente = "felipe.0692@hotmail.com";
+            Bitmap imagen;
+       
+
+     
+            //ENVIO DE CODIGO QR
+            try
+            {
+                //GENERADOR CODIGO QR
+
+                QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
+                QrCode qrCode = new QrCode();
+                qrEncoder.TryEncode(codigoConvertir, out qrCode);
+
+
+                GraphicsRenderer renderer = new GraphicsRenderer(new FixedCodeSize(400, QuietZoneModules.Zero), Brushes.Black, Brushes.White);
+
+                MemoryStream ms = new MemoryStream();
+
+                renderer.WriteToStream(qrCode.Matrix, ImageFormat.Jpeg, ms);
+                var imageTemporal = new Bitmap(ms);
+                imagen = new Bitmap(imageTemporal, new Size(new Point(200, 200)));
+
+
+                ////GUARDA EN EL DISCO DURO LA IMAGEN(CARPETA DEL PROYECTO)
+                imagen.Save(@"C:\Users\Felipe\Downloads\imagen.jpg", ImageFormat.Jpeg);
+                Correos cr = new Correos();
+                MailMessage mnsj = new MailMessage();
+
+                mnsj.Subject = "Confirmacion Tiquete VejudiFede®";
+                mnsj.To.Add(new MailAddress(correoCliente));
+                mnsj.From = new MailAddress("onepointhd@hotmail.com", "Verito");
+                //mnsj.Body = textBox3.Text;
+
+                /////////////////////////////////////////////////////////////
+                string text = "Hola, necesito hablar con vos ";
+
+                AlternateView plainView =
+                    AlternateView.CreateAlternateViewFromString(text,
+                                            Encoding.UTF8,
+                                            MediaTypeNames.Text.Plain);
+
+
+                // Esta es la vista para clientes que
+                // pueden mostrar contenido HTML...
+
+
+           
+
+                    string html = "<h2>Estimado Cliente:</h2><br/>" +
+                       "Gracias por usar el servicio de Aerolinea VejudiFede®. <br/>" +
+                       "Que disfrute su viaje. <br/><br/>" +
+                       "<img src='cid:imagen'/>";
+
+
+                    LinkedResource img =
+                   new LinkedResource(@"C:\Users\Felipe\Downloads\imagen.jpg",
+                                       MediaTypeNames.Image.Jpeg);
+
+                    AlternateView htmlView =
+                 AlternateView.CreateAlternateViewFromString(html,
+                                         Encoding.UTF8,
+                                         MediaTypeNames.Text.Html);
+
+                    img.ContentId = "imagen";
+                    htmlView.LinkedResources.Add(img);
+
+                    // Por último, vinculamos ambas vistas al mensaje...
+
+                    mnsj.AlternateViews.Add(plainView);
+                    mnsj.AlternateViews.Add(htmlView);
+
+                    /////////////////////////////////////////////////////////////
+
+
+                    cr.MandarCorreo(mnsj);
+              
+
+             
+
+
+                //AQUI VA MENSAJE DEL CORREO SALIO EXITOSAMENTE
+                Response.Write("<script>window.alert('Envio realizado');</script>");
+            }
+            catch (Exception ex)
+            {
+                //AQUI DEBE IR MENSAJE QUE EL MENSAJE NO SE ENVIO
+                Response.Write("<script>window.alert('Envio no realizado');</script>");
+            }
+
+
+
+
+
+
+
+
+
+
             //    try
             //    {
             //        var vuelo = carr.Buscar(Convert.ToInt32(dd_Vuelo1.Text));
@@ -163,5 +279,9 @@ namespace Aerolinea
 
 
         }
+
+
     }
+
+
 }

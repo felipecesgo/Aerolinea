@@ -31,3 +31,4 @@ D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\D
 D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.DataAccess\obj\Debug\Aerolinea.DataAccess.pdb
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Aerolinea.Data.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Aerolinea.Data.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.DataAccess\bin\Debug\Gma.QrCodeNet.Encoding.dll

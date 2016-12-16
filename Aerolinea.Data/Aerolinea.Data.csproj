@@ -29,6 +29,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.0.1.29147, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCodeNet.0.3\lib\Gma.QrCodeNet.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>..\resources\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
@@ -44,6 +48,7 @@
     <Compile Include="Agente.cs" />
     <Compile Include="Avion.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Pago.cs" />
     <Compile Include="Piloto.cs" />
     <Compile Include="Queja.cs" />
     <Compile Include="Reserva.cs" />

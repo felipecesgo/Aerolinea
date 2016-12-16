@@ -13,6 +13,6 @@ namespace Aerolinea.Business.Interfaces
         List<Cliente> ListarCliente();
         void GuardarCliente(Cliente cliente);
         void EliminarCliente(int cedula);
-        Cliente BuscarCliente(string cedula);
+        Cliente BuscarCliente(string usuario);
     }
 }

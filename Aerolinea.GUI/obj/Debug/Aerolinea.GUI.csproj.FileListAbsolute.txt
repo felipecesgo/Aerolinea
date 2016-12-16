@@ -21,3 +21,4 @@ D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Ae
 D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.pdb
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\RdlCompile.cache
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\RdlCompile.compiled
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Gma.QrCodeNet.Encoding.dll

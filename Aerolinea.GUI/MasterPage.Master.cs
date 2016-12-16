@@ -25,6 +25,11 @@ namespace Aerolinea.GUI
             //Session.Add("usuario", usuarioTest);
             if (Session["cliente"] != null)
             {
+                var cliente = (Cliente)Session["cliente"];
+                lbtnLogOut.Text = string.Format("{0} {1} (Cerrar Sesión)", cliente.Nombre, cliente.Apellido);
+                lbtnLogIn.Visible = false;
+                lbtnLogOut.Visible = true;
+
                 mnuPrincipal.Items.Clear();
                 var menuIndex = new MenuItem
                 {
@@ -71,7 +76,7 @@ namespace Aerolinea.GUI
                         Selected = currentPage.Contains("MantAgente.aspx")
                     };
                     mnuPrincipal.Items.Add(menuAgentes);
-
+                
                     var menuAvion = new MenuItem
                     {
                         Value = "Aviones",
@@ -116,6 +121,7 @@ namespace Aerolinea.GUI
                         Selected = currentPage.Contains("mantenimientoAsientos.aspx")
                     };
 
+            
                     mnuPrincipal.Items.Add(menuAsientos);
                 }
                 else if (usuario.IdRol == 2)

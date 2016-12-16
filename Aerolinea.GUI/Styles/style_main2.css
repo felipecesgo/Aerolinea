@@ -1,0 +1,29 @@
+﻿
+
+
+.Subtitle
+{
+   font-size: 12px; 
+   font-weight: bold;
+}
+
+.formText
+{
+   font-size: 11px;    
+    margin-bottom: 12px;
+}
+
+.textInput
+{
+   font-size: 12px;
+   width: 300px;   
+   margin-bottom: 15px;
+}
+
+.ErrorInput
+{
+   font-size: 11px;
+   color: Red;  
+}
+
+

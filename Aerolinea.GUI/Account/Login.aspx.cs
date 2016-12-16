@@ -60,15 +60,17 @@ namespace Aerolinea.GUI.Account
                     if (cliente.Contrasena.Equals(password.Value))
                     {
                         cliente.Contrasena = "";
-                        Session.Add("cliente", cliente);
-                        FormsAuthentication.SetAuthCookie(cliente.Nombre, remember.Checked);
-                        var loginCliente = Session["LoginCliente"] != null ? Convert.ToBoolean(Session["LoginCliente"]) : false;
+                        var loginCliente = Request["LoginCliente"] != null ? Convert.ToBoolean(Request["LoginCliente"]) : false;
                         if (loginCliente)
                         {
+                            Session.Add("cliente", cliente);
+                            FormsAuthentication.SetAuthCookie(cliente.Nombre, remember.Checked);
                             Response.Redirect("../ConfirmarReserva.aspx");
                         }
                         else
                         {
+                            Session.Add("cliente", cliente);
+                            FormsAuthentication.SetAuthCookie(cliente.Nombre, remember.Checked);
                             Response.Redirect("../Index.aspx");
                         }
                     }
