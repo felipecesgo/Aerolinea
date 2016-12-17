@@ -129,7 +129,7 @@
 
                     <asp:BoundField DataField="EstadoVuelo" HeaderText="Estado" />
 
-                    <asp:BoundField DataField="CapacidadAsientos" HeaderText="Asientos" />
+                    <%--<asp:BoundField DataField="CapacidadAsientos" HeaderText="Asientos" />--%>
 
                      <asp:TemplateField>
                             <ItemTemplate>

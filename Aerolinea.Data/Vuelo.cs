@@ -29,7 +29,7 @@ namespace Aerolinea.Data
 
         public int Escalas { get; set; }
 
-        public string EstadoAsientos { get; set; }
+        //public string EstadoAsientos { get; set; }
 
        [Ignore]
         public Ruta Ruta { get; set; }

@@ -114,6 +114,7 @@ namespace Aerolinea.GUI
                 else
                 {
                     tipoCabina2.InnerHtml = cabina;
+                    Session.Add("CabinaRegreso", cabina);
                     mostrarVueloRegreso(vuelo);
                     listaVuelos.Visible = false;
                     btnEligirAsientos.Visible = true;

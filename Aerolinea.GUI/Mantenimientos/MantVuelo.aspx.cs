@@ -150,7 +150,7 @@ namespace Aerolinea.GUI.Mantenimientos
                     vuelo.FechaLlegada = Convert.ToDateTime(txtFechaLLegada.Text);
 
                     vuelo.EstadoVuelo = ddlEstadoVuelo.SelectedItem.Text;
-                    vuelo.CapacidadAsientos = Convert.ToInt32(ddlCapacidadAsientos.SelectedValue);
+                    vuelo.CapacidadAsientos = 24;
 
                     vuelo.Escalas = Convert.ToInt32(ddlEscalas.Text); 
 

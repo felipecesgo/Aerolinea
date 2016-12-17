@@ -90,7 +90,6 @@
     <Content Include="Images\seat-mpp-P%402x.png" />
     <Content Include="Images\seat-unavailable%402x.png" />
     <Content Include="Index.aspx" />
-    <Content Include="Mantenimientos\CodigoQr.aspx" />
     <Content Include="Mantenimientos\MantAgente.aspx" />
     <Content Include="Mantenimientos\MantAvion.aspx" />
     <Content Include="Mantenimientos\MantenimientoAsientos.aspx" />
@@ -98,7 +97,6 @@
     <Content Include="Mantenimientos\MantRuta.aspx" />
     <Content Include="Mantenimientos\MantVuelo.aspx" />
     <Content Include="Mantenimientos\Queja.aspx" />
-    <Content Include="Mantenimientos\Reportes.aspx" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap-theme.min.css" />
     <Content Include="Scripts\bootstrap-3.3.7\content\bootstrap.css" />
@@ -200,13 +198,6 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\CodigoQr.aspx.cs">
-      <DependentUpon>CodigoQr.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Mantenimientos\CodigoQr.aspx.designer.cs">
-      <DependentUpon>CodigoQr.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Mantenimientos\MantAgente.aspx.cs">
       <DependentUpon>MantAgente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,13 +247,6 @@
     <Compile Include="Mantenimientos\Queja.aspx.designer.cs">
       <DependentUpon>Queja.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimientos\Reportes.aspx.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Mantenimientos\Reportes.aspx.designer.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,9 +281,6 @@
       <Project>{b4f9b8ee-a158-4e2b-9f5b-a9c14a3a0a0b}</Project>
       <Name>Aerolinea.Data</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Mantenimientos\Report1.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

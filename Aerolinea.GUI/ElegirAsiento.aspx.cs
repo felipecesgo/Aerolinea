@@ -13,7 +13,8 @@ namespace Aerolinea.GUI
     public partial class ElegirAsiento : System.Web.UI.Page
     {
 
-        List<int> asientosOcupados = new List<int>();
+        List<int> asientosOcupadosVueloIda = new List<int>();
+        List<int> asientosOcupadosVueloRegreso = new List<int>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,8 +34,32 @@ namespace Aerolinea.GUI
                 lblPasajeros.Text = pasajeros.ToString();
                 ViewState.Add("pasajeros", pasajeros);
                 var tiquetes = new TiquetesCRUD();
-                asientosOcupados = tiquetes.ListarAsientosOcupados(vuelo.IdVuelo);
-                cargarAsientosOcupados();
+                asientosOcupadosVueloIda = tiquetes.ListarAsientosOcupados(vuelo.IdVuelo);
+                cargarAsientosOcupadosVueloIda();
+                lblInfoVueloIda.Text = string.Format("Información del Vuelo {0} a {1}", vuelo.Ruta.Origen, vuelo.Ruta.Destino);
+
+                if (Session["VueloRegreso"] != null)
+                {
+                    var vueloRegreso = Session["VueloRegreso"] != null ? Session["VueloRegreso"] as Vuelo : new Vuelo();
+                    lblNroVueloRegreso.Text = vueloRegreso.IdVuelo.ToString();
+                    lblOrigenRegreso.Text = vueloRegreso.Ruta.Origen;
+                    lblDestinoRegreso.Text = vueloRegreso.Ruta.Destino;
+                    lblSalidaRegreso.Text = Convert.ToString(vueloRegreso.FechaSalida);
+                    lblLlegadaRegreso.Text = Convert.ToString(vueloRegreso.FechaLlegada);
+                    lblAvionRegreso.Text = vueloRegreso.Avion.Nombre;
+                    lblDuracionRegreso.Text = vueloRegreso.Duration;
+                    var cabinaRegreso = Session["CabinaRegreso"] != null ? Session["CabinaRegreso"].ToString() : "";
+                    lblClaseRegreso.Text = cabinaRegreso;
+                    lblPasajerosRegreso.Text = pasajeros.ToString();
+
+                    asientosOcupadosVueloRegreso = tiquetes.ListarAsientosOcupados(vueloRegreso.IdVuelo);
+                    cargarAsientosOcupadosVueloRegreso();
+                    lblInfoVueloRegreso.Text = string.Format("Información del Vuelo {0} a {1}", vueloRegreso.Ruta.Origen, vueloRegreso.Ruta.Destino);
+                    
+                    PlantillaRegreso.Visible = true;
+                    detalleRegreso.Visible = true;
+                }
+
              
             }
         }
@@ -43,54 +68,52 @@ namespace Aerolinea.GUI
         {
             Button btn = (Button)sender;
 
-
             var numPasajeros = Convert.ToInt32(ViewState["pasajeros"]);
 
             if (lbAsientos.Items.Count < numPasajeros)
             {
-                cargarAsientosOcupados();
+                cargarAsientosOcupadosVueloIda();
 
                 if (btn.BackColor != Color.Red)
                 {
                     btn.BackColor = Color.Blue;
                     int idAsiento = Convert.ToInt32(btn.CommandArgument);
                     lbAsientos.Items.Add(idAsiento.ToString());
+
+                    if (lbAsientos.Items.Count == numPasajeros )
+                    {
+                        if (Session["VueloRegreso"] == null)
+                        {
+                            btnIngresar.Visible = true;
+                        }
+                    }
+                   
                 }
             }
+            
         }
 
-        private void cargarAsientosOcupados()
+        private void cargarAsientosOcupadosVueloIda()
         {
             var allButtons = new List<Button>();
             FindButtons(Plantilla, allButtons);
             foreach (var button in allButtons)
             {
                 var numasiento = int.Parse(button.CommandArgument);
-                var estaOcupado = asientosOcupados.Contains(numasiento);
+                var estaOcupado = asientosOcupadosVueloIda.Contains(numasiento);
                 if (estaOcupado)
-                {
                     button.BackColor = Color.Red;
-                }
                 else
-                {
                     button.BackColor = Color.Green;
-                }
-
                 var seleccionado = lbAsientos.Items.FindByText(numasiento.ToString());
                 if (seleccionado != null)
-                {
                     button.BackColor = Color.Blue;
-                }
-
                 if (lblClase.Text == "Cabina Ejecutiva" && numasiento > 8)
-                {
                     button.Visible = false;
-                }
                 if (lblClase.Text == "Cabina Principal" && numasiento < 9)
-                {
                     button.Visible = false;
-                }
             }
+            btnIngresar.Visible = false;
         }
 
         private void FindButtons(Control Parent, List<Button> ListOfButtons)
@@ -116,21 +139,85 @@ namespace Aerolinea.GUI
             if (lbAsientos.SelectedIndex > -1)
             {
                 lbAsientos.Items.RemoveAt(lbAsientos.SelectedIndex);
-                cargarAsientosOcupados();
+                cargarAsientosOcupadosVueloIda();
             }
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Session.Add("LoginCliente", true);
-
-            var asientosSalida = string.Join(",", lbAsientos.Items);
+            var asientosSalida ="";
+            for(var i = 0; i < lbAsientos.Items.Count; i++)
+                asientosSalida += "," + lbAsientos.Items[0].Value;
+            asientosSalida = asientosSalida.Trim(',');
             Session.Add("asientosSalida", asientosSalida);
+
+            var asientosLlegada = "";
+            for (var i = 0; i < lbAsientosRegreso.Items.Count; i++)
+                asientosLlegada += "," + lbAsientosRegreso.Items[0].Value;
+            asientosLlegada = asientosLlegada.Trim(',');
+            Session.Add("asientosRegreso", asientosLlegada);
 
             Response.Redirect("Account/Login.aspx?LoginCliente=true");
 
         }
 
+
+        protected void btnAsientoRegreso_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            var numPasajeros = Convert.ToInt32(ViewState["pasajeros"]);
+
+            if (lbAsientosRegreso.Items.Count < numPasajeros)
+            {
+                cargarAsientosOcupadosVueloRegreso();
+
+                if (btn.BackColor != Color.Red)
+                {
+                    btn.BackColor = Color.Blue;
+                    int idAsiento = Convert.ToInt32(btn.CommandArgument);
+                    lbAsientosRegreso.Items.Add(idAsiento.ToString());
+
+                    if (lbAsientosRegreso.Items.Count == numPasajeros)
+                        btnIngresar.Visible = true;
+
+                }
+            }
+
+        }
+
+        private void cargarAsientosOcupadosVueloRegreso()
+        {
+            var allButtons = new List<Button>();
+            FindButtons(PlantillaRegreso, allButtons);
+            foreach (var button in allButtons)
+            {
+                var numasiento = int.Parse(button.CommandArgument);
+                var estaOcupado = asientosOcupadosVueloRegreso.Contains(numasiento);
+                if (estaOcupado)
+                    button.BackColor = Color.Red;
+                else
+                    button.BackColor = Color.Green;
+                var seleccionado = lbAsientosRegreso.Items.FindByText(numasiento.ToString());
+                if (seleccionado != null)
+                    button.BackColor = Color.Blue;
+                if (lblClaseRegreso.Text == "Cabina Ejecutiva" && numasiento > 8)
+                    button.Visible = false;
+                if (lblClaseRegreso.Text == "Cabina Principal" && numasiento < 9)
+                    button.Visible = false;
+            }
+            btnIngresar.Visible = false;
+        }
+        
+        protected void btnEliminarRegreso_Click(object sender, EventArgs e)
+        {
+            if (lbAsientosRegreso.SelectedIndex > -1)
+            {
+                lbAsientosRegreso.Items.RemoveAt(lbAsientosRegreso.SelectedIndex);
+                cargarAsientosOcupadosVueloRegreso();
+            }
+        }
     
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceStack.DataAnnotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Aerolinea.Data
 {
     public class Pago
     {
+        [PrimaryKey, AutoIncrement]
         public int IdPago { get; set; }
 
         public int IdTiquete { get; set; }

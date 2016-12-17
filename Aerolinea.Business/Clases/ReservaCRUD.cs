@@ -10,7 +10,6 @@ using Aerolinea.DataAccess;
 namespace Aerolinea.Business.Clases
 {
     public class ReservaCRUD : IReserva
-
     {
 
         private Repository<Reserva> vuelos;

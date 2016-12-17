@@ -1,7 +1,12 @@
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.csprojResolveAssemblyReference.cache
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.dll
+D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.pdb
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Aerolinea.GUI.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Aerolinea.GUI.pdb
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Aerolinea.Business.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Aerolinea.Data.dll
+C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Gma.QrCodeNet.Encoding.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Aerolinea.DataAccess.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\ServiceStack.Interfaces.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\ServiceStack.OrmLite.dll
@@ -13,12 +18,5 @@ C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Aerolinea.Data.pdb
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Aerolinea.DataAccess.pdb
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\ServiceStack.Common.xml
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\ServiceStack.Text.xml
-C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.dll
 C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.pdb
-D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.csprojResolveAssemblyReference.cache
-D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.dll
-D:\LIDAR\Examples_Code\jQueryAJAX\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\Aerolinea.GUI.pdb
-C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\RdlCompile.cache
-C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\obj\Debug\RdlCompile.compiled
-C:\Users\Felipe\Dropbox\Aerolinea.git\trunk\Aerolinea.GUI\bin\Gma.QrCodeNet.Encoding.dll

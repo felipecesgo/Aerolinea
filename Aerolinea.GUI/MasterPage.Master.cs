@@ -104,25 +104,26 @@ namespace Aerolinea.GUI
                     };
                     mnuPrincipal.Items.Add(menuVuelo);
 
-                    var menuQueja = new MenuItem
-                    {
-                        Value = "Queja",
-                        Text = "Quejas",
-                        NavigateUrl = "~/Mantenimientos/Queja.aspx",
-                        Selected = currentPage.Contains("Queja.aspx")
-                    };
-                    mnuPrincipal.Items.Add(menuQueja);
 
-                    var menuAsientos = new MenuItem
-                    {
-                        Value = "Asientos",
-                        Text = "Asientos",
-                        NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
-                        Selected = currentPage.Contains("mantenimientoAsientos.aspx")
-                    };
-
+                    //var menuAsientos = new MenuItem
+                    //{
+                    //    Value = "Asientos",
+                    //    Text = "Asientos",
+                    //    NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
+                    //    Selected = currentPage.Contains("mantenimientoAsientos.aspx")
+                    //};
             
-                    mnuPrincipal.Items.Add(menuAsientos);
+                    //mnuPrincipal.Items.Add(menuAsientos);
+
+                    //var menuReportes = new MenuItem
+                    //{
+                    //    Value = "Reportes",
+                    //    Text = "Reportes",
+                    //    NavigateUrl = "~/Mantenimientos/Reportes.aspx",
+                    //    Selected = currentPage.Contains("Reportes.aspx")
+                    //};
+                    //mnuPrincipal.Items.Add(menuReportes);
+
                 }
                 else if (usuario.IdRol == 2)
                 {
@@ -145,14 +146,14 @@ namespace Aerolinea.GUI
                             Selected = currentPage.Contains("EstadoVuelos.aspx")
                         };
                         mnuPrincipal.Items.Add(menuEstadoVuelos);
-                        var menuAsientos = new MenuItem
-                        {
-                            Value = "Asientos",
-                            Text = "Asientos",
-                            NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
-                            Selected = currentPage.Contains("mantenimientoAsientos.aspx")
-                        };
-                        mnuPrincipal.Items.Add(menuAsientos);
+                        //var menuAsientos = new MenuItem
+                        //{
+                        //    Value = "Asientos",
+                        //    Text = "Asientos",
+                        //    NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
+                        //    Selected = currentPage.Contains("mantenimientoAsientos.aspx")
+                        //};
+                        //mnuPrincipal.Items.Add(menuAsientos);
                     }
                 }
                 else if (usuario.IdRol == 3)
@@ -168,14 +169,14 @@ namespace Aerolinea.GUI
                                 NavigateUrl = "~/Index.aspx",
                                 Selected = currentPage.Contains("Index.aspx")
                             };
-                            var menuAsientos = new MenuItem
-                            {
-                                Value = "Asientos",
-                                Text = "Asientos",
-                                NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
-                                Selected = currentPage.Contains("mantenimientoAsientos.aspx")
-                            };
-                            mnuPrincipal.Items.Add(menuAsientos);
+                            //var menuAsientos = new MenuItem
+                            //{
+                            //    Value = "Asientos",
+                            //    Text = "Asientos",
+                            //    NavigateUrl = "~/Mantenimientos/MantenimientoAsientos.aspx",
+                            //    Selected = currentPage.Contains("mantenimientoAsientos.aspx")
+                            //};
+                            //mnuPrincipal.Items.Add(menuAsientos);
                         }
                     }
              

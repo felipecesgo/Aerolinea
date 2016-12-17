@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Aerolinea.Business.Clases
 {
-    class PagosCRUD
+    public class PagosCRUD
     {
 
          private Repository<Pago> pagos;
@@ -19,7 +19,7 @@ namespace Aerolinea.Business.Clases
         }
 
   
-        public void GuardarAgente(Pago pago)
+        public void Guardar(Pago pago)
         {
             pagos.Save(pago);
         }
