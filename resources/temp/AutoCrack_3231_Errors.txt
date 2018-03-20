@@ -1,0 +1,16 @@
+Introducción 
+Justificación y su importancia
+Desarrollo
+
+2. Evaluar las herramientas disponibles en el mercado (Licenciadas o Gratuitas) del sistema elegido. Realizar un estudio de mercado para evaluar funcionalidad y costos
+
+3. Seleccionar una de las herramientas investigadas, indicando su descripción funcional  y sus características. 
+
+4. Identificar los requerimientos de hardware y software necesarios para operar (tome en cuenta que puede usarse en la nube o bien debe ser instalado en algún equipo) 
+
+5. Identificar las ventajas y desventajas de utilizar la herramienta elegida. 
+
+6. Identificar el flujo funcional del producto  (Puede ser un diseño gráfico).  
+
+Conclusiones 
+Recomendaciones 
