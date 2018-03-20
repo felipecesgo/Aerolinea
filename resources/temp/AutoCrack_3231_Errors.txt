@@ -1,5 +1,29 @@
 Introducción 
+En la actualidad una empresa dispone de multitud de dispositivos tecnológicos enlazados en una misma red y 
+en dichos dispositivos hay instalado multitud de softwares informático en general con el fin de facilitar el trabajo,
+así como optimizarlo. A medida que un negocio crece también lo hace el número de programas que se alojan en la base de datos.
+Y por consiguiente, los costes de los mismos se incrementan y el descontrol se hace palpable. 
+Este problema se combate gracias a la gestión de licencias, una herramienta eficaz y cómoda para conocer los recursos 
+un equipo conectado a una red.
+
+La posibilidad de disponer de un inventario donde se listen los programas y la utilización que se hace de ellos en los 
+distintos dispositivos de la empresa es una clara ventaja de la gestión de licencias. Con este sistema se obtienen 
+datos de cada uno de los equipamientos lógicos empleados durante los proyectos, el tiempo dedicado a cada uno, 
+cuales provienen de licencias y cuáles vienen de instalaciones básicas.
+
+
 Justificación y su importancia
+Una herramienta de inventario de hardwre y software se torna clave en el área de licencias. 
+Por un lado, a través de este inventario de software se puede conocer cuáles son los permisos obtenidos, 
+detecta si estos están en vigor o ha pasado su tiempo de uso, y lo más importante, la gestión de licencias determina 
+el uso ilegal de algún mecanismo. De esta manera, la organización puede actuar ante el problema y resolverlo, ya que 
+muchas veces se obtienen equipamientos de forma casual sin conocerse el límite legal del mismo.  En los últimos años han 
+sido numerosos los negocios que han sido denunciados por el uso ilícito de estos programas.
+
+El beneficio económico también es un punto en valor de la gestión de licencias. Con la documentación necesaria de los software
+obtenidos, su utilización y demás datos se pueden atajar costes, ya que esta gestión determina cuales de los programas están en 
+desusos suponiendo un sobrecoste para la empresa.
+
 Desarrollo
 
 2. Evaluar las herramientas disponibles en el mercado (Licenciadas o Gratuitas) del sistema elegido. Realizar un estudio de mercado para evaluar funcionalidad y costos
