@@ -1,0 +1,31 @@
+1.	Investigue y exponga en el foro cinco entregables. 
+Acta Constitutiva
+Objetivo
+Poner a consideración de la autoridad competente el proyecto y obtener su visto bueno y compromiso para la realización de la etapa siguiente. Asimismo, realizar el registro formal del proyecto.
+Valor o importancia
+Como lo establece la metodología PMI en la guía del PMBOK, El beneficio clave de  desarrollar el acta de constitución de un proyecto proceso es registrar el proyecto formalmente en la organización, dar inicio al proyecto, establecer claramente sus límites y establecer una forma directa una vía para obtener el compromiso y aceptación formal del proyecto por parte de la dirección general.
+Quien lo debe realizar
+Este documento es emitido por el iniciador o patrocinador (Sponsor) que autoriza formalmente la existencia de un proyecto, confiriendo al gerente del proyecto (El Project Manager) la autoridad para asignar recursos de la organización a sus actividades.
+
+Quien lo aprueba
+El acta de constitución de un proyecto
+Cuál es la audiencia
+Áreas de conocimiento que involucra
+
+Acta Constitutiva,
+ Plan de Proyecto,
+ Documento de Alcance del Proyecto, 
+Cronograma de Trabajo,
+ Contratos, 
+Informe de Avance, 
+Bitácora del Proyecto, 
+Bitácora de cada miembro de equipo, 
+Minutas de Reuniones,
+ Solicitudes de Cambio, 
+Resolución de Cambio, 
+Adendas a Contratos,
+ Aceptación del producto o servicio, 
+Acta de Cierre de Contrato, 
+Informe de Cierre del Proyecto
+
+2.	Desarrolle para tres entregables claves el contenido típico que debe tener cada uno. Por ejemplo, el Informe de Avance, tiene como parte del contenido típico: Periodo que cubre, Tareas realizadas en el periodo reportado, etc.
