@@ -1,16 +1,110 @@
 1.	Investigue y exponga en el foro cinco entregables. 
 Acta Constitutiva
 Objetivo
-Poner a consideraci�n de la autoridad competente el proyecto y obtener su visto bueno y compromiso para la realizaci�n de la etapa siguiente. Asimismo, realizar el registro formal del proyecto.
+Poner a consideración de la autoridad competente el proyecto y obtener su visto bueno y compromiso para la realización de la etapa siguiente. Asimismo, realizar el registro formal del proyecto.
+
 Valor o importancia
-Como lo establece la metodolog�a PMI en la gu�a del PMBOK, El beneficio clave de  desarrollar el acta de constituci�n de un proyecto proceso es registrar el proyecto formalmente en la organizaci�n, dar inicio al proyecto, establecer claramente sus l�mites y establecer una forma directa una v�a para obtener el compromiso y aceptaci�n formal del proyecto por parte de la direcci�n general.
+Como lo establece la metodología PMI en la guía del PMBOK, El beneficio clave de  desarrollar el acta de constitución de un proyecto proceso es registrar el proyecto formalmente en la organizaci�n, dar inicio al proyecto, establecer claramente sus l�mites y establecer una forma directa una v�a para obtener el compromiso y aceptaci�n formal del proyecto por parte de la direcci�n general.
+
 Quien lo debe realizar
-Este documento es emitido por el iniciador o patrocinador (Sponsor) que autoriza formalmente la existencia de un proyecto, confiriendo al gerente del proyecto (El Project Manager) la autoridad para asignar recursos de la organizaci�n a sus actividades.
+La entidad patrocinadora debería ser la encargada de redactar el acta de constitución del proyecto.
+Se recomienda que el director del proyecto participe en la elaboración del acta de constitución del proyecto para que de este modo adquiera el conocimiento de los requisitos fundamentales del proyecto.
 
 Quien lo aprueba
-El acta de constituci�n de un proyecto
-Cu�l es la audiencia
-�reas de conocimiento que involucra
+El acta de constitución del proyecto debe ser aprobada y firmada por el patrocinador del proyecto.
+
+Cual es la audiencia
+el acta de constitucion del proyecto va dirigida a la dirección general de la empresa ejecutora del proyecto.
+
+Áreas de conocimiento que involucra
+El área de conocimiento involucrada es: Gestión de la Integración del Proyecto, en la fase de Inicio.
+
+
+2. 
+Documento de Alcance del Proyecto
+Objetivo
+El objetivo principal de la Gestión del Alcance del Proyecto es definir y controlar qué se incluye y qué no se incluye en el proyecto.
+
+Valor o importancia
+Su importancia está en que asegura que todos los stakeholders tengan un conocimiento común del alcance del proyecto.
+
+Quien lo debe realizar
+el Project Manager o Director del Proyecto es el que debería de realizar el documento de Alcance del Proyecto.
+
+Quien lo aprueba
+el documento de Alcance del Proyecto debe estar acordado con todos los interesados y aprobado por el patrocinador o el comité de dirección del proyecto. 
+
+Cual es la audiencia
+el documento de Alcance del Proyecto va dirigido a todos los interesados en el proyecto.
+
+Áreas de conocimiento que involucra
+el área de conocimiento involucrada es: Gestión del Alcance del Proyecto, Recopilar requisitos, Definir el Alcance, Crear la EDT se llevan a cabo durante la fase de planificación y Verificar el Alcance, Controlar el Alcance
+se ejecutan durante la fase de control y seguimiento del proyecto.
+
+
+3. Solicitudes de Cambio
+Objetivo
+Realizar y registrar una propuesta formal de modificaciones a la línea base o documento de proyecto.
+
+Valor o importancia
+Establece un método para identificar y solicitar cambios a las líneas base del proyecto y para determinar el valor y la eficacia de esos cambios. 
+además proporciona oportunidades de validar y mejorar el proyecto de manera continua.
+
+Quien lo debe realizar
+Cualquiera de los stakeholders puede detectar una necesidad y desear generar un cambio que cubra esa necesidad.
+El Gerente de proyecto debe garantizar que el proceso de gestión de cambios se lleve de forma apropiada, que no se realicen cambios indiscriminados, no autorizados y que tengan un control.
+
+Quien lo aprueba
+El equipo de dirección del proyecto valorará esta solicitud de cambio para ver todas sus consecuencias e implicaciones sobre la globalidad del proyecto y ver como afecta a las lineas base del proyecto. 
+El director del proyecto emitirá la solicitud de cambio y, en función de su importancia, la lleva al órgano o patrocinador correspondiente para que toma la decisión sobre su aceptación.
+
+Cual es la audiencia
+Esta solicitud debe encaminarse al director del proyecto, que es la persona encargada de dar inicio al proceso de aprobación de cambios.
+
+Áreas de conocimiento que involucra
+El área de conocimiento involucrada es: Gestión de la Integración del Proyecto, en la fase de control y seguimiento del proyecto.
+
+
+4. Cronograma de Trabajo
+Objetivo
+Aalizar el orden de las actividades, su duración, los requisitos de recursos y las restricciones para ejecutar el proyecto. 
+
+Valor o importancia
+El cronograma de trabajo es muy importante ya que determina los tiempos de ejecución de cada una de las actividades a realizar, así como detectar los posibles factores externos o internos  para la realización de un proyecto.
+
+Quien lo debe realizar
+el Project Manager o Director del Proyecto es el que debería de realizar el Cronograma de Trabajo
+
+Quien lo aprueba
+El cronograma de trabajo debe estar acordado con todos los interesados y aprobado por el patrocinador o el comité de dirección del proyecto. 
+
+Cual es la audiencia
+El cronograma de trabajo a dirigido a todos los interesados en el proyecto.
+
+Áreas de conocimiento que involucra
+Pertenece al área de conocimiento Gestión del Tiempo del proyecto al grupo del Proceso de Planificación
+
+5. Informe de Cierre del Proyecto
+Objetivo
+Finalizar todas las actividades a través de todos los grupos de procesos para completar el proyecto o una fase del mismo, teniendo como resultado la finalización formal del trabajo del proyecto, autorizando la documentación de lecciones aprendidas y liberación de los recursos.
+
+Valor o importancia
+El Informe de Cierre del Proyecto oficializa la finalización de todos los compromisos, tanto con la propia organización como con personas externas a ella, además:
+• Certifica y oficializa que hemos cumplido con el alcance y los compromisos delante del cliente. Lo que implica que ya no deberemos hacer nada más en relación a este proyecto o pedido, y que cualquier nueva solicitud será tramitada como un nuevo proyecto.
+• Libera totalmente al equipo del proyecto, incluido al director del proyecto. Por lo que estos pueden asumir nuevos proyectos.
+• Supone el cierre administrativo y financiero de todos los compromisos y derechos adquiridos por el proyecto. Esto incluye el cierre de los contratos con proveedores y cliente, y el cierre financiero del proyecto dentro de la propia organización.
+
+Quien lo debe realizar
+La organización o empresa que ejecuta el proyecto, debería ser la encargada de elaborar el Informe de Cierre del Proyecto.
+
+Quien lo aprueba
+el Acta de Cierre de Proyecto, será revisada y firmada por los patrocinadores, dejando evidencia que se ha completado y aceptado por los interesados, el producto del proyecto.
+
+Cual es la audiencia
+El Informe de Cierre del Proyecto va dirigido a los patrocinadores del proyecto.
+
+Áreas de conocimiento que involucra
+El área de conocimiento involucrada es: Gestión de la Integración del Proyecto, en la fase de cierre del proyecto.
 
 Acta Constitutiva,
  Plan de Proyecto,
@@ -18,14 +112,53 @@ Acta Constitutiva,
 Cronograma de Trabajo,
  Contratos, 
 Informe de Avance, 
-Bit�cora del Proyecto, 
-Bit�cora de cada miembro de equipo, 
+Bit�cora del Proyecto, 
+Bit�cora de cada miembro de equipo, 
 Minutas de Reuniones,
  Solicitudes de Cambio, 
-Resoluci�n de Cambio, 
+Resoluci�n de Cambio, 
 Adendas a Contratos,
- Aceptaci�n del producto o servicio, 
+ Aceptaci�n del producto o servicio, 
 Acta de Cierre de Contrato, 
 Informe de Cierre del Proyecto
 
-2.	Desarrolle para tres entregables claves el contenido t�pico que debe tener cada uno. Por ejemplo, el Informe de Avance, tiene como parte del contenido t�pico: Periodo que cubre, Tareas realizadas en el periodo reportado, etc.
+
+2.	Desarrolle para tres entregables claves el contenido t�pico que debe tener cada uno. Por ejemplo, el Informe de Avance, tiene como parte del contenido t�pico: Periodo que cubre, Tareas realizadas en el periodo reportado, etc.
+
+Acta de Constitución del Proyecto
+El acta de constitución del proyecto documenta las necesidades de negocio,
+los supuestos, las restricciones, el conocimiento de las necesidades y requisitos de alto nivel del cliente y el
+nuevo producto, servicio o resultado que el proyecto debe proporcionar, como por ejemplo:
+• El propósito o la justificación del proyecto,
+• Los objetivos medibles del proyecto y los criterios de éxito asociados,
+• Los requisitos de alto nivel,
+• Los supuestos y las restricciones,
+• La descripción de alto nivel del proyecto y sus límites,
+• Los riesgos de alto nivel,
+• El resumen del cronograma de hitos,
+• El resumen del presupuesto,
+• La lista de interesados,
+• Los requisitos de aprobación del proyecto (es decir, en qué consiste el éxito del proyecto, quién
+decide si el proyecto tiene éxito y quién firma la aprobación del proyecto),
+• El director del proyecto asignado, su responsabilidad y su nivel de autoridad
+• El nombre y el nivel de autoridad del patrocinador o de quienes autorizan el acta de constitución del
+proyecto.
+
+Documento de Alcance del Proyecto
+El Enunciado del Alcance del Proyecto es un documento que contiene los siguientes apartados:
+• Descripción del alcance del producto con el detalle de los requisitos para cada producto
+• Criterios de aceptación de los productos
+• Entregables del proyecto clasificados en internos, intermedios y finales (o a cliente)
+• Exclusiones del proyecto
+• Restricciones del proyecto
+• Supuestos del proyecto
+
+Solicitudes de Cambio
+la plantilla de solicitud de cambios en proyectos debe describir cada una de las siguientes secciones:
+• Datos de la solicitud de cambio: Nombre del proyecto, fecha en que se inicia la solicitud de cambio, solicitante de cambio y número de control para la solicitud.
+• Categoría del cambio: Tipo de cambio que se está realizando al proyecto, siguiendo la metodología de gerencia de proyectos y sus áreas de conocimiento, puede tratarse de un cambio de alcance, cronograma, costos (presupuesto), calidad, o inclusive cambios en los recursos (materiales y humanos) o la documentación.
+• Causa del cambio: El cambio se puede estar como resultado de solicitudes del cliente o interesados, pero también como resultado de reparaciones de defectos, acciones preventivas o acciones correctivas identificadas por el equipo de proyecto o también los interesados. Aquí se marcan todas las que apliquen e inclusive tiene la opción de marcar “otros”.
+• Descripción de la propuesta de cambio: Aquí se describe en detalle en qué consiste el cambio que se está proponiendo para el proyecto. La descripción dependerá de la categoría, por ejemplo si es de alcance, se describe que modificación se está realizando, si es de calidad, que procedimiento se está modificando, si es de costos los fondos adicionales que se están asignando o fondos que se están sustrayendo y así sucesivamente.
+• Justificación de la propuesta de cambio: Se describen las razones que desencadenaron el cambio o que lo justifican, implicaciones de no hacer el cambio, problemas que se están tratando de evitar, y cualquier otra que se considere.
+• Impacto del cambio en línea base: Aquí se especifican las implicaciones para cada variable de línea base y elemento de la gestión de proyectos. Se indica como está siendo afectada la variable y las implicaciones que tiene. Es importante expresar los impactos en términos medibles.
+• Implicaciones de recursos: Se indican los recursos materiales y de capital humano necesarios para implementar el cambio. Si el cambio implica liberar recursos esto también se especifica en esta sección. Los cambios en recursos estarán íntimamente asociados a los costos indicados en la sección anterior.
